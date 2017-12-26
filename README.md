@@ -2,7 +2,18 @@
 Course project for the iOS-11 and Swift-4 mobile application development course at @ Sofia University.
 
 
-# Bulgarian Project Description
+## Съдържание
+1. [Описание на проекта](https://github.com/pepincho/getLocal#описание-на-проекта)
+2. [Елементи на приложението](https://github.com/pepincho/getLocal#елементи-на-приложението)
+3. [Git Flow](https://github.com/pepincho/getLocal#git-flow)
+
+## Table of Contents
+1. [English Project Description](https://github.com/pepincho/getLocal#english-project-description)
+2. [Features of the application](https://github.com/pepincho/getLocal#features-of-the-application)
+3. [Git Flow](https://github.com/pepincho/getLocal#git-flow)
+
+
+# Описание на проекта
 Приложение, което ще помага на хората да намират обекти и услуги. Ще има обекти като нощни барове, дискотеки както и аптеки, магазинчета, супермаркети, заведения за хранене, ключари и т.н.
 
 ## Елементи на приложението
