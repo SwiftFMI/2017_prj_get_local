@@ -22,3 +22,22 @@ Course project for the iOS-11 and Swift-4 mobile application development course 
 
 
 # english project description
+
+
+## Git Flow
+
+> - **master** - main branch, used only for production builds
+> - **dev** - dev branch, used to contains all ready features
+> - **local-branch** - dev branch, used to contains a separated feature
+
+```
+	Steps when you want to develop a feature.
+	1. Pull dev branch
+	2. Create a new branch. Example authentication
+	3. Switch to your new branch
+	4. Commit
+	5. When you are ready, push your changes
+	6. Go to **getLocal** github repository and click "Create a pull request" button
+	7. Add title and description
+	8. Wait for review approval and merge
+```
