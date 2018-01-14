@@ -12,6 +12,17 @@
 		1F10DDE41FF2985300579C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE21FF2985300579C54 /* Main.storyboard */; };
 		1F10DDE61FF2985300579C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE51FF2985300579C54 /* Assets.xcassets */; };
 		1F10DDE91FF2985300579C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE71FF2985300579C54 /* LaunchScreen.storyboard */; };
+		BDCB0001200B55AE000D093F /* NewObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0000200B55AE000D093F /* NewObjectViewController.swift */; };
+		BDCB0003200B55BE000D093F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0002200B55BE000D093F /* InfoViewController.swift */; };
+		BDCB0005200B55FA000D093F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0004200B55FA000D093F /* CameraViewController.swift */; };
+		BDCBFFF0200B4658000D093F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFEF200B4658000D093F /* LoginViewController.swift */; };
+		BDCBFFF2200B4660000D093F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFF1200B4660000D093F /* RegisterViewController.swift */; };
+		BDCBFFF4200B467E000D093F /* ObjectsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFF3200B467E000D093F /* ObjectsMapViewController.swift */; };
+		BDCBFFF6200B484E000D093F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFF5200B484E000D093F /* MainTabBarController.swift */; };
+		BDCBFFF8200B492B000D093F /* ObjectsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFF7200B492B000D093F /* ObjectsListViewController.swift */; };
+		BDCBFFFA200B4981000D093F /* ObjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFF9200B4981000D093F /* ObjectDetailsViewController.swift */; };
+		BDCBFFFC200B4D7D000D093F /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFFB200B4D7D000D093F /* Object.swift */; };
+		BDCBFFFF200B4D9B000D093F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFFE200B4D9B000D093F /* Common.swift */; };
 		EC0EF54564470DC5512E9D70 /* Pods_getLocal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6387275EE389EDEC20C1FA /* Pods_getLocal.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +37,17 @@
 		1F10DDEA1FF2985300579C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25BD5E61FC817F041B117935 /* Pods-getLocal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getLocal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-getLocal/Pods-getLocal.debug.xcconfig"; sourceTree = "<group>"; };
 		B61B5FE4C4DC0521EC1A3F14 /* Pods-getLocal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getLocal.release.xcconfig"; path = "Pods/Target Support Files/Pods-getLocal/Pods-getLocal.release.xcconfig"; sourceTree = "<group>"; };
+		BDCB0000200B55AE000D093F /* NewObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewObjectViewController.swift; sourceTree = "<group>"; };
+		BDCB0002200B55BE000D093F /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		BDCB0004200B55FA000D093F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		BDCBFFEF200B4658000D093F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BDCBFFF1200B4660000D093F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		BDCBFFF3200B467E000D093F /* ObjectsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsMapViewController.swift; sourceTree = "<group>"; };
+		BDCBFFF5200B484E000D093F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		BDCBFFF7200B492B000D093F /* ObjectsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListViewController.swift; sourceTree = "<group>"; };
+		BDCBFFF9200B4981000D093F /* ObjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailsViewController.swift; sourceTree = "<group>"; };
+		BDCBFFFB200B4D7D000D093F /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		BDCBFFFE200B4D9B000D093F /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +83,10 @@
 		1F10DDDD1FF2985300579C54 /* getLocal */ = {
 			isa = PBXGroup;
 			children = (
-				1F10DDDE1FF2985300579C54 /* AppDelegate.swift */,
-				1F10DDE01FF2985300579C54 /* ViewController.swift */,
-				1F10DDE21FF2985300579C54 /* Main.storyboard */,
+				BDCBFFFD200B4D87000D093F /* Model */,
+				BDCBFFEE200B4624000D093F /* Controller */,
+				BDCBFFED200B461A000D093F /* View */,
 				1F10DDE51FF2985300579C54 /* Assets.xcassets */,
-				1F10DDE71FF2985300579C54 /* LaunchScreen.storyboard */,
 				1F10DDEA1FF2985300579C54 /* Info.plist */,
 			);
 			path = getLocal;
@@ -86,6 +107,42 @@
 				1B6387275EE389EDEC20C1FA /* Pods_getLocal.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDCBFFED200B461A000D093F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F10DDE21FF2985300579C54 /* Main.storyboard */,
+				1F10DDE71FF2985300579C54 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BDCBFFEE200B4624000D093F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F10DDDE1FF2985300579C54 /* AppDelegate.swift */,
+				1F10DDE01FF2985300579C54 /* ViewController.swift */,
+				BDCBFFEF200B4658000D093F /* LoginViewController.swift */,
+				BDCBFFF1200B4660000D093F /* RegisterViewController.swift */,
+				BDCBFFF3200B467E000D093F /* ObjectsMapViewController.swift */,
+				BDCBFFF9200B4981000D093F /* ObjectDetailsViewController.swift */,
+				BDCBFFF5200B484E000D093F /* MainTabBarController.swift */,
+				BDCBFFF7200B492B000D093F /* ObjectsListViewController.swift */,
+				BDCB0000200B55AE000D093F /* NewObjectViewController.swift */,
+				BDCB0002200B55BE000D093F /* InfoViewController.swift */,
+				BDCB0004200B55FA000D093F /* CameraViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BDCBFFFD200B4D87000D093F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BDCBFFFB200B4D7D000D093F /* Object.swift */,
+				BDCBFFFE200B4D9B000D093F /* Common.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +276,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDCBFFFA200B4981000D093F /* ObjectDetailsViewController.swift in Sources */,
+				BDCBFFF0200B4658000D093F /* LoginViewController.swift in Sources */,
 				1F10DDE11FF2985300579C54 /* ViewController.swift in Sources */,
+				BDCBFFF6200B484E000D093F /* MainTabBarController.swift in Sources */,
+				BDCB0005200B55FA000D093F /* CameraViewController.swift in Sources */,
+				BDCBFFFC200B4D7D000D093F /* Object.swift in Sources */,
+				BDCB0001200B55AE000D093F /* NewObjectViewController.swift in Sources */,
 				1F10DDDF1FF2985300579C54 /* AppDelegate.swift in Sources */,
+				BDCBFFF8200B492B000D093F /* ObjectsListViewController.swift in Sources */,
+				BDCBFFF4200B467E000D093F /* ObjectsMapViewController.swift in Sources */,
+				BDCBFFFF200B4D9B000D093F /* Common.swift in Sources */,
+				BDCB0003200B55BE000D093F /* InfoViewController.swift in Sources */,
+				BDCBFFF2200B4660000D093F /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
