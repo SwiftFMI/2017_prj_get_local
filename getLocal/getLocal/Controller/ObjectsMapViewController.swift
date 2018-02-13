@@ -7,29 +7,56 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class ObjectsMapViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+		var user: User!
+		var objects = [Object]()
+		var ref: DatabaseReference!
+		private var databaseHandle: DatabaseHandle!
+	
+		override func viewDidLoad() {
+			super.viewDidLoad()
+			user = Auth.auth().currentUser
+			ref = Database.database().reference()
+			
+			// MARK: - Reference for using Firebase Database: https://www.sitepoint.com/creating-a-firebase-backend-for-ios-app/
+			// insert hardcoded objects to Firebase Database
+			/*
+			let dbRefId1 = self.ref.child("users").child(self.user.uid).child("objects").childByAutoId()
+			dbRefId1.child("title").setValue("Sofia")
+			dbRefId1.child("latitude").setValue("42.69")
+			dbRefId1.child("longitude").setValue("23.31")
+			
+			let dbRefId2 = self.ref.child("users").child(self.user.uid).child("objects").childByAutoId()
+			dbRefId2.child("title").setValue("London")
+			dbRefId2.child("latitude").setValue("51.50")
+			dbRefId2.child("longitude").setValue("-0.11")
+			*/
+			
+			startObservingDatabase()
+		}
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+		func startObservingDatabase () {
+			databaseHandle = ref.child("users/\(self.user.uid)/objects").observe(.value, with: { (snapshot) in
+				var newObjects = [Object]()
+				
+				for objectSnapShot in snapshot.children {
+					let object = Object(snapshot: objectSnapShot as! DataSnapshot)
+					newObjects.append(object)
+				}
+				
+				self.objects = newObjects
+				
+				for object in self.objects {
+					print("Loaded object with name: \(object.title!), latitude: \(object.latitude!) and longitude: \(object.longitude!)")
+				}
+			})
+		}
+	
+		deinit {
+			ref.child("users/\(self.user.uid)/objects").removeObserver(withHandle: databaseHandle)
+		}
 }

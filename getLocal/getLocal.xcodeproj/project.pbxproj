@@ -44,7 +44,7 @@
 		BDCBFFF5200B484E000D093F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BDCBFFF7200B492B000D093F /* ObjectsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListViewController.swift; sourceTree = "<group>"; };
 		BDCBFFF9200B4981000D093F /* ObjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailsViewController.swift; sourceTree = "<group>"; };
-		BDCBFFFB200B4D7D000D093F /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		BDCBFFFB200B4D7D000D093F /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		BDCBFFFE200B4D9B000D093F /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,9 +123,9 @@
 				1F10DDDE1FF2985300579C54 /* AppDelegate.swift */,
 				1F10DDE01FF2985300579C54 /* LoginViewController.swift */,
 				BDCBFFF3200B467E000D093F /* ObjectsMapViewController.swift */,
+				BDCBFFF7200B492B000D093F /* ObjectsListViewController.swift */,
 				BDCBFFF9200B4981000D093F /* ObjectDetailsViewController.swift */,
 				BDCBFFF5200B484E000D093F /* MainTabBarController.swift */,
-				BDCBFFF7200B492B000D093F /* ObjectsListViewController.swift */,
 				BDCB0000200B55AE000D093F /* NewObjectViewController.swift */,
 				BDCB0002200B55BE000D093F /* InfoViewController.swift */,
 				BDCB0004200B55FA000D093F /* CameraViewController.swift */,
@@ -252,6 +252,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftOverlays/SwiftOverlays.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -264,6 +265,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOverlays.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,6 +11,7 @@ target 'getLocal' do
   # Pods for getLocal
   pod 'Firebase'
 	pod 'Firebase/Auth'
+	pod 'Firebase/Database'
 	pod 'FacebookCore'
 	pod 'FacebookLogin'
 	pod 'SwiftOverlays', '~> 4.0.0'
