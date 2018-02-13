@@ -8,18 +8,16 @@
 
 import Foundation
 
-
-
-enum SegueIDs{
+enum SegueIDs {
   
 }
 
-enum StoryboardIDS{
-  case loginVC
-  case registerVC
-  case mapVC
-  case objectListVC
-  case objectDetailsVC
+enum StoryboardIDS: String {
+  case loginVC = "LoginViewController"
+	case mainVC = "MainTabBarController"
+  case mapVC = "MapViewController"
+  case objectListVC = "ObjectListViewController"
+  case objectDetailsVC = "ObjectDetailsViewController"
 }
 
 

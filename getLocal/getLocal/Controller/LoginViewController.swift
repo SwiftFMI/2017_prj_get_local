@@ -1,38 +1,70 @@
 //
-//  LoginViewController.swift
+//  ViewController.swift
 //  getLocal
 //
-//  Created by Emil Iliev on 1/14/18.
-//  Copyright © 2018 Petar Ivanov. All rights reserved.
+//  Created by Petar Ivanov on 12/26/17.
+//  Copyright © 2017 Petar Ivanov. All rights reserved.
 //
 
 import UIKit
+import FirebaseAuth
+import FacebookLogin
+import FBSDKLoginKit
+import SwiftOverlays
 
 class LoginViewController: UIViewController {
-
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+				//creating button
+				let loginButton = FBSDKLoginButton()
+				loginButton.delegate = self
+				loginButton.center = view.center
+			
+				//adding it to view
+				view.addSubview(loginButton)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-  
-  
-  @IBAction func unwindToLogin(segue: UIStoryboardSegue){}
-  
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	
 }
+
+// MARK: - FBSDKLoginButtonDelegate
+extension LoginViewController: FBSDKLoginButtonDelegate {
+	
+		func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+			self.showWaitOverlay()
+			if let error = error {
+				self.removeAllOverlays()
+				print(error.localizedDescription)
+				return
+			}
+			if let current = FBSDKAccessToken.current() {
+				let token = current.tokenString
+				let credential = FacebookAuthProvider.credential(withAccessToken: token!)
+				Auth.auth().signIn(with: credential) { (user, error) in
+					if let error = error {
+						self.removeAllOverlays()
+						print("Error: \(error.localizedDescription)")
+						return
+					}
+					self.removeAllOverlays()
+					print("User is signed in successfully")
+					// User is signed in
+					let mainVC = self.storyboard?.instantiateViewController(withIdentifier: StoryboardIDS.mainVC.rawValue)
+					self.present(mainVC!, animated: true, completion: nil)
+				}
+			} else {
+				self.removeAllOverlays()
+			}
+		}
+	
+		func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+			print("User sign out")
+		}
+	
+}
+

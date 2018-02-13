@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F10DDDF1FF2985300579C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10DDDE1FF2985300579C54 /* AppDelegate.swift */; };
-		1F10DDE11FF2985300579C54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10DDE01FF2985300579C54 /* ViewController.swift */; };
+		1F10DDE11FF2985300579C54 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10DDE01FF2985300579C54 /* LoginViewController.swift */; };
 		1F10DDE41FF2985300579C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE21FF2985300579C54 /* Main.storyboard */; };
 		1F10DDE61FF2985300579C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE51FF2985300579C54 /* Assets.xcassets */; };
 		1F10DDE91FF2985300579C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE71FF2985300579C54 /* LaunchScreen.storyboard */; };
@@ -16,8 +16,6 @@
 		BDCB0001200B55AE000D093F /* NewObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0000200B55AE000D093F /* NewObjectViewController.swift */; };
 		BDCB0003200B55BE000D093F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0002200B55BE000D093F /* InfoViewController.swift */; };
 		BDCB0005200B55FA000D093F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0004200B55FA000D093F /* CameraViewController.swift */; };
-		BDCBFFF0200B4658000D093F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFEF200B4658000D093F /* LoginViewController.swift */; };
-		BDCBFFF2200B4660000D093F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFF1200B4660000D093F /* RegisterViewController.swift */; };
 		BDCBFFF4200B467E000D093F /* ObjectsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFF3200B467E000D093F /* ObjectsMapViewController.swift */; };
 		BDCBFFF6200B484E000D093F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFF5200B484E000D093F /* MainTabBarController.swift */; };
 		BDCBFFF8200B492B000D093F /* ObjectsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFF7200B492B000D093F /* ObjectsListViewController.swift */; };
@@ -31,7 +29,7 @@
 		1B6387275EE389EDEC20C1FA /* Pods_getLocal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_getLocal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F10DDDB1FF2985300579C54 /* getLocal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = getLocal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F10DDDE1FF2985300579C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F10DDE01FF2985300579C54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F10DDE01FF2985300579C54 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F10DDE31FF2985300579C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F10DDE51FF2985300579C54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F10DDE81FF2985300579C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,8 +40,6 @@
 		BDCB0000200B55AE000D093F /* NewObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewObjectViewController.swift; sourceTree = "<group>"; };
 		BDCB0002200B55BE000D093F /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		BDCB0004200B55FA000D093F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		BDCBFFEF200B4658000D093F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		BDCBFFF1200B4660000D093F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BDCBFFF3200B467E000D093F /* ObjectsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsMapViewController.swift; sourceTree = "<group>"; };
 		BDCBFFF5200B484E000D093F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BDCBFFF7200B492B000D093F /* ObjectsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListViewController.swift; sourceTree = "<group>"; };
@@ -125,9 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				1F10DDDE1FF2985300579C54 /* AppDelegate.swift */,
-				1F10DDE01FF2985300579C54 /* ViewController.swift */,
-				BDCBFFEF200B4658000D093F /* LoginViewController.swift */,
-				BDCBFFF1200B4660000D093F /* RegisterViewController.swift */,
+				1F10DDE01FF2985300579C54 /* LoginViewController.swift */,
 				BDCBFFF3200B467E000D093F /* ObjectsMapViewController.swift */,
 				BDCBFFF9200B4981000D093F /* ObjectDetailsViewController.swift */,
 				BDCBFFF5200B484E000D093F /* MainTabBarController.swift */,
@@ -184,6 +178,11 @@
 					1F10DDDA1FF2985300579C54 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -245,12 +244,26 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-getLocal/Pods-getLocal-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftOverlays/SwiftOverlays.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOverlays.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,8 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDCBFFFA200B4981000D093F /* ObjectDetailsViewController.swift in Sources */,
-				BDCBFFF0200B4658000D093F /* LoginViewController.swift in Sources */,
-				1F10DDE11FF2985300579C54 /* ViewController.swift in Sources */,
+				1F10DDE11FF2985300579C54 /* LoginViewController.swift in Sources */,
 				BDCBFFF6200B484E000D093F /* MainTabBarController.swift in Sources */,
 				BDCB0005200B55FA000D093F /* CameraViewController.swift in Sources */,
 				BDCBFFFC200B4D7D000D093F /* Object.swift in Sources */,
@@ -292,7 +304,6 @@
 				BDCBFFF4200B467E000D093F /* ObjectsMapViewController.swift in Sources */,
 				BDCBFFFF200B4D9B000D093F /* Common.swift in Sources */,
 				BDCB0003200B55BE000D093F /* InfoViewController.swift in Sources */,
-				BDCBFFF2200B4660000D093F /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
