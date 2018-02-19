@@ -12,8 +12,8 @@
 		1F10DDE41FF2985300579C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE21FF2985300579C54 /* Main.storyboard */; };
 		1F10DDE61FF2985300579C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE51FF2985300579C54 /* Assets.xcassets */; };
 		1F10DDE91FF2985300579C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE71FF2985300579C54 /* LaunchScreen.storyboard */; };
-		1FCC5F1D203B4E3C003ABC5D /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F1C203B4E3C003ABC5D /* TakePictureViewController.swift */; };
-		1FCC5F1F203B506C003ABC5D /* ChooseCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F1E203B506C003ABC5D /* ChooseCategoryViewController.swift */; };
+		1FCC5F1D203B4E3C003ABC5D /* TakeObjectPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F1C203B4E3C003ABC5D /* TakeObjectPictureViewController.swift */; };
+		1FCC5F1F203B506C003ABC5D /* ChooseObjectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F1E203B506C003ABC5D /* ChooseObjectCategoryViewController.swift */; };
 		1FCC5F21203B5163003ABC5D /* SetObjectNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F20203B5163003ABC5D /* SetObjectNameViewController.swift */; };
 		1FCC5F23203B52A3003ABC5D /* SetObjectLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F22203B52A3003ABC5D /* SetObjectLocationViewController.swift */; };
 		69834BE0203318C30002F4E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69834BDF203318C30002F4E5 /* GoogleService-Info.plist */; };
@@ -38,8 +38,8 @@
 		1F10DDE51FF2985300579C54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F10DDE81FF2985300579C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F10DDEA1FF2985300579C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FCC5F1C203B4E3C003ABC5D /* TakePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
-		1FCC5F1E203B506C003ABC5D /* ChooseCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewController.swift; sourceTree = "<group>"; };
+		1FCC5F1C203B4E3C003ABC5D /* TakeObjectPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeObjectPictureViewController.swift; sourceTree = "<group>"; };
+		1FCC5F1E203B506C003ABC5D /* ChooseObjectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseObjectCategoryViewController.swift; sourceTree = "<group>"; };
 		1FCC5F20203B5163003ABC5D /* SetObjectNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetObjectNameViewController.swift; sourceTree = "<group>"; };
 		1FCC5F22203B52A3003ABC5D /* SetObjectLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetObjectLocationViewController.swift; sourceTree = "<group>"; };
 		25BD5E61FC817F041B117935 /* Pods-getLocal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getLocal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-getLocal/Pods-getLocal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 				BDCB0000200B55AE000D093F /* NewObjectViewController.swift */,
 				BDCB0002200B55BE000D093F /* InfoViewController.swift */,
 				BDCB0004200B55FA000D093F /* CameraViewController.swift */,
-				1FCC5F1C203B4E3C003ABC5D /* TakePictureViewController.swift */,
-				1FCC5F1E203B506C003ABC5D /* ChooseCategoryViewController.swift */,
+				1FCC5F1C203B4E3C003ABC5D /* TakeObjectPictureViewController.swift */,
+				1FCC5F1E203B506C003ABC5D /* ChooseObjectCategoryViewController.swift */,
 				1FCC5F20203B5163003ABC5D /* SetObjectNameViewController.swift */,
 				1FCC5F22203B52A3003ABC5D /* SetObjectLocationViewController.swift */,
 			);
@@ -314,9 +314,9 @@
 				BDCB0005200B55FA000D093F /* CameraViewController.swift in Sources */,
 				BDCBFFFC200B4D7D000D093F /* Object.swift in Sources */,
 				BDCB0001200B55AE000D093F /* NewObjectViewController.swift in Sources */,
-				1FCC5F1F203B506C003ABC5D /* ChooseCategoryViewController.swift in Sources */,
+				1FCC5F1F203B506C003ABC5D /* ChooseObjectCategoryViewController.swift in Sources */,
 				1FCC5F21203B5163003ABC5D /* SetObjectNameViewController.swift in Sources */,
-				1FCC5F1D203B4E3C003ABC5D /* TakePictureViewController.swift in Sources */,
+				1FCC5F1D203B4E3C003ABC5D /* TakeObjectPictureViewController.swift in Sources */,
 				1F10DDDF1FF2985300579C54 /* AppDelegate.swift in Sources */,
 				BDCBFFF8200B492B000D093F /* ObjectsListViewController.swift in Sources */,
 				BDCBFFF4200B467E000D093F /* ObjectsMapViewController.swift in Sources */,
