@@ -266,6 +266,16 @@
                     <view key="view" contentMode="scaleToFill" id="Osl-5s-aBZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gV-HW-efm">
+                                <rect key="frame" x="106" y="318" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next - choose category"/>
+                                <connections>
+                                    <segue destination="5rI-O1-vLS" kind="show" id="Iqq-uB-8HT"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rRW-98-Fvm"/>
                     </view>
@@ -273,6 +283,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqW-Wu-uk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3786" y="2911"/>
+        </scene>
+        <!--Choose Category View Controller-->
+        <scene sceneID="tyv-IU-v34">
+            <objects>
+                <viewController id="5rI-O1-vLS" customClass="ChooseCategoryViewController" customModule="getLocal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L7s-iw-Lmg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="j8i-rO-Ocl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9k6-FP-EHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4826" y="2911"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0jN-Wd-5Ou">
