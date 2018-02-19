@@ -10,6 +10,8 @@ import UIKit
 
 class SetObjectNameViewController: UIViewController {
     
+    @IBOutlet weak var objectNameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

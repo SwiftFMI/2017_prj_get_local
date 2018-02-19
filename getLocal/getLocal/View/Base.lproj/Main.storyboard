@@ -331,30 +331,47 @@
             </objects>
             <point key="canvasLocation" x="4826" y="2911"/>
         </scene>
-        <!--View Controller-->
+        <!--Set Object Name View Controller-->
         <scene sceneID="3yg-FD-zPZ">
             <objects>
-                <viewController id="qaO-JB-qpH" sceneMemberID="viewController">
+                <viewController id="qaO-JB-qpH" customClass="SetObjectNameViewController" customModule="getLocal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ma8-kX-Uhr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwJ-Cs-xmH">
-                                <rect key="frame" x="124" y="318" width="126" height="30"/>
+                                <rect key="frame" x="124" y="471" width="126" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next - set location"/>
                                 <connections>
                                     <segue destination="VIh-XV-LCd" kind="show" id="CGo-3R-sfA"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aoY-gx-HqQ">
+                                <rect key="frame" x="88" y="318" width="199" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter object's name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opi-v5-pyr">
+                                <rect key="frame" x="111" y="248" width="152" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="aqi-M6-lwd"/>
                     </view>
+                    <connections>
+                        <outlet property="objectNameTextField" destination="aoY-gx-HqQ" id="nfO-Hn-A6d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SwH-wX-5kv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5839" y="2910"/>
+            <point key="canvasLocation" x="5837.6000000000004" y="2909.5952023988007"/>
         </scene>
         <!--Set Object Location View Controller-->
         <scene sceneID="w00-BW-NFl">
