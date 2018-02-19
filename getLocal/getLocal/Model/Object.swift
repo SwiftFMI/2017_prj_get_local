@@ -11,18 +11,24 @@ import FirebaseDatabase
 
 class Object {
 	
-		var ref: DatabaseReference?
-		var title: String?
-		var latitude: String?
-		var longitude: String?
+    var ref: DatabaseReference?
+    var title: String?
+    var latitude: String?
+    var longitude: String?
+    var category: String?
+    var description: String?
+    var businessHours: String?
 	
-		init (snapshot: DataSnapshot) {
-			ref = snapshot.ref
-			
-			let data = snapshot.value as! Dictionary<String, String>
-			title = data["title"]
-			latitude = data["latitude"]
-			longitude = data["longitude"]
-		}
+    init (snapshot: DataSnapshot) {
+        ref = snapshot.ref
+        
+        let data = snapshot.value as! Dictionary<String, String>
+        title = data["title"]
+        latitude = data["latitude"]
+        longitude = data["longitude"]
+        category = data["category"]
+        description = data["description"]
+        businessHours = data["businessHours"]
+    }
 	
 }

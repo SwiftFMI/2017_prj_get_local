@@ -14,6 +14,8 @@ class CategoriesListUserController: UIViewController, UITableViewDataSource, UIT
     
     var categories : [String] = []
     
+    var selectedCategory : String!
+    
     @IBOutlet var categoriesTable: UITableView!
     
     override func viewDidLoad() {
@@ -34,5 +36,19 @@ class CategoriesListUserController: UIViewController, UITableViewDataSource, UIT
         cell.textLabel?.text = categories[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedCategory = categories[indexPath.row]
+        
+        performSegue(withIdentifier: "category", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "category") {
+            let viewController = segue.destination as! ObjectsListViewController
+            viewController.category = selectedCategory
+        }
     }
 }
