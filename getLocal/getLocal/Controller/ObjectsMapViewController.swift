@@ -22,8 +22,10 @@ class ObjectsMapViewController: UIViewController {
 			user = Auth.auth().currentUser
 			ref = Database.database().reference()
 			
+            
+            print(user.photoURL)
 			// MARK: - Reference for using Firebase Database: https://www.sitepoint.com/creating-a-firebase-backend-for-ios-app/
-			// insert hardcoded objects to Firebase Database
+			// insert hardcoded objexcts to Firebase Database
 			/*
 			let dbRefId1 = self.ref.child("users").child(self.user.uid).child("objects").childByAutoId()
 			dbRefId1.child("title").setValue("Sofia")
@@ -40,7 +42,7 @@ class ObjectsMapViewController: UIViewController {
 		}
 
 		func startObservingDatabase () {
-			databaseHandle = ref.child("users/\(self.user.uid)/objects").observe(.value, with: { (snapshot) in
+			databaseHandle = ref.child("objects/").observe(.value, with: { (snapshot) in
 				var newObjects = [Object]()
 				
 				for objectSnapShot in snapshot.children {

@@ -29,7 +29,9 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-	
+
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue){}
+    
 }
 
 // MARK: - FBSDKLoginButtonDelegate
@@ -51,7 +53,8 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
 						print("Error: \(error.localizedDescription)")
 						return
 					}
-					self.removeAllOverlays()
+                    
+                    self.removeAllOverlays()
 					print("User is signed in successfully")
 					// User is signed in
 					let mainVC = self.storyboard?.instantiateViewController(withIdentifier: StoryboardIDS.mainVC.rawValue)
