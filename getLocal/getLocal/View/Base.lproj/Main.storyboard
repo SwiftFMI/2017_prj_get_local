@@ -291,6 +291,16 @@
                     <view key="view" contentMode="scaleToFill" id="L7s-iw-Lmg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfj-iI-Gtc">
+                                <rect key="frame" x="132" y="318" width="110" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next - set name"/>
+                                <connections>
+                                    <segue destination="qaO-JB-qpH" kind="show" id="FGD-m7-2MP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="j8i-rO-Ocl"/>
                     </view>
@@ -298,6 +308,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k6-FP-EHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4826" y="2911"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3yg-FD-zPZ">
+            <objects>
+                <viewController id="qaO-JB-qpH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ma8-kX-Uhr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="aqi-M6-lwd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SwH-wX-5kv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5839" y="2910"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0jN-Wd-5Ou">
