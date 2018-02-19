@@ -8,12 +8,30 @@
 
 import UIKit
 
-class TakeObjectPictureViewController: UIViewController {
+class TakeObjectPictureViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    @IBOutlet weak var imageTake: UIImageView!
+    
+    var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    
+    //MARK: - Take a photo
+    @IBAction func takePhoto(_ sender: UIButton) {
+        imagePicker =  UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    //MARK: - Finalize image capture
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        imagePicker.dismiss(animated: true, completion: nil)
+        imageTake.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
     
     override func didReceiveMemoryWarning() {

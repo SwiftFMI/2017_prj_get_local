@@ -27,6 +27,10 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+    <key>NSCameraUsageDescription</key>
+    <string>This app will use camera.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>You can select photos to attach.</string>
 	<key>FacebookAppID</key>
 	<string>342359919588157</string>
 	<key>FacebookDisplayName</key>
