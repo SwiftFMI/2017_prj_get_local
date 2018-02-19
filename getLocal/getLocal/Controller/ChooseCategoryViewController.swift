@@ -1,5 +1,5 @@
 //
-//  ChooseCategoryViewController.swift
+//  ChooseObjectCategoryViewController.swift
 //  getLocal
 //
 //  Created by Petar Ivanov on 2/19/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChooseCategoryViewController: UIViewController {
+class ChooseObjectCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

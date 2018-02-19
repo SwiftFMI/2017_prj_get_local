@@ -259,10 +259,10 @@
             </objects>
             <point key="canvasLocation" x="2908" y="3320"/>
         </scene>
-        <!--Take Picture View Controller-->
+        <!--Take Object Picture View Controller-->
         <scene sceneID="hlV-x8-NjS">
             <objects>
-                <viewController id="ttr-RP-dJd" customClass="TakePictureViewController" sceneMemberID="viewController">
+                <viewController id="ttr-RP-dJd" customClass="TakeObjectPictureViewController" customModule="getLocal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Osl-5s-aBZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,10 +284,10 @@
             </objects>
             <point key="canvasLocation" x="3786" y="2911"/>
         </scene>
-        <!--Choose Category View Controller-->
+        <!--Choose Object Category View Controller-->
         <scene sceneID="tyv-IU-v34">
             <objects>
-                <viewController id="5rI-O1-vLS" customClass="ChooseCategoryViewController" customModule="getLocal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5rI-O1-vLS" customClass="ChooseObjectCategoryViewController" customModule="getLocal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L7s-iw-Lmg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
