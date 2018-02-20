@@ -107,7 +107,6 @@
 				1F10DDE51FF2985300579C54 /* Assets.xcassets */,
 				1F10DDEA1FF2985300579C54 /* Info.plist */,
 				69834BDF203318C30002F4E5 /* GoogleService-Info.plist */,
-				BD04BA18203CD3830041FB7E /* EnumCollections.swift */,
 			);
 			path = getLocal;
 			sourceTree = "<group>";
@@ -168,6 +167,7 @@
 				BDCBFFFE200B4D9B000D093F /* Common.swift */,
 				BDF23DB9203BE71E003AF4DC /* CommonExtension.swift */,
 				BD04BA1A203CD3EB0041FB7E /* Language.swift */,
+				BD04BA18203CD3830041FB7E /* EnumCollections.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
