@@ -56,7 +56,9 @@ class ObjectsMapViewController: UIViewController {
 			})
 		}
 	
-		deinit {
-			ref.child("users/\(self.user.uid)/objects").removeObserver(withHandle: databaseHandle)
+			deinit {
+            if ref != nil {
+                ref.child("users/\(self.user.uid)/objects").removeObserver(withHandle: databaseHandle)
+            }
 		}
 }

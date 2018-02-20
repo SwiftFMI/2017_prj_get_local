@@ -560,10 +560,10 @@
             </objects>
             <point key="canvasLocation" x="3023" y="4709"/>
         </scene>
-        <!--View Controller-->
+        <!--Logout View Controller-->
         <scene sceneID="2Yn-U6-GfV">
             <objects>
-                <viewController id="gRR-uj-o4j" sceneMemberID="viewController">
+                <viewController id="gRR-uj-o4j" customClass="LogoutViewController" customModule="getLocal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Bf-4K-0Oz">
                         <rect key="frame" x="0.0" y="0.0" width="359" height="43.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -575,6 +575,9 @@
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleLogout:" destination="gRR-uj-o4j" eventType="touchUpInside" id="jje-8P-QRy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -586,8 +589,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YhZ-ue-AAi"/>
                     </view>
+                    <connections>
+                        <segue destination="peL-sC-8FH" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginWithSegue:" id="Rjj-Q3-rFP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRp-3A-XKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="peL-sC-8FH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="304" y="4907"/>
         </scene>

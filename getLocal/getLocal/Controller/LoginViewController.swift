@@ -16,13 +16,9 @@ class LoginViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-				//creating button
-				let loginButton = FBSDKLoginButton()
-				loginButton.delegate = self
-				loginButton.center = view.center
-			
-				//adding it to view
-				view.addSubview(loginButton)
+        
+        autologin()
+        addLogin()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +28,27 @@ class LoginViewController: UIViewController {
 
     @IBAction func unwindToLogin(segue: UIStoryboardSegue){}
     
+
+    private func autologin() {
+        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+            guard let `self` = self ,let user = user else { return }
+            
+            guard let mainTab = self.storyboard?.instantiateViewController(withIdentifier: StoryboardIDS.mainVC.rawValue) as? MainTabBarController
+                else { fatalError("\(StoryboardIDS.mainVC) doesn't exist!") }
+                
+            self.present(mainTab, animated: true)
+        }
+    }
+    
+    private func addLogin() {
+        //creating button
+        let loginButton = FBSDKLoginButton()
+        loginButton.delegate = self
+        loginButton.center = view.center
+        
+        //adding it to view
+        view.addSubview(loginButton)
+    }
 }
 
 // MARK: - FBSDKLoginButtonDelegate

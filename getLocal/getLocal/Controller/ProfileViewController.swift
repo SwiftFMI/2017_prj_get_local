@@ -20,6 +20,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        user = Auth.auth().currentUser
         activityIndicator.startAnimating()
         self.title = "Profile"
         downloadAvatar()

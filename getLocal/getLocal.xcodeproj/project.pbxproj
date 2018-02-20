@@ -25,6 +25,7 @@
 		BDF23DB0203B82C9003AF4DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF23DAF203B82C9003AF4DC /* ProfileViewController.swift */; };
 		BDF23DB2203BE235003AF4DC /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF23DB1203BE235003AF4DC /* LanguageViewController.swift */; };
 		BDF23DBA203BE71E003AF4DC /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF23DB9203BE71E003AF4DC /* CommonExtension.swift */; };
+		BDF23DBE203CBC54003AF4DC /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF23DBD203CBC54003AF4DC /* LogoutViewController.swift */; };
 		EC0EF54564470DC5512E9D70 /* Pods_getLocal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6387275EE389EDEC20C1FA /* Pods_getLocal.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		BDF23DAF203B82C9003AF4DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BDF23DB1203BE235003AF4DC /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		BDF23DB9203BE71E003AF4DC /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
+		BDF23DBD203CBC54003AF4DC /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				BDCB0004200B55FA000D093F /* CameraViewController.swift */,
 				BDF23DAF203B82C9003AF4DC /* ProfileViewController.swift */,
 				BDF23DB1203BE235003AF4DC /* LanguageViewController.swift */,
+				BDF23DBD203CBC54003AF4DC /* LogoutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				BDCBFFF4200B467E000D093F /* ObjectsMapViewController.swift in Sources */,
 				BDF23DB2203BE235003AF4DC /* LanguageViewController.swift in Sources */,
 				BDCBFFFF200B4D9B000D093F /* Common.swift in Sources */,
+				BDF23DBE203CBC54003AF4DC /* LogoutViewController.swift in Sources */,
 				BDCB0003200B55BE000D093F /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
