@@ -8,17 +8,24 @@
 
 import Foundation
 
+var language: Language = .eng
+
 enum SegueIDs {
   
 }
 
 enum StoryboardIDS: String {
-  case loginVC = "LoginViewController"
+    case loginVC = "LoginViewController"
 	case mainVC = "MainTabBarController"
-  case mapVC = "MapViewController"
-  case objectListVC = "ObjectListViewController"
-  case objectDetailsVC = "ObjectDetailsViewController"
+    case mapVC = "MapViewController"
+    case objectListVC = "ObjectListViewController"
+    case objectDetailsVC = "ObjectDetailsViewController"
+    case profileVC
+    case languageVC
+//    case themeVC
 }
 
-
-
+enum Language {
+    case eng
+    case bg
+}

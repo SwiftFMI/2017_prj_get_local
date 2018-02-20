@@ -22,6 +22,9 @@
 		BDCBFFFA200B4981000D093F /* ObjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFF9200B4981000D093F /* ObjectDetailsViewController.swift */; };
 		BDCBFFFC200B4D7D000D093F /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFFB200B4D7D000D093F /* Object.swift */; };
 		BDCBFFFF200B4D9B000D093F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBFFFE200B4D9B000D093F /* Common.swift */; };
+		BDF23DB0203B82C9003AF4DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF23DAF203B82C9003AF4DC /* ProfileViewController.swift */; };
+		BDF23DB2203BE235003AF4DC /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF23DB1203BE235003AF4DC /* LanguageViewController.swift */; };
+		BDF23DBA203BE71E003AF4DC /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF23DB9203BE71E003AF4DC /* CommonExtension.swift */; };
 		EC0EF54564470DC5512E9D70 /* Pods_getLocal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6387275EE389EDEC20C1FA /* Pods_getLocal.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +49,9 @@
 		BDCBFFF9200B4981000D093F /* ObjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailsViewController.swift; sourceTree = "<group>"; };
 		BDCBFFFB200B4D7D000D093F /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		BDCBFFFE200B4D9B000D093F /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		BDF23DAF203B82C9003AF4DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BDF23DB1203BE235003AF4DC /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		BDF23DB9203BE71E003AF4DC /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,8 @@
 				BDCB0000200B55AE000D093F /* NewObjectViewController.swift */,
 				BDCB0002200B55BE000D093F /* InfoViewController.swift */,
 				BDCB0004200B55FA000D093F /* CameraViewController.swift */,
+				BDF23DAF203B82C9003AF4DC /* ProfileViewController.swift */,
+				BDF23DB1203BE235003AF4DC /* LanguageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -138,6 +146,7 @@
 			children = (
 				BDCBFFFB200B4D7D000D093F /* Object.swift */,
 				BDCBFFFE200B4D9B000D093F /* Common.swift */,
+				BDF23DB9203BE71E003AF4DC /* CommonExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,15 +304,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDF23DBA203BE71E003AF4DC /* CommonExtension.swift in Sources */,
 				BDCBFFFA200B4981000D093F /* ObjectDetailsViewController.swift in Sources */,
 				1F10DDE11FF2985300579C54 /* LoginViewController.swift in Sources */,
 				BDCBFFF6200B484E000D093F /* MainTabBarController.swift in Sources */,
 				BDCB0005200B55FA000D093F /* CameraViewController.swift in Sources */,
 				BDCBFFFC200B4D7D000D093F /* Object.swift in Sources */,
 				BDCB0001200B55AE000D093F /* NewObjectViewController.swift in Sources */,
+				BDF23DB0203B82C9003AF4DC /* ProfileViewController.swift in Sources */,
 				1F10DDDF1FF2985300579C54 /* AppDelegate.swift in Sources */,
 				BDCBFFF8200B492B000D093F /* ObjectsListViewController.swift in Sources */,
 				BDCBFFF4200B467E000D093F /* ObjectsMapViewController.swift in Sources */,
+				BDF23DB2203BE235003AF4DC /* LanguageViewController.swift in Sources */,
 				BDCBFFFF200B4D9B000D093F /* Common.swift in Sources */,
 				BDCB0003200B55BE000D093F /* InfoViewController.swift in Sources */,
 			);

@@ -22,9 +22,7 @@ class ObjectsMapViewController: UIViewController {
 			user = Auth.auth().currentUser
 			ref = Database.database().reference()
 			
-            
-            print(user.photoURL)
-			// MARK: - Reference for using Firebase Database: https://www.sitepoint.com/creating-a-firebase-backend-for-ios-app/
+            // MARK: - Reference for using Firebase Database: https://www.sitepoint.com/creating-a-firebase-backend-for-ios-app/
 			// insert hardcoded objexcts to Firebase Database
 			/*
 			let dbRefId1 = self.ref.child("users").child(self.user.uid).child("objects").childByAutoId()
