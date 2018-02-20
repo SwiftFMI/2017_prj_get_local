@@ -26,7 +26,4 @@ enum StoryboardIDS: String {
 //    case themeVC
 }
 
-enum Language {
-    case eng
-    case bg
-}
+

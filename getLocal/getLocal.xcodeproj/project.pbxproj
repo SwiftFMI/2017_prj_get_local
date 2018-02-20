@@ -17,6 +17,8 @@
 		696CDD8B203C5F85003DD7F6 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696CDD89203C5F85003DD7F6 /* AnnotationView.swift */; };
 		696CDD8C203C5F85003DD7F6 /* ObjectAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696CDD8A203C5F85003DD7F6 /* ObjectAnnotation.swift */; };
 		69834BE0203318C30002F4E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69834BDF203318C30002F4E5 /* GoogleService-Info.plist */; };
+		BD04BA19203CD3830041FB7E /* EnumCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04BA18203CD3830041FB7E /* EnumCollections.swift */; };
+		BD04BA1B203CD3EB0041FB7E /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04BA1A203CD3EB0041FB7E /* Language.swift */; };
 		BDCB0001200B55AE000D093F /* NewObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0000200B55AE000D093F /* NewObjectViewController.swift */; };
 		BDCB0003200B55BE000D093F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0002200B55BE000D093F /* InfoViewController.swift */; };
 		BDCB0005200B55FA000D093F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0004200B55FA000D093F /* CameraViewController.swift */; };
@@ -49,6 +51,8 @@
 		696CDD8A203C5F85003DD7F6 /* ObjectAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectAnnotation.swift; sourceTree = "<group>"; };
 		69834BDF203318C30002F4E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B61B5FE4C4DC0521EC1A3F14 /* Pods-getLocal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getLocal.release.xcconfig"; path = "Pods/Target Support Files/Pods-getLocal/Pods-getLocal.release.xcconfig"; sourceTree = "<group>"; };
+		BD04BA18203CD3830041FB7E /* EnumCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCollections.swift; sourceTree = "<group>"; };
+		BD04BA1A203CD3EB0041FB7E /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		BDCB0000200B55AE000D093F /* NewObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewObjectViewController.swift; sourceTree = "<group>"; };
 		BDCB0002200B55BE000D093F /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		BDCB0004200B55FA000D093F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				1F10DDE51FF2985300579C54 /* Assets.xcassets */,
 				1F10DDEA1FF2985300579C54 /* Info.plist */,
 				69834BDF203318C30002F4E5 /* GoogleService-Info.plist */,
+				BD04BA18203CD3830041FB7E /* EnumCollections.swift */,
 			);
 			path = getLocal;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				BDCBFFFB200B4D7D000D093F /* Object.swift */,
 				BDCBFFFE200B4D9B000D093F /* Common.swift */,
 				BDF23DB9203BE71E003AF4DC /* CommonExtension.swift */,
+				BD04BA1A203CD3EB0041FB7E /* Language.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF23DBA203BE71E003AF4DC /* CommonExtension.swift in Sources */,
+				BD04BA1B203CD3EB0041FB7E /* Language.swift in Sources */,
 				696CDD87203C5F76003DD7F6 /* CustomCalloutView.swift in Sources */,
 				BDCBFFFA200B4981000D093F /* ObjectDetailsViewController.swift in Sources */,
 				1F10DDE11FF2985300579C54 /* LoginViewController.swift in Sources */,
@@ -333,6 +340,7 @@
 				696CDD8B203C5F85003DD7F6 /* AnnotationView.swift in Sources */,
 				BDCB0001200B55AE000D093F /* NewObjectViewController.swift in Sources */,
 				BDF23DB0203B82C9003AF4DC /* ProfileViewController.swift in Sources */,
+				BD04BA19203CD3830041FB7E /* EnumCollections.swift in Sources */,
 				1F10DDDF1FF2985300579C54 /* AppDelegate.swift in Sources */,
 				BDCBFFF8200B492B000D093F /* ObjectsListViewController.swift in Sources */,
 				BDCBFFF4200B467E000D093F /* ObjectsMapViewController.swift in Sources */,

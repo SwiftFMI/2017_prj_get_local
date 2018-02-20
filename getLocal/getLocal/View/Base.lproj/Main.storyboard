@@ -427,7 +427,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="HJ8-nW-sc0" kind="show" id="qlk-uh-l9G"/>
+                                            <segue destination="o7d-9f-XlQ" kind="show" id="VoK-WY-yqF"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChangeTheme" textLabel="Ud0-b5-fW1" style="IBUITableViewCellStyleDefault" id="dy2-ih-fq7">
@@ -446,9 +446,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="ZkU-Bx-41j" kind="show" id="vaS-I7-dqY"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -506,32 +503,41 @@
             <point key="canvasLocation" x="847" y="5472"/>
         </scene>
         <!--Language View Controller-->
-        <scene sceneID="QiQ-4d-Rhn">
+        <scene sceneID="T4m-sh-JEr">
             <objects>
-                <viewController id="ZkU-Bx-41j" customClass="LanguageViewController" customModule="getLocal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9Q4-zT-4Cp">
+                <tableViewController id="o7d-9f-XlQ" customClass="LanguageViewController" customModule="getLocal" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WVl-QG-aNQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C3N-eb-z1V">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <sections/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="8S6-9U-VWb" firstAttribute="trailing" secondItem="C3N-eb-z1V" secondAttribute="trailing" id="Kbg-hr-yY7"/>
-                            <constraint firstItem="8S6-9U-VWb" firstAttribute="bottom" secondItem="C3N-eb-z1V" secondAttribute="bottom" id="uhS-pL-qrf"/>
-                            <constraint firstItem="C3N-eb-z1V" firstAttribute="top" secondItem="8S6-9U-VWb" secondAttribute="top" id="wFU-rl-XxX"/>
-                            <constraint firstItem="C3N-eb-z1V" firstAttribute="leading" secondItem="8S6-9U-VWb" secondAttribute="leading" id="xeo-FT-4s1"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="8S6-9U-VWb"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MlH-WW-7ZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="XGh-iM-1FW" style="IBUITableViewCellStyleDefault" id="Jvl-l7-Qwh">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jvl-l7-Qwh" id="dHQ-in-P2U">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XGh-iM-1FW">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="o7d-9f-XlQ" id="BUX-qp-9IZ"/>
+                            <outlet property="delegate" destination="o7d-9f-XlQ" id="6Fv-aI-5hm"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RwI-rT-Txh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="5473"/>
+            <point key="canvasLocation" x="1825" y="5516"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="w26-j6-jXB">
