@@ -129,10 +129,13 @@
                         <viewLayoutGuide key="safeArea" id="rps-V2-Y7D"/>
                     </view>
                     <navigationItem key="navigationItem" id="XHW-np-nKe"/>
+                    <connections>
+                        <outlet property="mapView" destination="gRZ-Ti-mvP" id="DeF-MZ-k5g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovy-dc-7IU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1831.2" y="686.80659670164926"/>
+            <point key="canvasLocation" x="1833" y="770"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="FbN-Do-uXo">
