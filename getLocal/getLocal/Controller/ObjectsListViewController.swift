@@ -17,17 +17,37 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     
     var user: User!
     var objects = [Object]()
-    var ref: DatabaseReference!
+    
+    var objectsRef: DatabaseReference!
+    var userRef: DatabaseReference!
+    
     private var databaseHandle: DatabaseHandle!
     
-    var category : String!
+    var category : Category!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         user = Auth.auth().currentUser
-        ref = Database.database().reference().child("objects")
         
-        ref.queryOrdered(byChild: "category").queryEqual(toValue: category).observe(.value, with: { (snapshot) in
+        objectsRef = Database.database().reference().child("objects")
+        userRef = Database.database().reference().child("users").child(user.uid)
+        
+        queryDb()
+
+        categoryLabel.text = category.plural
+    }
+    
+    private func queryDb() {
+        switch category {
+            case .all: queryDb(query: objectsRef.queryOrdered(byChild: "title"))
+            case .favourites: queryFavourites()
+            case .myObjects: queryDb(query: objectsRef.queryOrdered(byChild: "createdBy").queryEqual(toValue: user.uid))
+            default: queryDb(query: objectsRef.queryOrdered(byChild: "category").queryEqual(toValue: category.rawValue))
+        }
+    }
+    
+    private func queryDb(query: DatabaseQuery) {
+        query.observe(.value, with: { (snapshot) in
             if snapshot.childrenCount > 0 {
                 self.objects.removeAll()
                 
@@ -38,8 +58,34 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
                 self.tableViewObjects.reloadData()
             }
         })
-        
-        categoryLabel.text = category
+    }
+    
+    private func queryFavourites() {
+        userRef.child("favourites").observe(.value, with: { (snapshot) in
+            if snapshot.childrenCount > 0 {
+                var favourites = [String]()
+                
+                for objectSnapshot in snapshot.children.allObjects as![DataSnapshot] {
+                    favourites.append(objectSnapshot.value as! String)
+                }
+                self.queryFavouriteObjects(favourites: favourites)
+            }
+        })
+    }
+    
+    private func queryFavouriteObjects(favourites: [String]) {
+        self.objects.removeAll()
+        for favourite in favourites {
+            objectsRef.queryOrdered(byChild: "uid").queryEqual(toValue: favourite).observe(.value, with: { (snapshot) in
+                if snapshot.childrenCount > 0 {
+                    for objectSnapshot in snapshot.children.allObjects as![DataSnapshot] {
+                        let object = Object(snapshot: objectSnapshot)
+                        self.objects.append(object)
+                        self.tableViewObjects.reloadData()
+                    }
+                }
+            })
+        }
     }
     
     // MARK: - List Objects Datasource

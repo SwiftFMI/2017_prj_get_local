@@ -10,14 +10,12 @@ import UIKit
 
 class CategoriesListUserController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var categories : [String] = []
+    var categories : [Category] = Category.allCategories
     
-    var selectedCategory : String!
+    var selectedCategory : Category!
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        categories = ["restaurant", "club", "pharmacy", "shop", "other", "service", "all", "favourites", "my objects"]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,7 +25,7 @@ class CategoriesListUserController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Category")!
         
-        cell.textLabel?.text = categories[indexPath.row]
+        cell.textLabel?.text = categories[indexPath.row].plural
         
         return cell
     }
