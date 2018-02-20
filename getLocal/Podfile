@@ -15,4 +15,5 @@ target 'getLocal' do
 	pod 'FacebookCore'
 	pod 'FacebookLogin'
 	pod 'SwiftOverlays', '~> 4.0.0'
+	pod 'Kingfisher', '~> 4.0'
 end
