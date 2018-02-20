@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController {
     private func downloadAvatar() {
         guard let user = user, let photoURL = user.photoURL else { return }
         
-        userAvatar.imageFromServerURL(url: photoURL) { [weak self]
+        userAvatar.imageFromServerURL(url: photoURL) { [weak self] in
             guard let `self` = self else { return }
             
             self.activityIndicator.stopAnimating()
