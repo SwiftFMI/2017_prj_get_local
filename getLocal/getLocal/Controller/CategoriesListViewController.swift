@@ -17,7 +17,7 @@ class CategoriesListUserController: UIViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        categories = ["restaurant", "club", "pharmacy", "shop", "other", "service", "favourites", "my objects"]
+        categories = ["restaurant", "club", "pharmacy", "shop", "other", "service", "all", "favourites", "my objects"]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
