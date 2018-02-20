@@ -13,7 +13,7 @@ import FirebaseAuth
 class ObjectsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
     @IBOutlet var categoryLabel: UILabel!
-    @IBOutlet var objectsTable: UITableView!
+    @IBOutlet var tableViewObjects: UITableView!
     
     var user: User!
     var objects = [Object]()
@@ -25,15 +25,24 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         user = Auth.auth().currentUser
-        ref = Database.database().reference()
-        //startObservingDatabase()
-        // Do any additional setup after loading the view.
+        ref = Database.database().reference().child("objects")
         
-        objectsTable.dataSource = self
-        objectsTable.delegate = self
+        ref.queryOrdered(byChild: "category").queryEqual(toValue: category).observe(.value, with: { (snapshot) in
+            if snapshot.childrenCount > 0 {
+                self.objects.removeAll()
+                
+                for objectSnapshot in snapshot.children.allObjects as![DataSnapshot] {
+                    let object = Object(snapshot: objectSnapshot)
+                    self.objects.append(object)
+                }
+                self.tableViewObjects.reloadData()
+            }
+        })
+        
         categoryLabel.text = category
     }
-	
+    
+    // MARK: - List Objects Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count
     }
@@ -42,6 +51,8 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "objectCell") as! ObjectTableViewCell
         
         let object = objects[indexPath.row]
+        
+        cell.titleCell.text = object.title
         
         return cell
     }

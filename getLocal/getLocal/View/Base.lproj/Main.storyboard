@@ -70,6 +70,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qdF-Mv-X9E" id="LIc-I4-iH7"/>
+                                    <outlet property="delegate" destination="qdF-Mv-X9E" id="O7g-3R-qD9"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qd-6w-28u">
                                 <rect key="frame" x="0.0" y="588" width="375" height="30"/>
@@ -90,7 +94,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="vME-fZ-nd3"/>
                     <connections>
-                        <outlet property="categoriesTable" destination="Tr0-hM-gti" id="Juc-OM-k0s"/>
                         <segue destination="KFN-9u-4lt" kind="show" identifier="category" id="oT7-CK-jeb"/>
                     </connections>
                 </viewController>
@@ -124,9 +127,25 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dbQ-bw-00g" id="BEA-mN-4H2">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVZ-67-FBY">
+                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleCell" destination="RVZ-67-FBY" id="B4Z-Dt-zEP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KFN-9u-4lt" id="NUz-oq-VDB"/>
+                                    <outlet property="delegate" destination="KFN-9u-4lt" id="J7y-OA-VyK"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -134,7 +153,7 @@
                     </view>
                     <connections>
                         <outlet property="categoryLabel" destination="LXl-Qs-QWW" id="Uau-h0-2JA"/>
-                        <outlet property="objectsTable" destination="CYU-Mk-5pb" id="I9b-rs-JX1"/>
+                        <outlet property="tableViewObjects" destination="CYU-Mk-5pb" id="mo5-GH-7Mp"/>
                         <segue destination="gFq-na-8Gu" kind="show" id="XuB-sA-5AM"/>
                     </connections>
                 </viewController>

@@ -10,20 +10,14 @@ import UIKit
 
 class CategoriesListUserController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
-    
     var categories : [String] = []
     
     var selectedCategory : String!
-    
-    @IBOutlet var categoriesTable: UITableView!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        categoriesTable.dataSource = self
-        categoriesTable.delegate = self
-        categories = ["restaurants", "bars", "favourites", "my objects"]
+        categories = ["restaurant", "club", "pharmacy", "shop", "other", "service", "favourites", "my objects"]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
