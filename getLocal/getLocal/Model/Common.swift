@@ -8,7 +8,7 @@
 
 import Foundation
 
-var language: Language = .eng
+
 
 
 enum SegueIDs {
@@ -26,4 +26,8 @@ enum StoryboardIDS: String {
 //    case themeVC
 }
 
+
+enum Notifications {
+    case languageChanged
+}
 

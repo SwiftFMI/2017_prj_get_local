@@ -1,0 +1,33 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4qd-6w-28u"; */
+"4qd-6w-28u.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HqJ-di-Ujh"; */
+"HqJ-di-Ujh.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Profile"; ObjectID = "Mfr-VV-BHu"; */
+"Mfr-VV-BHu.text" = "Profile";
+
+/* Class = "UILabel"; text = "My objects"; ObjectID = "Qns-HJ-gfD"; */
+"Qns-HJ-gfD.text" = "My objects";
+
+/* Class = "UILabel"; text = "Liked objects"; ObjectID = "UYd-m3-unZ"; */
+"UYd-m3-unZ.text" = "Liked objects";
+
+/* Class = "UILabel"; text = "Change theme"; ObjectID = "Ud0-b5-fW1"; */
+"Ud0-b5-fW1.text" = "Change theme";
+
+/* Class = "UILabel"; text = "Change language"; ObjectID = "Wx2-K2-Ep1"; */
+"Wx2-K2-Ep1.text" = "Change language";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "XGh-iM-1FW"; */
+"XGh-iM-1FW.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "pHB-qr-Imv"; */
+"pHB-qr-Imv.normalTitle" = "Logout";
+
+/* Class = "UILabel"; text = "getLocal"; ObjectID = "udb-wv-YYM"; */
+"udb-wv-YYM.text" = "getLocal";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xhO-Cw-CMi"; */
+"xhO-Cw-CMi.text" = "Label";

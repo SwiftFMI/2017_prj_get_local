@@ -91,7 +91,7 @@
         <!--Object Details View Controller-->
         <scene sceneID="iLM-dp-VOK">
             <objects>
-                <viewController id="gFq-na-8Gu" customClass="ObjectDetailsViewController" customModule="getLocal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ObjectDetailsViewController" id="gFq-na-8Gu" customClass="ObjectDetailsViewController" customModule="getLocal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Awi-2h-7Zh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -519,7 +519,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XGh-iM-1FW">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -599,6 +599,7 @@
                         <viewLayoutGuide key="safeArea" id="YhZ-ue-AAi"/>
                     </view>
                     <connections>
+                        <outlet property="logoutButton" destination="pHB-qr-Imv" id="Pn6-k2-SYO"/>
                         <segue destination="peL-sC-8FH" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginWithSegue:" id="Rjj-Q3-rFP"/>
                     </connections>
                 </viewController>

@@ -12,9 +12,14 @@ import FBSDKLoginKit
 
 class LogoutViewController: UIViewController {
 
+    @IBOutlet weak var logoutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        logoutButton.setTitle("Hello".localized, for: .normal)
+//        Language.shared.currentLanguage
         // Do any additional setup after loading the view.
     }
 

@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  getLocal
+
+  Created by Emil Iliev on 2/21/18.
+  Copyright © 2018 Petar Ivanov. All rights reserved.
+*/
+
+
+"Hello" = "Hello";
+"profile" = "Profile";
+"my_objects" = "My objects";
+"liked_objects" = "Liked objects";
+"change_language" = "Change language";
+"change_theme" = "Change theme";

@@ -18,7 +18,8 @@
 		696CDD8C203C5F85003DD7F6 /* ObjectAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696CDD8A203C5F85003DD7F6 /* ObjectAnnotation.swift */; };
 		69834BE0203318C30002F4E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69834BDF203318C30002F4E5 /* GoogleService-Info.plist */; };
 		BD04BA19203CD3830041FB7E /* EnumCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04BA18203CD3830041FB7E /* EnumCollections.swift */; };
-		BD04BA1B203CD3EB0041FB7E /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04BA1A203CD3EB0041FB7E /* Language.swift */; };
+		BD04BA1B203CD3EB0041FB7E /* LanguageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04BA1A203CD3EB0041FB7E /* LanguageEnum.swift */; };
+		BD371856203DE9FC00DED6F4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD371858203DE9FC00DED6F4 /* Localizable.strings */; };
 		BDCB0001200B55AE000D093F /* NewObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0000200B55AE000D093F /* NewObjectViewController.swift */; };
 		BDCB0003200B55BE000D093F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0002200B55BE000D093F /* InfoViewController.swift */; };
 		BDCB0005200B55FA000D093F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0004200B55FA000D093F /* CameraViewController.swift */; };
@@ -52,10 +53,14 @@
 		69834BDF203318C30002F4E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B61B5FE4C4DC0521EC1A3F14 /* Pods-getLocal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getLocal.release.xcconfig"; path = "Pods/Target Support Files/Pods-getLocal/Pods-getLocal.release.xcconfig"; sourceTree = "<group>"; };
 		BD04BA18203CD3830041FB7E /* EnumCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCollections.swift; sourceTree = "<group>"; };
-		BD04BA1A203CD3EB0041FB7E /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		BD04BA1A203CD3EB0041FB7E /* LanguageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageEnum.swift; sourceTree = "<group>"; };
+		BD371854203DE97200DED6F4 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/Main.strings; sourceTree = "<group>"; };
+		BD371855203DE97200DED6F4 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		BD371857203DE9FC00DED6F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BD371859203DE9FE00DED6F4 /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BDCB0000200B55AE000D093F /* NewObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewObjectViewController.swift; sourceTree = "<group>"; };
 		BDCB0002200B55BE000D093F /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		BDCB0004200B55FA000D093F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		BDCB0004200B55FA000D093F /* CameraViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		BDCBFFF3200B467E000D093F /* ObjectsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsMapViewController.swift; sourceTree = "<group>"; };
 		BDCBFFF5200B484E000D093F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BDCBFFF7200B492B000D093F /* ObjectsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 				1F10DDE51FF2985300579C54 /* Assets.xcassets */,
 				1F10DDEA1FF2985300579C54 /* Info.plist */,
 				69834BDF203318C30002F4E5 /* GoogleService-Info.plist */,
+				BD371858203DE9FC00DED6F4 /* Localizable.strings */,
 			);
 			path = getLocal;
 			sourceTree = "<group>";
@@ -166,7 +172,7 @@
 				BDCBFFFB200B4D7D000D093F /* Object.swift */,
 				BDCBFFFE200B4D9B000D093F /* Common.swift */,
 				BDF23DB9203BE71E003AF4DC /* CommonExtension.swift */,
-				BD04BA1A203CD3EB0041FB7E /* Language.swift */,
+				BD04BA1A203CD3EB0041FB7E /* LanguageEnum.swift */,
 				BD04BA18203CD3830041FB7E /* EnumCollections.swift */,
 			);
 			path = Model;
@@ -223,6 +229,7 @@
 			knownRegions = (
 				en,
 				Base,
+				bg,
 			);
 			mainGroup = 1F10DDD21FF2985300579C54;
 			productRefGroup = 1F10DDDC1FF2985300579C54 /* Products */;
@@ -240,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F10DDE91FF2985300579C54 /* LaunchScreen.storyboard in Resources */,
+				BD371856203DE9FC00DED6F4 /* Localizable.strings in Resources */,
 				69834BE0203318C30002F4E5 /* GoogleService-Info.plist in Resources */,
 				1F10DDE61FF2985300579C54 /* Assets.xcassets in Resources */,
 				696CDD88203C5F76003DD7F6 /* CustomCalloutView.xib in Resources */,
@@ -275,6 +283,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-getLocal/Pods-getLocal-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ARCL/ARCL.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -289,6 +298,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARCL.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -329,7 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF23DBA203BE71E003AF4DC /* CommonExtension.swift in Sources */,
-				BD04BA1B203CD3EB0041FB7E /* Language.swift in Sources */,
+				BD04BA1B203CD3EB0041FB7E /* LanguageEnum.swift in Sources */,
 				696CDD87203C5F76003DD7F6 /* CustomCalloutView.swift in Sources */,
 				BDCBFFFA200B4981000D093F /* ObjectDetailsViewController.swift in Sources */,
 				1F10DDE11FF2985300579C54 /* LoginViewController.swift in Sources */,
@@ -358,6 +368,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F10DDE31FF2985300579C54 /* Base */,
+				BD371854203DE97200DED6F4 /* bg */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -366,8 +377,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F10DDE81FF2985300579C54 /* Base */,
+				BD371855203DE97200DED6F4 /* bg */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BD371858203DE9FC00DED6F4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD371857203DE9FC00DED6F4 /* en */,
+				BD371859203DE9FE00DED6F4 /* bg */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -377,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -434,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -486,7 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2L24TQ8W95;
+				DEVELOPMENT_TEAM = 4D5PLR5969;
 				INFOPLIST_FILE = getLocal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bg.sofia-uni.fmi.getLocal";
@@ -502,7 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2L24TQ8W95;
+				DEVELOPMENT_TEAM = 4D5PLR5969;
 				INFOPLIST_FILE = getLocal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bg.sofia-uni.fmi.getLocal";

@@ -27,4 +27,9 @@ extension UIImageView {
     }
 }
 
-
+extension String {
+    var localized: String {
+        let table = "\(Language.shared.currentLanguage.code)" + ".lproj/Localizable"
+        return NSLocalizedString(self, tableName: table, bundle: Bundle.main, value: self, comment: "")
+        }
+}
