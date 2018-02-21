@@ -278,35 +278,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gV-HW-efm">
-                                <rect key="frame" x="106" y="565" width="162" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next - choose category"/>
-                                <connections>
-                                    <segue destination="5rI-O1-vLS" kind="show" id="Iqq-uB-8HT"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Take picture of the object" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAa-h2-ShV">
-                                <rect key="frame" x="90" y="81" width="195" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image-not-available" translatesAutoresizingMaskIntoConstraints="NO" id="Sw6-e6-BaC">
-                                <rect key="frame" x="60" y="121" width="255" height="344"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-not-available" translatesAutoresizingMaskIntoConstraints="NO" id="Sw6-e6-BaC">
+                                <rect key="frame" x="60" y="84" width="254" height="384"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="254" id="0Vg-Jg-AHf"/>
+                                    <constraint firstAttribute="height" constant="384" id="g2d-WB-DO6"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msl-pv-StT">
-                                <rect key="frame" x="149" y="495" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Take Photo"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msl-pv-StT">
+                                <rect key="frame" x="117.5" y="494" width="140" height="40"/>
+                                <color key="backgroundColor" red="0.78823529411764703" green="0.24705882352941178" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="F8h-tx-FqH"/>
+                                    <constraint firstAttribute="height" constant="40" id="uWD-bl-36v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="takePhoto:" destination="ttr-RP-dJd" eventType="touchUpInside" id="UFd-w9-4xd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gV-HW-efm">
+                                <rect key="frame" x="117" y="554" width="140" height="40"/>
+                                <color key="backgroundColor" red="0.32941176470588235" green="0.63137254901960782" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="8MG-n1-Tj4"/>
+                                    <constraint firstAttribute="height" constant="40" id="fYo-Qf-ATy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5rI-O1-vLS" kind="show" id="Iqq-uB-8HT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.19215686269999999" green="0.50980392159999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Msl-pv-StT" firstAttribute="top" secondItem="Sw6-e6-BaC" secondAttribute="bottom" constant="26" id="3NU-ml-0sk"/>
+                            <constraint firstItem="4gV-HW-efm" firstAttribute="centerX" secondItem="Osl-5s-aBZ" secondAttribute="centerX" id="C9f-tD-xSk"/>
+                            <constraint firstItem="Msl-pv-StT" firstAttribute="centerX" secondItem="Osl-5s-aBZ" secondAttribute="centerX" id="G4Q-fZ-8QW"/>
+                            <constraint firstItem="Sw6-e6-BaC" firstAttribute="top" secondItem="rRW-98-Fvm" secondAttribute="top" constant="20" id="NO0-pc-97q"/>
+                            <constraint firstItem="4gV-HW-efm" firstAttribute="top" secondItem="Msl-pv-StT" secondAttribute="bottom" constant="20" id="PBX-L7-sZm"/>
+                            <constraint firstItem="Sw6-e6-BaC" firstAttribute="centerX" secondItem="Osl-5s-aBZ" secondAttribute="centerX" id="eJJ-06-Tm1"/>
+                            <constraint firstItem="Sw6-e6-BaC" firstAttribute="top" secondItem="rRW-98-Fvm" secondAttribute="top" constant="20" id="tTq-DC-s83"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rRW-98-Fvm"/>
                     </view>
                     <connections>

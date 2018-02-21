@@ -17,7 +17,7 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        self.title = "Set object's photo"
     }
     
     //MARK: - Take a photo
