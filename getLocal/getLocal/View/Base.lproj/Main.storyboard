@@ -381,24 +381,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMd-rO-6sS">
-                                <rect key="frame" x="139" y="478" width="96" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit object"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter object's location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9b-PR-ap9">
-                                <rect key="frame" x="102" y="100" width="170" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exp-hQ-sAD">
+                                <rect key="frame" x="0.0" y="127" width="375" height="392"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold on map to change location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4A-c7-Tdd">
+                                <rect key="frame" x="66" y="89" width="243" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exp-hQ-sAD">
-                                <rect key="frame" x="36" y="155" width="303" height="231"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMd-rO-6sS">
+                                <rect key="frame" x="139" y="549" width="96" height="30"/>
+                                <state key="normal" title="Submit object"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="N4A-c7-Tdd" firstAttribute="centerX" secondItem="O0l-eI-l1Y" secondAttribute="centerX" id="2vX-d8-o2n"/>
+                            <constraint firstItem="exp-hQ-sAD" firstAttribute="trailing" secondItem="R3m-Fi-7ir" secondAttribute="trailing" id="5wz-k8-6UP"/>
+                            <constraint firstItem="N4A-c7-Tdd" firstAttribute="top" secondItem="R3m-Fi-7ir" secondAttribute="top" constant="25" id="FIK-cR-ApX"/>
+                            <constraint firstItem="lMd-rO-6sS" firstAttribute="centerX" secondItem="O0l-eI-l1Y" secondAttribute="centerX" id="G06-xa-A0X"/>
+                            <constraint firstItem="exp-hQ-sAD" firstAttribute="leading" secondItem="R3m-Fi-7ir" secondAttribute="leading" id="Gel-Rt-7Rq"/>
+                            <constraint firstItem="exp-hQ-sAD" firstAttribute="top" secondItem="N4A-c7-Tdd" secondAttribute="bottom" constant="17" id="mGu-Nw-sn0"/>
+                            <constraint firstItem="R3m-Fi-7ir" firstAttribute="bottom" secondItem="lMd-rO-6sS" secondAttribute="bottom" constant="39" id="p7M-7z-HLx"/>
+                            <constraint firstItem="lMd-rO-6sS" firstAttribute="top" secondItem="exp-hQ-sAD" secondAttribute="bottom" constant="30" id="wcZ-jm-Vba"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="R3m-Fi-7ir"/>
                     </view>
                     <connections>
