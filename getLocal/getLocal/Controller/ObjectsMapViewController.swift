@@ -23,7 +23,7 @@ class ObjectsMapViewController: UIViewController {
 			ref = Database.database().reference()
 			
             
-            print(user.photoURL)
+//            print(user.photoURL)
 			// MARK: - Reference for using Firebase Database: https://www.sitepoint.com/creating-a-firebase-backend-for-ios-app/
 			// insert hardcoded objexcts to Firebase Database
 			/*
@@ -38,27 +38,29 @@ class ObjectsMapViewController: UIViewController {
 			dbRefId2.child("longitude").setValue("-0.11")
 			*/
 			
-			startObservingDatabase()
+//            startObservingDatabase()
 		}
 
-		func startObservingDatabase () {
-			databaseHandle = ref.child("objects/").observe(.value, with: { (snapshot) in
-				var newObjects = [Object]()
-				
-				for objectSnapShot in snapshot.children {
-					let object = Object(snapshot: objectSnapShot as! DataSnapshot)
-					newObjects.append(object)
-				}
-				
-				self.objects = newObjects
-				
-				for object in self.objects {
-					print("Loaded object with name: \(object.title!), latitude: \(object.latitude!) and longitude: \(object.longitude!)")
-				}
-			})
-		}
+//        func startObservingDatabase () {
+//            databaseHandle = ref.child("objects/").observe(.value, with: { (snapshot) in
+//                var newObjects = [Object]()
+//
+//                for objectSnapShot in snapshot.children {
+//                    let object = Object(snapshot: objectSnapShot as! DataSnapshot)
+//                    newObjects.append(object)
+//                }
+//
+//                self.objects = newObjects
+//
+//                for object in self.objects {
+//                    print("Loaded object with name: \(object.title!), latitude: \(object.latitude!) and longitude: \(object.longitude!)")
+//                }
+//            })
+//        }
 	
-		deinit {
-			ref.child("users/\(self.user.uid)/objects").removeObserver(withHandle: databaseHandle)
-		}
+//        deinit {
+//            ref.child("users/\(self.user.uid)/objects").removeObserver(withHandle: databaseHandle)
+//        }
+
 }
+
