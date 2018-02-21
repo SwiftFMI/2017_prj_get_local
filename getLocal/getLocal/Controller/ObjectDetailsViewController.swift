@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseStorage
 
 class ObjectDetailsViewController: UIViewController {
 
@@ -21,6 +22,7 @@ class ObjectDetailsViewController: UIViewController {
     
     var user: User!
     var userRef: DatabaseReference!
+    var storageRef: StorageReference!
     var object: Object!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,15 @@ class ObjectDetailsViewController: UIViewController {
         user = Auth.auth().currentUser
         
         userRef = Database.database().reference().child("users").child(user.uid)
+        storageRef = Storage.storage().reference()
+        storageRef.child(object.uid!).child(object.imageUrl!).getData(maxSize: 1024 * 1024) { data, error in
+            if let error = error {
+                print(error)
+            } else {
+                // Data for "images/island.jpg" is returned
+                self.objectImageView.image = UIImage(data: data!)
+            }
+        }
         
         userRef.child("favourites").observe(.value, with: { (snapshot) in
             let isFavourite = (snapshot.children.allObjects as![DataSnapshot]).map({$0.key}).contains(where: {$0 == self.object.uid})
