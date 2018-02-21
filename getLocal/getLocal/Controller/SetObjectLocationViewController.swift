@@ -135,8 +135,9 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
                     return
                 }
 
-                if let uploadedImageUrl = metadata?.downloadURL()?.absoluteString {
-                    self.objectImageUrl = uploadedImageUrl
+//                if let uploadedImageUrl = metadata?.downloadURL()?.absoluteString {
+                if metadata != nil {
+                    self.objectImageUrl = "\(imageName).png"
                     
                     self.saveObjectValues()
                     

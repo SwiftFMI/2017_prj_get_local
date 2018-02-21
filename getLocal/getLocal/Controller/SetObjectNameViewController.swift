@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SetObjectNameViewController: UIViewController {
+class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var objectNameTextField: UITextField!
     
@@ -17,6 +17,8 @@ class SetObjectNameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        objectNameTextField.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,6 +40,11 @@ class SetObjectNameViewController: UIViewController {
     // built in method
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
     
 }
