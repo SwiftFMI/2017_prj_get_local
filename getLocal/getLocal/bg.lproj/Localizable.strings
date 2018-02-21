@@ -9,7 +9,15 @@
 
 "Hello" = "Здравей";
 "profile" = "Профил";
-"my_objects" = "Мой обекти";
+"my_objects" = "Мои обекти";
 "liked_objects" = "Харесани обекти";
 "change_language" = "Промяна на езика";
 "change_theme" = "Промяна на темата";
+"change_language_message" = "Сигурни ли сте, че искате да смените езика ?";
+"change_language_yes" = "Да";
+"change_language_cancel" = "Отказ";
+"tabbar.title.objects" = "Обекти";
+"tabbar.title.info" = "Инфо";
+"tabbar.title.new_objects" = "Нов обект";
+"tabbar.title.camera" = "Камера";
+"tabbar.title.map" = "Карта";

@@ -60,12 +60,12 @@ extension LanguageViewController {
     
     
     private func presentAlert(for language: LanguageEnum) {
-        let alertController = UIAlertController(title: "Chaging language", message: "Are you sure you wnat to change the language?", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Yes", style: .default) { [weak self] _ in
+        let alertController = UIAlertController(title: "change_language".localized, message: "change_language_message".localized, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "change_language_yes".localized, style: .default) { [weak self] _ in
             guard let `self` = self else { return }
             self.changeLanguage(to: language)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: "change_language_cancel".localized, style: .cancel)
         
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)

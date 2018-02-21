@@ -31,7 +31,7 @@ class ObjectsMapViewController: UIViewController {
 		override func viewDidLoad() {
 			super.viewDidLoad()
 			
-			self.title = "Nearby objects"
+//            self.title = "Nearby objects"
 			mapView.delegate = self
 			mapView.showsUserLocation = true;
 			ref = Database.database().reference()

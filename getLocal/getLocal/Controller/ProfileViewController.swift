@@ -23,7 +23,10 @@ class ProfileViewController: UIViewController {
         user = Auth.auth().currentUser
         activityIndicator.startAnimating()
         self.title = "Profile"
+        usernameLabel.text = user?.displayName
         downloadAvatar()
+        
+        userAvatar.layer.cornerRadius = 60
     }
 
     override func didReceiveMemoryWarning() {

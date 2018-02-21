@@ -13,3 +13,11 @@
 "liked_objects" = "Liked objects";
 "change_language" = "Change language";
 "change_theme" = "Change theme";
+"change_language_message" = "Are you sure you want to change the language?";
+"change_language_yes" = "Yes";
+"change_language_cancel" = "Cancel";
+"tabbar.title.objects" = "Objects";
+"tabbar.title.info" = "Info";
+"tabbar.title.new_objects" = "New object";
+"tabbar.title.camera" = "Camera";
+"tabbar.title.map" = "Map";

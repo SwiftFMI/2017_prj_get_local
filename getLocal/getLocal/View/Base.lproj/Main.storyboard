@@ -158,11 +158,11 @@
             </objects>
             <point key="canvasLocation" x="-1604" y="2185"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nearby Objects-->
         <scene sceneID="RKL-kZ-tTy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zf6-Qx-EYb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="Zze-sB-ql2"/>
+                <navigationController title="Nearby Objects" automaticallyAdjustsScrollViewInsets="NO" id="zf6-Qx-EYb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" id="Zze-sB-ql2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ObE-RW-ULG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -613,6 +613,6 @@
         <image name="ndk" width="480" height="336"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1bG-M3-WjI"/>
+        <segue reference="4r1-5e-VJd"/>
     </inferredMetricsTieBreakers>
 </document>

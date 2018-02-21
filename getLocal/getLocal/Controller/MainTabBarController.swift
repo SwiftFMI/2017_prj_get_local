@@ -12,8 +12,9 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        changeLanguage()
+        handleNotifications()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +22,32 @@ class MainTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    private func handleNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "\(Notifications.languageChanged)"), object: nil)
     }
-    */
 
+    @objc private func changeLanguage() {
+        for controller in viewControllers! {
+            let navigationTopController = (controller as! UINavigationController).viewControllers.first!
+            let tabBarItemtitle: String
+            switch navigationTopController {
+            case is ObjectsMapViewController:
+                tabBarItemtitle = "tabbar.title.map"
+            case is CameraViewController:
+                tabBarItemtitle = "tabbar.title.camera"
+            case is NewObjectViewController:
+                tabBarItemtitle = "tabbar.title.new_object"
+            case is InfoViewController:
+                tabBarItemtitle = "tabbar.title.info"
+            case is UIViewController:
+                tabBarItemtitle = "tabbar.title.objects"
+            default:
+                assertionFailure("No such controller")
+                tabBarItemtitle = ""
+            }
+            
+            controller.tabBarItem.title = tabBarItemtitle.localized
+        }
+    }
 }
