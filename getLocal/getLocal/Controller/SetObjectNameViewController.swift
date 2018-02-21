@@ -12,7 +12,7 @@ class SetObjectNameViewController: UIViewController {
     
     @IBOutlet weak var objectNameTextField: UITextField!
     
-    var objectImageUrl: String = ""
+    var objectImage: UIImage = UIImage()
     var objectCategory: String = ""
     
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class SetObjectNameViewController: UIViewController {
         let objectName: String = objectNameTextField.text!
         
         if let setObjectLocationVC = segue.destination as? SetObjectLocationViewController {
-            setObjectLocationVC.objectImageUrl = objectImageUrl
+            setObjectLocationVC.objectImage = objectImage
             setObjectLocationVC.objectCategory = objectCategory
             setObjectLocationVC.objectTitle = objectName
         }

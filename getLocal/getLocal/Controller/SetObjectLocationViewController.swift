@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import FirebaseStorage
 import FirebaseAuth
 import FirebaseDatabase
 
@@ -25,6 +26,8 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
     }
     
     var ref: DatabaseReference!
+    var dbRef: DatabaseReference!
+    
     var objectCreatedBy: String!
     
     var locationManager =  CLLocationManager()
@@ -32,7 +35,7 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
     
     var objectTitle: String = ""
     var objectCategory: String = ""
-//    var objectImage: UIImage = UIImage()
+    var objectImage: UIImage = UIImage()
     var objectImageUrl: String = ""
     var objectWorkTime: String = ""
     var objectDescription: String = ""
@@ -43,6 +46,11 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
         super.viewDidLoad()
         
         self.title = "Set object's location"
+        
+        ref = Database.database().reference()
+        
+        dbRef = self.ref.child("objects").childByAutoId()
+        
         objectCreatedBy = Auth.auth().currentUser?.uid
         
         objectLocationMapView.delegate = self
@@ -115,10 +123,33 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
     }
     
     func addObjectToDatabase() {
-        ref = Database.database().reference()
         
-        let dbRef = self.ref.child("objects").childByAutoId()
-        
+        uploadImage(objectId: dbRef.key)
+    }
+    
+    func uploadImage(objectId: String) {
+        let imageName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child(objectId).child("\(imageName).png")
+
+        if let uploadData = UIImagePNGRepresentation(objectImage) {
+
+            storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+
+                if let error = error {
+                    print(error)
+                    return
+                }
+
+                if let uploadedImageUrl = metadata?.downloadURL()?.absoluteString {
+                    self.objectImageUrl = uploadedImageUrl
+                    
+                    self.saveObjectValues()
+                }
+            })
+        }
+    }
+    
+    func saveObjectValues() {
         dbRef.child("title").setValue(objectTitle)
         dbRef.child("latitude").setValue(newPin.coordinate.latitude)
         dbRef.child("longitude").setValue(newPin.coordinate.longitude)

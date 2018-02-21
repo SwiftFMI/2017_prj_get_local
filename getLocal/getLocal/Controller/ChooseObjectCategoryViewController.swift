@@ -13,7 +13,7 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
     
     @IBOutlet weak var categoryPickerView: UIPickerView!
     
-    var objectImageUrl: String = ""
+    var objectImage: UIImage = UIImage()
     
     var pickerData: [String] = [String]()
     
@@ -38,7 +38,7 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         let objectCategory: String = pickerData[categoryPickerView.selectedRow(inComponent: 0)]
         
         if let setObjectNameVC = segue.destination as? SetObjectNameViewController {
-            setObjectNameVC.objectImageUrl = objectImageUrl
+            setObjectNameVC.objectImage = objectImage
             setObjectNameVC.objectCategory = objectCategory
         }
     }

@@ -41,10 +41,10 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let objectImageUrl: String = "luchko"
+        let objectImage: UIImage = imageTake.image!
         
         if let chooseObjectCategoryVC = segue.destination as? ChooseObjectCategoryViewController {
-            chooseObjectCategoryVC.objectImageUrl = objectImageUrl
+            chooseObjectCategoryVC.objectImage = objectImage
         }
     }
     
