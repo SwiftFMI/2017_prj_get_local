@@ -391,30 +391,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwJ-Cs-xmH">
-                                <rect key="frame" x="124" y="471" width="126" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next - set location"/>
-                                <connections>
-                                    <segue destination="VIh-XV-LCd" kind="show" id="CGo-3R-sfA"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aoY-gx-HqQ">
-                                <rect key="frame" x="88" y="318" width="199" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aoY-gx-HqQ">
+                                <rect key="frame" x="77.5" y="318" width="220" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ivt-Ng-QkW"/>
+                                    <constraint firstAttribute="width" constant="220" id="iDR-vV-VBq"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter object's name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opi-v5-pyr">
-                                <rect key="frame" x="111" y="248" width="152" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwJ-Cs-xmH">
+                                <rect key="frame" x="117" y="513" width="140" height="40"/>
+                                <color key="backgroundColor" red="0.32941176470588235" green="0.63137254901960782" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Em2-1F-BxY"/>
+                                    <constraint firstAttribute="width" constant="140" id="xSo-fW-Xx4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="VIh-XV-LCd" kind="show" id="CGo-3R-sfA"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.51764705882352935" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aoY-gx-HqQ" firstAttribute="top" secondItem="aqi-M6-lwd" secondAttribute="top" constant="254" id="8ka-mc-hnX"/>
+                            <constraint firstItem="PwJ-Cs-xmH" firstAttribute="centerX" secondItem="ma8-kX-Uhr" secondAttribute="centerX" id="AgP-Ww-S57"/>
+                            <constraint firstItem="aoY-gx-HqQ" firstAttribute="centerX" secondItem="ma8-kX-Uhr" secondAttribute="centerX" id="FG6-Gq-ryP"/>
+                            <constraint firstItem="PwJ-Cs-xmH" firstAttribute="top" secondItem="aoY-gx-HqQ" secondAttribute="bottom" constant="155" id="ePy-eP-Tlp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aqi-M6-lwd"/>
                     </view>
                     <connections>
