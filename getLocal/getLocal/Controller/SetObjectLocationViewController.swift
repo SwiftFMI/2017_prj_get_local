@@ -18,11 +18,13 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
     @IBOutlet weak var objectLocationMapView: MKMapView!
     
     @IBAction func pressSubmitObjectButton(_ sender: Any) {
+        self.showWaitOverlay()
+        view.isUserInteractionEnabled = false
+        
         addObjectToDatabase()
         
 //        let objectDetailsVC = storyboard?.instantiateViewController(withIdentifier: StoryboardIDS.objectDetailsVC.rawValue)
-        self.tabBarController?.selectedIndex = 1
-        navigationController?.popToRootViewController(animated: true)
+        
     }
     
     var ref: DatabaseReference!
@@ -126,6 +128,10 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
 
                 if let error = error {
                     print(error)
+                    
+                    self.removeAllOverlays()
+                    self.view.isUserInteractionEnabled = true
+                    
                     return
                 }
 
@@ -133,8 +139,17 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
                     self.objectImageUrl = uploadedImageUrl
                     
                     self.saveObjectValues()
+                    
+                    self.removeAllOverlays()
+                    self.view.isUserInteractionEnabled = true
+                    
+                    self.showSuccessfulAlert()
                 }
             })
+        }
+        else {
+            self.removeAllOverlays()
+            self.view.isUserInteractionEnabled = true
         }
     }
     
@@ -148,6 +163,20 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
         dbRef.child("description").setValue(objectDescription)
         dbRef.child("createdBy").setValue(objectCreatedBy)
         dbRef.child("uid").setValue(objectUid)
+    }
+    
+    
+    func showSuccessfulAlert() {
+        let alertController = UIAlertController(title: "Success!", message: "You've successfully added an object!", preferredStyle: .alert)
+        
+        let action1 = UIAlertAction(title: "Okay!", style: .default) { (action:UIAlertAction) in
+            self.tabBarController?.selectedIndex = 1
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        
+        alertController.addAction(action1)
+ 
+        self.present(alertController, animated: true, completion: nil)
     }
     
 }
