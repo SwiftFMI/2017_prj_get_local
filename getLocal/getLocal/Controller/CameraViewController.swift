@@ -7,29 +7,32 @@
 //
 
 import UIKit
+import ARCL
+import CoreLocation
 
 class CameraViewController: UIViewController {
+	
+	  var sceneLocationView = SceneLocationView()
+	
+	  override func viewDidLoad() {
+		super.viewDidLoad()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+		sceneLocationView.run()
+		view.addSubview(sceneLocationView)
+		
+		let coordinate = CLLocationCoordinate2D(latitude: 42.679639, longitude: 23.253010)
+		let location = CLLocation(coordinate: coordinate, altitude: 300)
+		let image = UIImage(named: "pin")!
+		
+		let annotationNode = LocationAnnotationNode(location: location, image: image)
+		sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
+	  }
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	  override func viewDidLayoutSubviews() {
+		  super.viewDidLayoutSubviews()
+		
+		  sceneLocationView.frame = view.bounds
+		
+	  }
+	
 }

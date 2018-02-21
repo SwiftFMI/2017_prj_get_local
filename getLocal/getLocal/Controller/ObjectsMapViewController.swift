@@ -95,14 +95,14 @@ class ObjectsMapViewController: UIViewController {
 				self.mapView.addAnnotation(point)
 			}
 			
-			// set Sofia for region (hardcoded for now)
-			let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.69751, longitude: 23.32415), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+			let region = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
 			self.mapView.setRegion(region, animated: false)
 			self.removeAllOverlays()
 		}
 	
-		func gotoDetailsScreen() {
-			// TODO: - Present details screen from here
+		@objc func gotoDetailsScreen() {
+			let detailsVC = storyboard?.instantiateViewController(withIdentifier: StoryboardIDS.objectDetailsVC.rawValue)
+			self.navigationController?.pushViewController(detailsVC!, animated: true)
 		}
 	
 		deinit {
@@ -113,50 +113,53 @@ class ObjectsMapViewController: UIViewController {
 // MARK: - MKMapViewDelegate
 extension ObjectsMapViewController: MKMapViewDelegate {
 	
-	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-		if annotation is MKUserLocation {
-			return nil
+		func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+			if annotation is MKUserLocation {
+				return nil
+			}
+			var annotationView = self.mapView.dequeueReusableAnnotationView(withIdentifier: "Pin")
+			if annotationView == nil {
+				annotationView = AnnotationView(annotation: annotation, reuseIdentifier: "Pin")
+				annotationView?.canShowCallout = false
+			} else {
+				annotationView?.annotation = annotation
+			}
+			annotationView?.image = #imageLiteral(resourceName: "pin")
+			return annotationView
 		}
-		var annotationView = self.mapView.dequeueReusableAnnotationView(withIdentifier: "Pin")
-		if annotationView == nil {
-			annotationView = AnnotationView(annotation: annotation, reuseIdentifier: "Pin")
-			annotationView?.canShowCallout = false
-		} else {
-			annotationView?.annotation = annotation
-		}
-		annotationView?.image = #imageLiteral(resourceName: "pin")
-		return annotationView
-	}
 	
-	func mapView(_ mapView: MKMapView,
-							 didSelect view: MKAnnotationView) {
+		func mapView(_ mapView: MKMapView,
+								 didSelect view: MKAnnotationView) {
 
-		if view.annotation is MKUserLocation {
-			// Don't proceed with custom callout
-			return
+			if view.annotation is MKUserLocation {
+				// Don't proceed with custom callout
+				return
+			}
+
+			let objectAnnotation = view.annotation as! ObjectAnnotation
+			let views = Bundle.main.loadNibNamed("CustomCalloutView", owner: nil, options: nil)
+			let calloutView = views?[0] as! CustomCalloutView
+			let tap = UITapGestureRecognizer(target: self, action: #selector(gotoDetailsScreen))
+			calloutView.addGestureRecognizer(tap)
+			calloutView.isUserInteractionEnabled = true
+			calloutView.pinTitleLabel.text = objectAnnotation.name
+			calloutView.pinWorkTimeLabel.text = "Work time: \(objectAnnotation.workTime!)"
+			
+			// Setting image from url with Kingfisher
+			let url = URL(string: objectAnnotation.imageUrl)
+			calloutView.pinImageView.kf.setImage(with: url)
+
+			calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
+			view.addSubview(calloutView)
+			mapView.setCenter((view.annotation?.coordinate)!, animated: true)
 		}
-
-		let objectAnnotation = view.annotation as! ObjectAnnotation
-		let views = Bundle.main.loadNibNamed("CustomCalloutView", owner: nil, options: nil)
-		let calloutView = views?[0] as! CustomCalloutView
-		calloutView.pinTitleLabel.text = objectAnnotation.name
-		calloutView.pinWorkTimeLabel.text = "Work time: \(objectAnnotation.workTime!)"
-		
-		// Setting image from url with Kingfisher
-		let url = URL(string: objectAnnotation.imageUrl)
-		calloutView.pinImageView.kf.setImage(with: url)
-
-		calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
-		view.addSubview(calloutView)
-		mapView.setCenter((view.annotation?.coordinate)!, animated: true)
-	}
 	
-	func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-		if view.isKind(of: AnnotationView.self) {
-			for subview in view.subviews {
-				subview.removeFromSuperview()
+		func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+			if view.isKind(of: AnnotationView.self) {
+				for subview in view.subviews {
+					subview.removeFromSuperview()
+				}
 			}
 		}
-	}
 	
 }
