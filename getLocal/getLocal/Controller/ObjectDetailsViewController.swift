@@ -35,7 +35,7 @@ class ObjectDetailsViewController: UIViewController {
         
         userRef.child("favourites").observe(.value, with: { (snapshot) in
             
-            let isFavourite = (snapshot.children.allObjects as![DataSnapshot]).map({$0.value as! String}).contains(where: {$0 == self.object.uid})
+            let isFavourite = (snapshot.children.allObjects as![DataSnapshot]).map({$0.key}).contains(where: {$0 == self.object.uid})
             self.favouritesButtonState(enabled: !isFavourite)
         })
         
@@ -57,7 +57,7 @@ class ObjectDetailsViewController: UIViewController {
     }
 
     @IBAction func addToFavourites(_ sender: UIButton) {
-        userRef.child("favourites").childByAutoId().setValue(object.uid)
+        userRef.child("favourites").updateChildValues([AnyHashable(object.uid!) : true])
     }
     
     @IBAction func removeFromFavourites(_ sender: UIButton) {

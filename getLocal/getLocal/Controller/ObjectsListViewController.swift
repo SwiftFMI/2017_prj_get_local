@@ -65,14 +65,8 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     
     private func queryFavourites() {
         userRef.child("favourites").observe(.value, with: { (snapshot) in
-            if snapshot.childrenCount > 0 {
-                var favourites = [String]()
-                
-                for objectSnapshot in snapshot.children.allObjects as![DataSnapshot] {
-                    favourites.append(objectSnapshot.value as! String)
-                }
-                self.queryFavouriteObjects(favourites: favourites)
-            }
+            let favourites = (snapshot.children.allObjects as![DataSnapshot]).map({$0.key})
+            self.queryFavouriteObjects(favourites: favourites)
         })
     }
     
