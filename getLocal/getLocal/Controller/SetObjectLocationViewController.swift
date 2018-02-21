@@ -9,19 +9,37 @@
 import UIKit
 import MapKit
 import CoreLocation
-
+import FirebaseAuth
+import FirebaseDatabase
 
 class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var objectLocationMapView: MKMapView!
     
+    @IBAction func pressSubmitObjectButton(_ sender: Any) {
+        addObjectToDatabase()
+    }
+    
+    var ref: DatabaseReference!
+    var objectCreatedBy: String!
+    
     var locationManager =  CLLocationManager()
     var newPin = MKPointAnnotation()
+    
+    var objectTitle: String = ""
+    var objectCategory: String = ""
+//    var objectImage: UIImage = UIImage()
+    var objectImageUrl: String = ""
+    var objectWorkTime: String = ""
+    var objectDescription: String = ""
+    var objectUid: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Set object's location"
+        objectCreatedBy = Auth.auth().currentUser?.uid
         
         objectLocationMapView.delegate = self
         
@@ -92,9 +110,20 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
         objectLocationMapView.addAnnotation(newPin)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func addObjectToDatabase() {
+        ref = Database.database().reference()
+        
+        let dbRef = self.ref.child("objects").childByAutoId()
+        
+        dbRef.child("title").setValue(objectTitle)
+        dbRef.child("latitude").setValue(newPin.coordinate.latitude)
+        dbRef.child("longitude").setValue(newPin.coordinate.longitude)
+        dbRef.child("category").setValue(objectCategory)
+        dbRef.child("imageUrl").setValue(objectImageUrl)
+        dbRef.child("workTime").setValue(objectWorkTime)
+        dbRef.child("description").setValue(objectDescription)
+        dbRef.child("createdBy").setValue(objectCreatedBy)
+        dbRef.child("uid").setValue(objectUid)
     }
     
 }

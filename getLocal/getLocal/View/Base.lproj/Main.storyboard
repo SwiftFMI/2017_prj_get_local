@@ -393,6 +393,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMd-rO-6sS">
                                 <rect key="frame" x="139" y="549" width="96" height="30"/>
                                 <state key="normal" title="Submit object"/>
+                                <connections>
+                                    <action selector="pressSubmitObjectButton:" destination="VIh-XV-LCd" eventType="touchUpInside" id="x36-xP-etp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
