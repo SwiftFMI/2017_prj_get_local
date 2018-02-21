@@ -17,7 +17,7 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
     @IBOutlet weak var objectLocationMapView: MKMapView!
     
     @IBAction func pressSubmitObjectButton(_ sender: Any) {
-//        addObjectToDatabase()
+        addObjectToDatabase()
         
 //        let objectDetailsVC = storyboard?.instantiateViewController(withIdentifier: StoryboardIDS.objectDetailsVC.rawValue)
         self.tabBarController?.selectedIndex = 1

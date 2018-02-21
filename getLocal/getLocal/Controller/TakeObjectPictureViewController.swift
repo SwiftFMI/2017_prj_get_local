@@ -39,4 +39,13 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let objectImageUrl: String = "luchko"
+        
+        if let chooseObjectCategoryVC = segue.destination as? ChooseObjectCategoryViewController {
+            chooseObjectCategoryVC.objectImageUrl = objectImageUrl
+        }
+    }
+    
 }

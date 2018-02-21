@@ -315,13 +315,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfj-iI-Gtc">
-                                <rect key="frame" x="132" y="318" width="110" height="30"/>
+                                <rect key="frame" x="132" y="514" width="110" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next - set name"/>
                                 <connections>
                                     <segue destination="qaO-JB-qpH" kind="show" id="FGD-m7-2MP"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oH1-QD-NCD">
+                                <rect key="frame" x="0.0" y="165" width="375" height="301"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="j8i-rO-Ocl"/>
@@ -329,7 +333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k6-FP-EHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4826" y="2911"/>
+            <point key="canvasLocation" x="4824.8000000000002" y="2910.4947526236883"/>
         </scene>
         <!--Set Object Name View Controller-->
         <scene sceneID="3yg-FD-zPZ">

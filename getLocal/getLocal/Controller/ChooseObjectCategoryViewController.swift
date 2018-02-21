@@ -10,6 +10,8 @@ import UIKit
 
 class ChooseObjectCategoryViewController: UIViewController {
     
+    var objectImageUrl: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,4 +23,12 @@ class ChooseObjectCategoryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let objectCategory: String = "bars"
+        
+        if let setObjectNameVC = segue.destination as? SetObjectNameViewController {
+            setObjectNameVC.objectImageUrl = objectImageUrl
+            setObjectNameVC.objectCategory = objectCategory
+        }
+    }
 }

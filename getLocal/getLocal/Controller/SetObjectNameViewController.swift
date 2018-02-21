@@ -12,6 +12,9 @@ class SetObjectNameViewController: UIViewController {
     
     @IBOutlet weak var objectNameTextField: UITextField!
     
+    var objectImageUrl: String = ""
+    var objectCategory: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,4 +26,13 @@ class SetObjectNameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let objectName: String = "Plazza Dance Sofia"
+        
+        if let setObjectLocationVC = segue.destination as? SetObjectLocationViewController {
+            setObjectLocationVC.objectImageUrl = objectImageUrl
+            setObjectLocationVC.objectCategory = objectCategory
+            setObjectLocationVC.objectTitle = objectName
+        }
+    }
 }
