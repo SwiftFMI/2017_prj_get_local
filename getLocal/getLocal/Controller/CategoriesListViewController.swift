@@ -16,6 +16,7 @@ class CategoriesListUserController: UIViewController, UITableViewDataSource, UIT
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Categories"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,9 +24,9 @@ class CategoriesListUserController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Category")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Category") as! CategoryTableViewCell
         
-        cell.textLabel?.text = categories[indexPath.row].plural
+        cell.categoryLabel.text = categories[indexPath.row].plural
         
         return cell
     }

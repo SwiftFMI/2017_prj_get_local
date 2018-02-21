@@ -12,7 +12,6 @@ import FirebaseAuth
 
 class ObjectsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
-    @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var tableViewObjects: UITableView!
     
     var user: User!
@@ -29,19 +28,18 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        user = Auth.auth().currentUser
+        self.title = category.plural
         
+        user = Auth.auth().currentUser
         objectsRef = Database.database().reference().child("objects")
         userRef = Database.database().reference().child("users").child(user.uid)
         
         queryDb()
-
-        categoryLabel.text = category.plural
     }
     
     private func queryDb() {
         switch category {
-            case .all: queryDb(query: objectsRef.queryOrdered(byChild: "title"))
+            case .allObjects: queryDb(query: objectsRef.queryOrdered(byChild: "title"))
             case .favourites: queryFavourites()
             case .myObjects: queryDb(query: objectsRef.queryOrdered(byChild: "createdBy").queryEqual(toValue: user.uid))
             default: queryDb(query: objectsRef.queryOrdered(byChild: "category").queryEqual(toValue: category.rawValue))

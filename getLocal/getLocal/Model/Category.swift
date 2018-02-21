@@ -15,23 +15,23 @@ enum Category :String{
     case shop = "shop"
     case services = "service"
     case other = "other"
-    case all
+    case allObjects
     case favourites
     case myObjects
     
     var plural: String {
         switch self {
-            case .restaurant: return "restaurants"
-            case .club: return "clubs"
-            case .pharmacy: return "pharmacies"
-            case .shop: return "shops"
-            case .services: return "services"
-            case .other: return "other"
-            case .all: return "all"
-            case .favourites: return "favourites"
-            case .myObjects: return "my objects"
+            case .restaurant: return "Restaurants"
+            case .club: return "Clubs"
+            case .pharmacy: return "Pharmacies"
+            case .shop: return "Shops"
+            case .services: return "Services"
+            case .other: return "Other"
+            case .allObjects: return "All objects"
+            case .favourites: return "Favourites"
+            case .myObjects: return "My objects"
         }
     }
     
-    static let allCategories = [restaurant, club, pharmacy, shop, services, other, all, favourites, myObjects]
+    static let allCategories = [favourites, allObjects, restaurant, club, pharmacy, shop, services, other, myObjects]
 }
