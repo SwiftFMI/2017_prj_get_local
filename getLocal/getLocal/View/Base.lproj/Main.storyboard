@@ -406,7 +406,7 @@
                                 <color key="backgroundColor" red="0.32941176470588235" green="0.63137254901960782" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Em2-1F-BxY"/>
-                                    <constraint firstAttribute="width" constant="140" id="xSo-fW-Xx4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="xSo-fW-Xx4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Next">
@@ -443,23 +443,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exp-hQ-sAD">
-                                <rect key="frame" x="0.0" y="127" width="375" height="392"/>
+                                <rect key="frame" x="0.0" y="130" width="375" height="369"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold on map to change location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4A-c7-Tdd">
-                                <rect key="frame" x="66" y="89" width="243" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="50.5" y="89" width="274.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMd-rO-6sS">
-                                <rect key="frame" x="139" y="549" width="96" height="30"/>
-                                <state key="normal" title="Submit object"/>
+                                <rect key="frame" x="97.5" y="529" width="180" height="50"/>
+                                <color key="backgroundColor" red="0.32941176470588235" green="0.63137254901960782" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="MTL-qA-i8X"/>
+                                    <constraint firstAttribute="height" constant="50" id="wTB-gT-P1T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Submit object">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="pressSubmitObjectButton:" destination="VIh-XV-LCd" eventType="touchUpInside" id="x36-xP-etp"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.51764705879999995" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="N4A-c7-Tdd" firstAttribute="centerX" secondItem="O0l-eI-l1Y" secondAttribute="centerX" id="2vX-d8-o2n"/>
                             <constraint firstItem="exp-hQ-sAD" firstAttribute="trailing" secondItem="R3m-Fi-7ir" secondAttribute="trailing" id="5wz-k8-6UP"/>
