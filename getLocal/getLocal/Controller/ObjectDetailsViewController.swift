@@ -34,7 +34,6 @@ class ObjectDetailsViewController: UIViewController {
         userRef = Database.database().reference().child("users").child(user.uid)
         
         userRef.child("favourites").observe(.value, with: { (snapshot) in
-            
             let isFavourite = (snapshot.children.allObjects as![DataSnapshot]).map({$0.key}).contains(where: {$0 == self.object.uid})
             self.favouritesButtonState(enabled: !isFavourite)
         })
@@ -61,7 +60,7 @@ class ObjectDetailsViewController: UIViewController {
     }
     
     @IBAction func removeFromFavourites(_ sender: UIButton) {
-        
+        userRef.child("favourites").child(object.uid!).removeValue()
     }
     
 }

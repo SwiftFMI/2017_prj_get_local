@@ -52,12 +52,13 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     private func queryDb(query: DatabaseQuery) {
         query.observe(.value, with: { (snapshot) in
             if snapshot.hasChildren() {
-                self.objects.removeAll()
+                var newObjects = [Object]()
                 
                 for objectSnapshot in snapshot.children.allObjects as![DataSnapshot] {
                     let object = Object(snapshot: objectSnapshot)
-                    self.objects.append(object)
+                    newObjects.append(object)
                 }
+                self.objects = newObjects
                 self.tableViewObjects.reloadData()
             }
         })
@@ -72,14 +73,16 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     
     private func queryFavouriteObjects(favourites: [String]) {
         self.objects.removeAll()
+        self.tableViewObjects.reloadData()
+        
         for favourite in favourites {
             objectsRef.queryOrdered(byChild: "uid").queryEqual(toValue: favourite).observe(.value, with: { (snapshot) in
                 if snapshot.childrenCount > 0 {
                     for objectSnapshot in snapshot.children.allObjects as![DataSnapshot] {
                         let object = Object(snapshot: objectSnapshot)
                         self.objects.append(object)
-                        self.tableViewObjects.reloadData()
                     }
+                    self.tableViewObjects.reloadData()
                 }
             })
         }
