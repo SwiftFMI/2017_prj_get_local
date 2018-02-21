@@ -49,10 +49,6 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
         
         self.title = "Set object's location"
         
-        let backItem = UIBarButtonItem()
-        backItem.title = "Back"
-        navigationItem.backBarButtonItem = backItem
-        
         ref = Database.database().reference()
         
         dbRef = self.ref.child("objects").childByAutoId()

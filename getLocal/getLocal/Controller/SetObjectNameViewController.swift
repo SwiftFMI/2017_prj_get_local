@@ -20,10 +20,6 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
         
         self.title = "Set object's name"
         
-        let backItem = UIBarButtonItem()
-        backItem.title = "Back"
-        navigationItem.backBarButtonItem = backItem
-        
         objectNameTextField.delegate = self
     }
     
@@ -35,6 +31,10 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let objectName: String = "Plazza Dance Sofia"
         let objectName: String = objectNameTextField.text!
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
         
         if let setObjectLocationVC = segue.destination as? SetObjectLocationViewController {
             setObjectLocationVC.objectImage = objectImage

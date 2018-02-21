@@ -18,10 +18,6 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
         super.viewDidLoad()
         
         self.title = "Set object's photo"
-        
-        let backItem = UIBarButtonItem()
-        backItem.title = "Back"
-        navigationItem.backBarButtonItem = backItem
     }
     
     //MARK: - Take a photo
@@ -48,6 +44,10 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
         let objectImage: UIImage = imageTake.image!
         let compressData = UIImageJPEGRepresentation(objectImage, 0.5)
         let compressedObjectImage = UIImage(data: compressData!)!
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
         
         if let chooseObjectCategoryVC = segue.destination as? ChooseObjectCategoryViewController {
             chooseObjectCategoryVC.objectImage = compressedObjectImage

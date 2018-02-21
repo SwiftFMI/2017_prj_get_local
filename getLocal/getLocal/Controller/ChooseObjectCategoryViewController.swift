@@ -23,10 +23,6 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         
         self.title = "Set object's category"
         
-        let backItem = UIBarButtonItem()
-        backItem.title = "Back"
-        navigationItem.backBarButtonItem = backItem
-        
         pickerData = ["restaurant", "club", "pharmacy", "shop", "services", "other"]
         
         // Connect data
@@ -42,6 +38,10 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let objectCategory: String = "bars"
         let objectCategory: String = pickerData[categoryPickerView.selectedRow(inComponent: 0)]
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
         
         if let setObjectNameVC = segue.destination as? SetObjectNameViewController {
             setObjectNameVC.objectImage = objectImage
