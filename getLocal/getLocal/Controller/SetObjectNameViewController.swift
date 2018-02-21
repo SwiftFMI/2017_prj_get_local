@@ -27,7 +27,8 @@ class SetObjectNameViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let objectName: String = "Plazza Dance Sofia"
+//        let objectName: String = "Plazza Dance Sofia"
+        let objectName: String = objectNameTextField.text!
         
         if let setObjectLocationVC = segue.destination as? SetObjectLocationViewController {
             setObjectLocationVC.objectImageUrl = objectImageUrl
