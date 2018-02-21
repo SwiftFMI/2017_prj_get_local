@@ -82,17 +82,11 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        objectLocationMapView.removeAnnotation(newPin)
-//
 //        let location = locations.last! as CLLocation
-//
-//        newPin.coordinate = location.coordinate
-//        objectLocationMapView.addAnnotation(newPin)
-        
         let userLocation:CLLocation = locations[0] as CLLocation
         
         // Call stopUpdatingLocation() to stop listening for location updates,
-        // other wise this function will be called every time when user location changes.
+        // otherwise this function will be called every time when user location changes.
         locationManager.stopUpdatingLocation()
         
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
@@ -100,30 +94,25 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
         
         objectLocationMapView.setRegion(region, animated: true)
         
-        // Drop a pin at user's Current Location
-//        let myAnnotation: MKPointAnnotation = MKPointAnnotation()
+        // Drop a pin at user's current location
         newPin.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
-//        myAnnotation.title = "Current location"
+//        newPin = "Current location"
         objectLocationMapView.addAnnotation(newPin)
     }
     
     // func called when gesture recognizer detects a long press
     @objc func mapLongPress(_ recognizer: UIGestureRecognizer) {
-        print("A long press has been detected.")
-        
         objectLocationMapView.removeAnnotation(newPin)
         newPin = MKPointAnnotation()
         
         let touchedAt = recognizer.location(in: self.objectLocationMapView) // adds the location on the view it was pressed
         let touchedAtCoordinate : CLLocationCoordinate2D = objectLocationMapView.convert(touchedAt, toCoordinateFrom: self.objectLocationMapView) // will get coordinates
         
-//        let newPin = MKPointAnnotation()
         newPin.coordinate = touchedAtCoordinate
         objectLocationMapView.addAnnotation(newPin)
     }
     
     func addObjectToDatabase() {
-        
         uploadImage(objectId: dbRef.key)
     }
     
