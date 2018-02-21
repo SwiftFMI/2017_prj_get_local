@@ -76,14 +76,12 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
         self.tableViewObjects.reloadData()
         
         for favourite in favourites {
-            objectsRef.queryOrdered(byChild: "uid").queryEqual(toValue: favourite).observe(.value, with: { (snapshot) in
-                if snapshot.childrenCount > 0 {
-                    for objectSnapshot in snapshot.children.allObjects as![DataSnapshot] {
-                        let object = Object(snapshot: objectSnapshot)
-                        self.objects.append(object)
-                    }
-                    self.tableViewObjects.reloadData()
+            objectsRef.child(favourite).observe(.value, with: { (snapshot) in
+                if snapshot.hasChildren() {
+                    let object = Object(snapshot: snapshot)
+                    self.objects.append(object)
                 }
+                self.tableViewObjects.reloadData()
             })
         }
     }
