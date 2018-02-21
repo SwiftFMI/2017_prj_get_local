@@ -21,6 +21,8 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Set object's category"
+        
         pickerData = ["restaurant", "club", "pharmacy", "shop", "services", "other"]
         
         // Connect data
@@ -53,8 +55,13 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         return pickerData.count
     }
     
-    // The data to return for the row and component (column) that's being passed in
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+    
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return pickerData[row]
+//    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: pickerData[row], attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+        return attributedString
     }
 }

@@ -345,23 +345,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="oH1-QD-NCD">
-                                <rect key="frame" x="0.0" y="64" width="375" height="394"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="384"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfj-iI-Gtc">
-                                <rect key="frame" x="132" y="519" width="110" height="30"/>
+                                <rect key="frame" x="117" y="509" width="140" height="40"/>
+                                <color key="backgroundColor" red="0.32941176470588235" green="0.63137254901960782" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="3A6-M2-Ltv"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="3A6-M2-Ltv"/>
+                                    <constraint firstAttribute="height" constant="40" id="IgS-Hq-Vht"/>
                                 </constraints>
-                                <state key="normal" title="Next - set name"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="qaO-JB-qpH" kind="show" id="FGD-m7-2MP"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.51764705882352935" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oH1-QD-NCD" firstAttribute="trailing" secondItem="j8i-rO-Ocl" secondAttribute="trailing" id="0GC-QH-2Bi"/>
                             <constraint firstItem="kfj-iI-Gtc" firstAttribute="centerX" secondItem="L7s-iw-Lmg" secondAttribute="centerX" id="0uZ-Wq-juc"/>
+                            <constraint firstItem="kfj-iI-Gtc" firstAttribute="centerX" secondItem="L7s-iw-Lmg" secondAttribute="centerX" id="3Bi-Yu-xte"/>
                             <constraint firstItem="j8i-rO-Ocl" firstAttribute="bottom" secondItem="kfj-iI-Gtc" secondAttribute="bottom" constant="69" id="40W-N8-eku"/>
                             <constraint firstItem="oH1-QD-NCD" firstAttribute="leading" secondItem="j8i-rO-Ocl" secondAttribute="leading" id="HbN-m0-b5S"/>
                             <constraint firstItem="oH1-QD-NCD" firstAttribute="top" secondItem="j8i-rO-Ocl" secondAttribute="top" id="T7s-PE-dJ5"/>
