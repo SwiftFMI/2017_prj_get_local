@@ -47,7 +47,7 @@
 		B61B5FE4C4DC0521EC1A3F14 /* Pods-getLocal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getLocal.release.xcconfig"; path = "Pods/Target Support Files/Pods-getLocal/Pods-getLocal.release.xcconfig"; sourceTree = "<group>"; };
 		BDCB0000200B55AE000D093F /* NewObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewObjectViewController.swift; sourceTree = "<group>"; };
 		BDCB0002200B55BE000D093F /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		BDCB0004200B55FA000D093F /* CameraViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
+		BDCB0004200B55FA000D093F /* CameraViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		BDCBFFF3200B467E000D093F /* ObjectsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsMapViewController.swift; sourceTree = "<group>"; };
 		BDCBFFF5200B484E000D093F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BDCBFFF7200B492B000D093F /* ObjectsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListViewController.swift; sourceTree = "<group>"; };

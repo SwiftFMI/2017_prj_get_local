@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 import FirebaseDatabase
-import FirebaseAuth
 import Kingfisher
 
 class ObjectsMapViewController: UIViewController {
@@ -26,6 +25,7 @@ class ObjectsMapViewController: UIViewController {
 		var titles: [String]!
 		var workHours: [String]!
 		var imageUrls: [String]!
+		var locationManager = CLLocationManager()
 
 		override func viewDidLoad() {
 			super.viewDidLoad()
@@ -49,6 +49,10 @@ class ObjectsMapViewController: UIViewController {
 			dbRefId2.child("longitude").setValue("-0.11")
 			*/
 			
+			locationManager.delegate = self
+			locationManager.desiredAccuracy = kCLLocationAccuracyBest
+			locationManager.requestWhenInUseAuthorization()
+			locationManager.startUpdatingLocation()
 			startObservingDatabase()
 		}
 
@@ -160,6 +164,17 @@ extension ObjectsMapViewController: MKMapViewDelegate {
 					subview.removeFromSuperview()
 				}
 			}
+		}
+	
+}
+
+// MARK: - CLLocationManagerDelegate
+extension ObjectsMapViewController: CLLocationManagerDelegate {
+	
+		func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+			let region = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+			self.mapView.setRegion(region, animated: false)
+			locationManager.stopUpdatingLocation()
 		}
 	
 }
