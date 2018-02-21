@@ -25,6 +25,8 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     
     var category : Category!
     
+    var selectedObject : Object!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         user = Auth.auth().currentUser
@@ -46,9 +48,10 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
+    // MARK: - Backend communication
     private func queryDb(query: DatabaseQuery) {
         query.observe(.value, with: { (snapshot) in
-            if snapshot.childrenCount > 0 {
+            if snapshot.hasChildren() {
                 self.objects.removeAll()
                 
                 for objectSnapshot in snapshot.children.allObjects as![DataSnapshot] {
@@ -101,6 +104,21 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
         cell.titleCell.text = object.title
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedObject = objects[indexPath.row]
+        
+        performSegue(withIdentifier: "object", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "object") {
+            let viewController = segue.destination as! ObjectDetailsViewController
+            viewController.object = selectedObject
+        }
     }
 	
 }
