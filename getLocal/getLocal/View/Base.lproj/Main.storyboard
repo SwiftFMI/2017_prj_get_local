@@ -220,6 +220,10 @@
                                     <action selector="removeFromFavourites:" destination="gFq-na-8Gu" eventType="touchUpInside" id="wi0-vh-2IQ"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IYV-a1-7Ph">
+                                <rect key="frame" x="177" y="220" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="EMK-aZ-qtx"/>
@@ -227,6 +231,7 @@
                     <connections>
                         <outlet property="addToFavourites" destination="Cgh-Rj-UR0" id="2iY-Db-s09"/>
                         <outlet property="descriptionText" destination="eV9-Hc-pp0" id="5tU-Xv-aHr"/>
+                        <outlet property="loader" destination="IYV-a1-7Ph" id="Wxw-DX-huq"/>
                         <outlet property="objectImageView" destination="vjy-gM-wtt" id="ClS-ww-D47"/>
                         <outlet property="removeFromFavourites" destination="lhs-Su-fbE" id="tti-vt-ic1"/>
                         <outlet property="titleLabel" destination="s5r-04-NjY" id="d0d-HZ-LZA"/>
@@ -514,6 +519,6 @@
         <image name="ndk" width="480" height="336"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BgH-Hl-0rB"/>
+        <segue reference="1bG-M3-WjI"/>
     </inferredMetricsTieBreakers>
 </document>

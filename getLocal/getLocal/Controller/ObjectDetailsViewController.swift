@@ -19,6 +19,7 @@ class ObjectDetailsViewController: UIViewController {
     @IBOutlet var descriptionText: UITextView!
     @IBOutlet var addToFavourites: UIButton!
     @IBOutlet var removeFromFavourites: UIButton!
+    @IBOutlet var loader: UIActivityIndicatorView!
     
     var user: User!
     var userRef: DatabaseReference!
@@ -39,8 +40,8 @@ class ObjectDetailsViewController: UIViewController {
             if let error = error {
                 print(error)
             } else {
-                // Data for "images/island.jpg" is returned
                 self.objectImageView.image = UIImage(data: data!)
+                self.loader.stopAnimating()
             }
         }
         
