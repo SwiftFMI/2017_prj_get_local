@@ -23,6 +23,10 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         
         self.title = "Set object's category"
         
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
+        
         pickerData = ["restaurant", "club", "pharmacy", "shop", "services", "other"]
         
         // Connect data

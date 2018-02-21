@@ -18,6 +18,10 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
         super.viewDidLoad()
         
         self.title = "Set object's photo"
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
     }
     
     //MARK: - Take a photo
