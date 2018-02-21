@@ -42,9 +42,11 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let objectImage: UIImage = imageTake.image!
+        let compressData = UIImageJPEGRepresentation(objectImage, 0.5)
+        let compressedObjectImage = UIImage(data: compressData!)!
         
         if let chooseObjectCategoryVC = segue.destination as? ChooseObjectCategoryViewController {
-            chooseObjectCategoryVC.objectImage = objectImage
+            chooseObjectCategoryVC.objectImage = compressedObjectImage
         }
     }
     
