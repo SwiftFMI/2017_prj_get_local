@@ -40,7 +40,7 @@ class MainTabBarController: UITabBarController {
                 tabBarItemtitle = "tabbar.title.new_object"
             case is InfoViewController:
                 tabBarItemtitle = "tabbar.title.info"
-            case is UIViewController:
+            case is CategoriesListUserController:
                 tabBarItemtitle = "tabbar.title.objects"
             default:
                 assertionFailure("No such controller")
