@@ -75,4 +75,17 @@ class ObjectDetailsViewController: UIViewController {
         userRef.child("favourites").child(object.uid!).removeValue()
     }
     
+		@IBAction func pressNavigateButton(_ sender: Any) {
+				if (UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)) {
+                    	if let url = URL(string: "comgooglemaps://?saddr=&daddr=\(object.latitude!),\(object.longitude!)&directionsmode=driving") {
+                            print(url)
+							UIApplication.shared.open(url, options: [:], completionHandler: nil)
+						}
+				} else {
+						print("Can't use comgooglemaps://")
+						if let url = URL(string: "https://itunes.apple.com/us/app/google-maps-navigation-transit/id585027354?mt=8") {
+								UIApplication.shared.open(url, options: [:], completionHandler: nil)
+						}
+				}
+		}
 }
