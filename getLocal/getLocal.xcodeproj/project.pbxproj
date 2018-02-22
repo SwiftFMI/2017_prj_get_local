@@ -24,6 +24,7 @@
 		69834BE0203318C30002F4E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69834BDF203318C30002F4E5 /* GoogleService-Info.plist */; };
 		AF99E3DF203DF3C0000EC9F6 /* ObjectList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF99E3DD203DF3C0000EC9F6 /* ObjectList.storyboard */; };
 		AF99E3E2203DF3EC000EC9F6 /* CategoriesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF99E3E0203DF3EC000EC9F6 /* CategoriesList.storyboard */; };
+		AF99E3E4203DF73E000EC9F6 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF99E3E3203DF73E000EC9F6 /* CategoryTableViewCell.swift */; };
 		AFEB7E3E203B77D900CA21A9 /* CategoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB7E3D203B77D900CA21A9 /* CategoriesListViewController.swift */; };
 		AFEB7E40203B86B000CA21A9 /* ObjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB7E3F203B86B000CA21A9 /* ObjectTableViewCell.swift */; };
 		AFEB7E44203C8DBC00CA21A9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB7E43203C8DBC00CA21A9 /* Category.swift */; };
@@ -69,6 +70,7 @@
 		69834BDF203318C30002F4E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF99E3DE203DF3C0000EC9F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ObjectList.storyboard; sourceTree = "<group>"; };
 		AF99E3E1203DF3EC000EC9F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CategoriesList.storyboard; sourceTree = "<group>"; };
+		AF99E3E3203DF73E000EC9F6 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		AFEB7E3D203B77D900CA21A9 /* CategoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListViewController.swift; sourceTree = "<group>"; };
 		AFEB7E3F203B86B000CA21A9 /* ObjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectTableViewCell.swift; sourceTree = "<group>"; };
 		AFEB7E43203C8DBC00CA21A9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				BDCBFFF3200B467E000D093F /* ObjectsMapViewController.swift */,
 				BDCBFFF7200B492B000D093F /* ObjectsListViewController.swift */,
 				AFEB7E3F203B86B000CA21A9 /* ObjectTableViewCell.swift */,
+				AF99E3E3203DF73E000EC9F6 /* CategoryTableViewCell.swift */,
 				BDCBFFF9200B4981000D093F /* ObjectDetailsViewController.swift */,
 				BDCBFFF5200B484E000D093F /* MainTabBarController.swift */,
 				AFEB7E3D203B77D900CA21A9 /* CategoriesListViewController.swift */,
@@ -386,6 +389,7 @@
 				BDCBFFF6200B484E000D093F /* MainTabBarController.swift in Sources */,
 				1FCC5F23203B52A3003ABC5D /* SetObjectLocationViewController.swift in Sources */,
 				BDCB0005200B55FA000D093F /* CameraViewController.swift in Sources */,
+				AF99E3E4203DF73E000EC9F6 /* CategoryTableViewCell.swift in Sources */,
 				BDCBFFFC200B4D7D000D093F /* Object.swift in Sources */,
 				696CDD8B203C5F85003DD7F6 /* AnnotationView.swift in Sources */,
 				BDCB0001200B55AE000D093F /* NewObjectViewController.swift in Sources */,
