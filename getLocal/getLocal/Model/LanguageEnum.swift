@@ -49,7 +49,7 @@ extension LanguageEnum: CustomStringConvertible {
 
 class Language {
     
-    private static let current_language = "current_language"
+    private static let kCurrent_language = "current_language"
     static let shared = Language()
     var currentLanguage: LanguageEnum = .eng
 
@@ -65,12 +65,12 @@ class Language {
     }
 
     private func saveLanguage() {
-       UserDefaults.standard.set("\(currentLanguage)", forKey: "current_language")
+        UserDefaults.standard.set("\(currentLanguage)", forKey: Language.kCurrent_language)
         UserDefaults.standard.synchronize()
     }
 
     private func loadLanguage() {
-        guard let lang = UserDefaults.standard.value(forKey: Language.current_language) as? String
+        guard let lang = UserDefaults.standard.value(forKey: Language.kCurrent_language) as? String
         else { return }
         
         if let createdLanguage = LanguageEnum.createLanguage(from: lang) {

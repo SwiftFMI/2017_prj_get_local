@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bKB-kg-XZn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -49,60 +49,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="908" y="50.824587706146929"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="fUi-Xi-afp">
-            <objects>
-                <viewController id="qdF-Mv-X9E" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dEm-8F-N2O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tr0-hM-gti">
-                                <rect key="frame" x="0.0" y="64" width="375" height="524"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qd-6w-28u">
-                                <rect key="frame" x="0.0" y="588" width="375" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="gFq-na-8Gu" kind="show" id="4r1-5e-VJd"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="4qd-6w-28u" firstAttribute="top" secondItem="Tr0-hM-gti" secondAttribute="bottom" id="4TS-Qz-TqR"/>
-                            <constraint firstItem="4qd-6w-28u" firstAttribute="leading" secondItem="e2s-ay-Klw" secondAttribute="leading" id="Ehp-oX-5FU"/>
-                            <constraint firstItem="e2s-ay-Klw" firstAttribute="trailing" secondItem="4qd-6w-28u" secondAttribute="trailing" id="GMn-vC-NbA"/>
-                            <constraint firstItem="Tr0-hM-gti" firstAttribute="leading" secondItem="e2s-ay-Klw" secondAttribute="leading" id="KLU-Zh-Qcf"/>
-                            <constraint firstItem="Tr0-hM-gti" firstAttribute="top" secondItem="e2s-ay-Klw" secondAttribute="top" id="hA5-eE-Wpe"/>
-                            <constraint firstItem="e2s-ay-Klw" firstAttribute="bottom" secondItem="4qd-6w-28u" secondAttribute="bottom" id="vHs-nd-4lI"/>
-                            <constraint firstItem="e2s-ay-Klw" firstAttribute="trailing" secondItem="Tr0-hM-gti" secondAttribute="trailing" id="yf7-kc-VFc"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="e2s-ay-Klw"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="vME-fZ-nd3"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bPA-Kk-w4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1833" y="1513"/>
-        </scene>
-        <!--Object Details View Controller-->
-        <scene sceneID="iLM-dp-VOK">
-            <objects>
-                <viewController storyboardIdentifier="ObjectDetailsViewController" id="gFq-na-8Gu" customClass="ObjectDetailsViewController" customModule="getLocal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Awi-2h-7Zh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="EMK-aZ-qtx"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qs2-IS-csv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3153" y="1513"/>
-        </scene>
+        </scene>        
         <!--Objects Map View Controller-->
         <scene sceneID="G7s-9X-4ag">
             <objects>
@@ -189,7 +136,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="qdF-Mv-X9E" kind="relationship" relationship="rootViewController" id="0Ij-s8-NNQ"/>
+                        <segue destination="Fcb-Ya-bm7" kind="relationship" relationship="rootViewController" id="0Ij-s8-NNQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xw-rR-c0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -209,7 +156,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="gFq-na-8Gu" kind="show" id="1bG-M3-WjI"/>
+                                    <segue destination="H1I-Yf-WXt" kind="show" id="1bG-M3-WjI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -608,11 +555,27 @@
             </objects>
             <point key="canvasLocation" x="304" y="4907"/>
         </scene>
+        <!--ObjectDetail-->
+        <scene sceneID="C7d-w8-fMn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ObjectDetail" id="H1I-Yf-WXt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSa-O1-Gwl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2907" y="2184"/>
+        </scene>
+        <!--CategoriesList-->
+        <scene sceneID="DU7-WV-FSb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CategoriesList" id="Fcb-Ya-bm7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Rsf-6P-5ZK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzp-UX-9Sn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1804" y="1512"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ndk" width="480" height="336"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="4r1-5e-VJd"/>
-    </inferredMetricsTieBreakers>
+
 </document>

@@ -23,6 +23,7 @@ class Object {
 
     init (snapshot: DataSnapshot) {
         ref = snapshot.ref
+        uid = snapshot.key
         let data = snapshot.value as! Dictionary<String, Any>
         title = data["title"] as? String
         latitude = data["latitude"] as? Double
@@ -31,6 +32,6 @@ class Object {
         imageUrl = data["imageUrl"] as? String
         description = data["description"] as? String
         workTime = data["workTime"] as? String
-        uid = data["uid"] as? String
     }
+	
 }
