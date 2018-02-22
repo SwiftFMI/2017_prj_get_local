@@ -20,6 +20,14 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
         self.title = "Set object's photo"
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        <#code#>
+//    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     //MARK: - Take a photo
     @IBAction func takePhoto(_ sender: UIButton) {
         imagePicker =  UIImagePickerController()

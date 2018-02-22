@@ -73,9 +73,9 @@ class ObjectsMapViewController: UIViewController {
 				
 				self.objects = newObjects
 				
-                for object in self.objects {
-                    print("Loaded object with name: \(object.title!), latitude: \(object.latitude!) and longitude: \(object.longitude!), cattegory: \(object.category!), imageUrl: \(object.imageUrl!), description: \(object.description!), workTime: \(object.workTime!), uid: \(object.uid!)")
-                }
+//                for object in self.objects {
+//                    print("Loaded object with name: \(object.title!), latitude: \(object.latitude!) and longitude: \(object.longitude!), cattegory: \(object.category!), imageUrl: \(object.imageUrl!), description: \(object.description!), workTime: \(object.workTime!), uid: \(object.uid!)")
+//                }
 				
 				self.loadMapData()
 				
@@ -83,33 +83,33 @@ class ObjectsMapViewController: UIViewController {
 		}
 	
 		func loadMapData() {
-			coordinates = []
-			titles = []
-			workHours = []
-			imageUrls = []
-			objectIds = []
-		
-			for object in objects {
-				coordinates.append([object.latitude!, object.longitude!])
-				titles.append(object.title!)
-				workHours.append(object.workTime!)
-				imageUrls.append(object.imageUrl!)
-				objectIds.append(object.uid!)
-			}
-			
-			for i in 0...objects.count-1 {
-				let coordinate = coordinates[i]
-				let point = ObjectAnnotation(coordinate: CLLocationCoordinate2D(latitude: coordinate[0] , longitude: coordinate[1] ))
-				point.imageUrl = imageUrls[i]
-				point.name = titles[i]
-				point.workTime = workHours[i]
-				point.objectId = objectIds[i]
-				self.mapView.addAnnotation(point)
-			}
-			
-			let region = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
-			self.mapView.setRegion(region, animated: false)
-			self.removeAllOverlays()
+//            coordinates = []
+//            titles = []
+//            workHours = []
+//            imageUrls = []
+//            objectIds = []
+//
+//            for object in objects {
+//                coordinates.append([object.latitude!, object.longitude!])
+//                titles.append(object.title!)
+//                workHours.append(object.workTime!)
+//                imageUrls.append(object.imageUrl!)
+//                objectIds.append(object.uid!)
+//            }
+//
+//            for i in 0...objects.count-1 {
+//                let coordinate = coordinates[i]
+//                let point = ObjectAnnotation(coordinate: CLLocationCoordinate2D(latitude: coordinate[0] , longitude: coordinate[1] ))
+//                point.imageUrl = imageUrls[i]
+//                point.name = titles[i]
+//                point.workTime = workHours[i]
+//                point.objectId = objectIds[i]
+//                self.mapView.addAnnotation(point)
+//            }
+//
+//            let region = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+//            self.mapView.setRegion(region, animated: false)
+//            self.removeAllOverlays()
 		}
 	
 		@objc func gotoDetailsScreen() {

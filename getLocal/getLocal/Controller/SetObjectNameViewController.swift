@@ -23,6 +23,10 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
         objectNameTextField.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

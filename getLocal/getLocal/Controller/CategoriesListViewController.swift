@@ -19,6 +19,10 @@ class CategoriesListUserController: UIViewController, UITableViewDataSource, UIT
         self.title = "Categories"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }

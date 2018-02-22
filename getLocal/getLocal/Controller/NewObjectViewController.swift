@@ -16,11 +16,14 @@ class NewObjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        self.title = "Add object"
         navigationItem.title = "Add object"
         
         changeLanguage()
         handleNotifications()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +31,6 @@ class NewObjectViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = "Back"

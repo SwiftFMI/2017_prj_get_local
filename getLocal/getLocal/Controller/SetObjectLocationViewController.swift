@@ -71,6 +71,10 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
         objectLocationMapView.addGestureRecognizer(longPress)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     func determineCurrentLocation() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
