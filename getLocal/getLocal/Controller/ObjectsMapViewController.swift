@@ -22,6 +22,7 @@ class ObjectsMapViewController: UIViewController {
 		var ref: DatabaseReference!
 		private var databaseHandle: DatabaseHandle!
 	    var storageRef: StorageReference!
+		var selectedObject : Object!
 
 		var coordinates: [[Double]]!
 		var titles: [String]!
@@ -112,8 +113,10 @@ class ObjectsMapViewController: UIViewController {
 		}
 	
 		@objc func gotoDetailsScreen() {
-			let detailsVC = storyboard?.instantiateViewController(withIdentifier: StoryboardIDS.objectDetailsVC.rawValue)
-			self.navigationController?.pushViewController(detailsVC!, animated: true)
+			let objectDetailsStoryboard = UIStoryboard.init(name: "ObjectDetail", bundle: Bundle.main)
+			let detailsVC = objectDetailsStoryboard.instantiateViewController(withIdentifier: StoryboardIDS.objectDetailsVC.rawValue) as! ObjectDetailsViewController
+			detailsVC.object = selectedObject
+			self.navigationController?.pushViewController(detailsVC, animated: true)
 		}
 	
     deinit {
@@ -158,6 +161,8 @@ extension ObjectsMapViewController: MKMapViewDelegate {
 			calloutView.isUserInteractionEnabled = true
 			calloutView.pinTitleLabel.text = objectAnnotation.name
 			calloutView.pinWorkTimeLabel.text = "Work time: \(objectAnnotation.workTime!)"
+			
+			selectedObject = objects.first(where: { $0.uid == objectAnnotation.objectId })
 			
 			// Setting cached image from url
 			if objectAnnotation.downloadImageUrl != nil {
