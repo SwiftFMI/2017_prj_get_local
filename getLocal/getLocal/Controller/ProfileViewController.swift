@@ -26,7 +26,9 @@ class ProfileViewController: UIViewController {
         usernameLabel.text = user?.displayName
         downloadAvatar()
         
-        userAvatar.layer.cornerRadius = 60
+        userAvatar.layer.cornerRadius = 100
+        
+        userAvatar.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
