@@ -29,14 +29,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVZ-67-FBY">
-                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVZ-67-FBY">
+                                                    <rect key="frame" x="20" y="10" width="355" height="23.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="RVZ-67-FBY" secondAttribute="trailing" id="3Gx-Vg-suY"/>
+                                                <constraint firstItem="RVZ-67-FBY" firstAttribute="leading" secondItem="BEA-mN-4H2" secondAttribute="leading" constant="20" id="NMR-Lf-n1I"/>
+                                                <constraint firstAttribute="bottom" secondItem="RVZ-67-FBY" secondAttribute="bottom" constant="10" id="bIV-AJ-6jk"/>
+                                                <constraint firstItem="RVZ-67-FBY" firstAttribute="top" secondItem="BEA-mN-4H2" secondAttribute="top" constant="10" id="xOS-3O-LfZ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="titleCell" destination="RVZ-67-FBY" id="B4Z-Dt-zEP"/>
@@ -58,12 +63,11 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="CYU-Mk-5pb" firstAttribute="leading" secondItem="W5R-p4-MLH" secondAttribute="leading" id="Fbn-su-Dhx"/>
+                            <constraint firstItem="CYU-Mk-5pb" firstAttribute="bottom" secondItem="W5R-p4-MLH" secondAttribute="bottom" id="IYi-Iu-UPI"/>
                             <constraint firstItem="CYU-Mk-5pb" firstAttribute="trailing" secondItem="W5R-p4-MLH" secondAttribute="trailing" id="MF3-HE-QBM"/>
                             <constraint firstItem="Ivd-sU-YJX" firstAttribute="leading" secondItem="W5R-p4-MLH" secondAttribute="leading" id="Px7-6Q-hZZ"/>
                             <constraint firstItem="Ivd-sU-YJX" firstAttribute="top" secondItem="W5R-p4-MLH" secondAttribute="top" id="SPn-df-kRd"/>
                             <constraint firstItem="Ivd-sU-YJX" firstAttribute="trailing" secondItem="W5R-p4-MLH" secondAttribute="trailing" id="XUc-Gc-tkW"/>
-                            <constraint firstItem="CYU-Mk-5pb" firstAttribute="top" secondItem="Ivd-sU-YJX" secondAttribute="bottom" id="aD3-Ud-7s3"/>
-                            <constraint firstItem="W5R-p4-MLH" firstAttribute="bottom" secondItem="CYU-Mk-5pb" secondAttribute="bottom" id="uNq-Tx-t8y"/>
                             <constraint firstItem="CYU-Mk-5pb" firstAttribute="top" secondItem="Ivd-sU-YJX" secondAttribute="bottom" id="uXC-W8-j24"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W5R-p4-MLH"/>
