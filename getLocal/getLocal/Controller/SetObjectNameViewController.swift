@@ -22,6 +22,12 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     var objectCategory: String = ""
     var addObjectStep : Int = 0
     
+    @IBAction func goToSetLocation(_ sender: UIButton) {
+        if objectNameTextField.text?.isEmpty == true {
+            showErrorAlert()
+            return
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +52,17 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
         progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
         
         progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
+    }
+    
+    func showErrorAlert() {
+        let alertController = UIAlertController(title: "Error!", message: "You didn't enter a name for the object!", preferredStyle: .alert)
+        
+        let action1 = UIAlertAction(title: "Okay!", style: .default) { (action:UIAlertAction) in
+        }
+        
+        alertController.addAction(action1)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     private func handleNotifications() {

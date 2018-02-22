@@ -484,7 +484,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VIh-XV-LCd" kind="show" id="CGo-3R-sfA"/>
+                                    <action selector="goToSetLocation:" destination="qaO-JB-qpH" eventType="touchUpInside" id="Qgf-M3-NOC"/>
+                                    <segue destination="VIh-XV-LCd" kind="show" identifier="showSetLocation" id="CGo-3R-sfA"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wGR-ay-rRW">
