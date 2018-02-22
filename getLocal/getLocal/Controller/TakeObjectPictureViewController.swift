@@ -75,6 +75,7 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
         
         if let chooseObjectCategoryVC = segue.destination as? ChooseObjectCategoryViewController {
             chooseObjectCategoryVC.objectImage = compressedObjectImage
+            chooseObjectCategoryVC.addObjectStep = addObjectStep + 1
         }
     }
     

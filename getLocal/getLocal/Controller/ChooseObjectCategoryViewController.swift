@@ -19,7 +19,7 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
     
     var pickerData: [String] = [String]()
     
-    var addObjectStep : Int = 2
+    var addObjectStep : Int = 0
     
     
     override func viewDidLoad() {
@@ -56,6 +56,7 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         if let setObjectNameVC = segue.destination as? SetObjectNameViewController {
             setObjectNameVC.objectImage = objectImage
             setObjectNameVC.objectCategory = objectCategory
+            setObjectNameVC.addObjectStep = addObjectStep + 1
         }
     }
     

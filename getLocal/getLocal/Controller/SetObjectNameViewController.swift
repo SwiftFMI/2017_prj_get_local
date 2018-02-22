@@ -17,7 +17,7 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     var objectImage: UIImage = UIImage()
     var objectCategory: String = ""
     
-    var addObjectStep : Int = 3
+    var addObjectStep : Int = 0
     
     
     override func viewDidLoad() {
@@ -51,6 +51,7 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
             setObjectLocationVC.objectImage = objectImage
             setObjectLocationVC.objectCategory = objectCategory
             setObjectLocationVC.objectTitle = objectName
+            setObjectLocationVC.addObjectStep = addObjectStep + 1
         }
     }
     

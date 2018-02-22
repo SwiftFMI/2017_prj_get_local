@@ -45,7 +45,7 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
     var objectDescription: String = ""
     var objectUid: String = ""
     
-    var addObjectStep : Int = 4
+    var addObjectStep : Int = 0
     
     
     override func viewDidLoad() {
