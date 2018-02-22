@@ -9,18 +9,18 @@
 import UIKit
 
 class TakeObjectPictureViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+  
     
     @IBOutlet weak var imageTake: UIImageView!
-    
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
-    @IBOutlet var progressBar: UIView!
+    @IBOutlet weak var progressBar: UIView!
+   
     
     var imagePicker: UIImagePickerController!
-    
     var addObjectStep : Int = 1
-    
     private var photoIsChanged: Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,7 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    //MARK: - Update User Interface
     func updateUI() {
         progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
         
@@ -59,12 +60,6 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
             self.photoIsChanged = false
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let objectImage: UIImage = imageTake.image!
