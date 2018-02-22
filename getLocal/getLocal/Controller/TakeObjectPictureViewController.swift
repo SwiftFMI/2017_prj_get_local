@@ -12,17 +12,19 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
     
     @IBOutlet weak var imageTake: UIImageView!
     
+    @IBOutlet weak var progressBar: UIView!
+    
     var imagePicker: UIImagePickerController!
+    
+    var addObjectStep : Int = 1
+    
+    private var photoIsChanged: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Set object's photo"
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        <#code#>
-//    }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
@@ -39,7 +41,13 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
     //MARK: - Finalize image capture
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         imagePicker.dismiss(animated: true, completion: nil)
-        imageTake.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+
+        if let newImg = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageTake.image = newImg
+            self.photoIsChanged = true
+        } else {
+            self.photoIsChanged = false
+        }
     }
     
     override func didReceiveMemoryWarning() {
