@@ -15,6 +15,8 @@ import FirebaseDatabase
 
 class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var progressBar: UIView!
     @IBOutlet weak var objectLocationMapView: MKMapView!
     
     @IBAction func pressSubmitObjectButton(_ sender: Any) {
@@ -43,11 +45,15 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
     var objectDescription: String = ""
     var objectUid: String = ""
     
+    var addObjectStep : Int = 4
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Set object's location"
+        
+        updateUI()
         
         ref = Database.database().reference()
         
@@ -85,6 +91,11 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
 //            locationManager.startUpdatingHeading()
         locationManager.startUpdatingLocation()
 //        }
+    }
+    
+    func updateUI() {
+        //        progressBar.frame.size.width = (view.frame.size.width / 3) * CGFloat(addObjectStep)
+        progressBarWidthConstraint.constant = (view.frame.size.width / 4) * CGFloat(addObjectStep)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

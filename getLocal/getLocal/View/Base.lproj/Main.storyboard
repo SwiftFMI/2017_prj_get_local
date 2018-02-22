@@ -546,6 +546,27 @@
                                     <action selector="pressSubmitObjectButton:" destination="VIh-XV-LCd" eventType="touchUpInside" id="x36-xP-etp"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBm-7o-KkR">
+                                <rect key="frame" x="0.0" y="624" width="375" height="43"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RlL-kE-cOk">
+                                        <rect key="frame" x="0.0" y="26" width="74" height="17"/>
+                                        <color key="backgroundColor" red="0.92549019610000005" green="0.72941176470000002" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="74" id="Wi4-xi-6bp"/>
+                                            <constraint firstAttribute="height" constant="17" id="x7A-DI-VCl"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.19215686269999999" green="0.50980392159999999" blue="0.81176470590000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="RlL-kE-cOk" firstAttribute="leading" secondItem="GBm-7o-KkR" secondAttribute="leading" id="7i8-Fk-MUm"/>
+                                    <constraint firstAttribute="height" constant="43" id="BNY-4Y-7hJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="RlL-kE-cOk" secondAttribute="bottom" id="Cp5-5m-4zD"/>
+                                    <constraint firstAttribute="width" constant="375" id="fXP-4b-zso"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="43" id="tdZ-XH-J0M"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.51764705879999995" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -554,7 +575,10 @@
                             <constraint firstItem="N4A-c7-Tdd" firstAttribute="top" secondItem="R3m-Fi-7ir" secondAttribute="top" constant="25" id="FIK-cR-ApX"/>
                             <constraint firstItem="lMd-rO-6sS" firstAttribute="centerX" secondItem="O0l-eI-l1Y" secondAttribute="centerX" id="G06-xa-A0X"/>
                             <constraint firstItem="exp-hQ-sAD" firstAttribute="leading" secondItem="R3m-Fi-7ir" secondAttribute="leading" id="Gel-Rt-7Rq"/>
+                            <constraint firstAttribute="bottom" secondItem="GBm-7o-KkR" secondAttribute="bottom" id="Q6n-Rr-bBZ"/>
+                            <constraint firstItem="R3m-Fi-7ir" firstAttribute="trailing" secondItem="GBm-7o-KkR" secondAttribute="trailing" id="ULB-vF-9dV"/>
                             <constraint firstItem="exp-hQ-sAD" firstAttribute="top" secondItem="N4A-c7-Tdd" secondAttribute="bottom" constant="17" id="mGu-Nw-sn0"/>
+                            <constraint firstItem="GBm-7o-KkR" firstAttribute="leading" secondItem="O0l-eI-l1Y" secondAttribute="leading" id="nUf-15-41I"/>
                             <constraint firstItem="R3m-Fi-7ir" firstAttribute="bottom" secondItem="lMd-rO-6sS" secondAttribute="bottom" constant="39" id="p7M-7z-HLx"/>
                             <constraint firstItem="lMd-rO-6sS" firstAttribute="top" secondItem="exp-hQ-sAD" secondAttribute="bottom" constant="30" id="wcZ-jm-Vba"/>
                         </constraints>
@@ -562,6 +586,8 @@
                     </view>
                     <connections>
                         <outlet property="objectLocationMapView" destination="exp-hQ-sAD" id="yDO-bQ-ca6"/>
+                        <outlet property="progressBar" destination="RlL-kE-cOk" id="hqD-xP-5WS"/>
+                        <outlet property="progressBarWidthConstraint" destination="Wi4-xi-6bp" id="dwQ-jV-QtS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMb-SY-nRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
