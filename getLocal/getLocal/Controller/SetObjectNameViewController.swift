@@ -10,14 +10,15 @@ import UIKit
 
 class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     
+    
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var progressBar: UIView!
     @IBOutlet weak var objectNameTextField: UITextField!
     
+    
     var objectImage: UIImage = UIImage()
     var objectCategory: String = ""
-    
     var addObjectStep : Int = 0
     
     
@@ -35,13 +36,14 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK: - Update User Interface
+    func updateUI() {
+        progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
+        
+        progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let objectName: String = "Plazza Dance Sofia"
         let objectName: String = objectNameTextField.text!
         
         let backItem = UIBarButtonItem()
@@ -54,12 +56,6 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
             setObjectLocationVC.objectTitle = objectName
             setObjectLocationVC.addObjectStep = addObjectStep + 1
         }
-    }
-    
-    func updateUI() {
-        progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
-        
-        progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
     }
     
     // built in method
