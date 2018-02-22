@@ -12,7 +12,8 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
     
     @IBOutlet weak var imageTake: UIImageView!
     
-    @IBOutlet weak var progressBar: UIView!
+    @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var progressBar: UIView!
     
     var imagePicker: UIImagePickerController!
     
@@ -24,10 +25,17 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
         super.viewDidLoad()
         
         self.title = "Set object's photo"
+        
+        updateUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    func updateUI() {
+//        progressBar.frame.size.width = (view.frame.size.width / 3) * CGFloat(addObjectStep)
+        progressBarWidthConstraint.constant = (view.frame.size.width / 4) * CGFloat(addObjectStep)
     }
     
     //MARK: - Take a photo

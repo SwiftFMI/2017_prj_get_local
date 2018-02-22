@@ -11,14 +11,15 @@ import UIKit
 class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
-    @IBOutlet weak var progressBar: UIView!
+    @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var progressBar: UIView!
     @IBOutlet weak var categoryPickerView: UIPickerView!
     
     var objectImage: UIImage = UIImage()
     
     var pickerData: [String] = [String]()
     
-    var addObjectStep : Int = 1
+    var addObjectStep : Int = 2
     
     
     override func viewDidLoad() {
@@ -59,7 +60,8 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
     }
     
     func updateUI() {
-        progressBar.frame.size.width = (view.frame.size.width / 2) * CGFloat(addObjectStep)
+//        progressBar.frame.size.width = (view.frame.size.width / 3) * CGFloat(addObjectStep)
+        progressBarWidthConstraint.constant = (view.frame.size.width / 4) * CGFloat(addObjectStep)
     }
     
     // The number of columns of data

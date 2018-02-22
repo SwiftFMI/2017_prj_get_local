@@ -10,10 +10,15 @@ import UIKit
 
 class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var progressBar: UIView!
     @IBOutlet weak var objectNameTextField: UITextField!
     
     var objectImage: UIImage = UIImage()
     var objectCategory: String = ""
+    
+    var addObjectStep : Int = 3
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +26,8 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
         self.title = "Set object's name"
         
         objectNameTextField.delegate = self
+        
+        updateUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +52,11 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
             setObjectLocationVC.objectCategory = objectCategory
             setObjectLocationVC.objectTitle = objectName
         }
+    }
+    
+    func updateUI() {
+//        progressBar.frame.size.width = (view.frame.size.width / 3) * CGFloat(addObjectStep)
+        progressBarWidthConstraint.constant = (view.frame.size.width / 4) * CGFloat(addObjectStep)
     }
     
     // built in method

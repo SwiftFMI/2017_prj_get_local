@@ -361,6 +361,7 @@
                     <connections>
                         <outlet property="imageTake" destination="Sw6-e6-BaC" id="alz-NS-BGr"/>
                         <outlet property="progressBar" destination="SoE-cL-eI1" id="ocR-Xv-xBQ"/>
+                        <outlet property="progressBarWidthConstraint" destination="cym-Kv-YWS" id="cnX-ol-1pg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqW-Wu-uk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -431,6 +432,7 @@
                     <connections>
                         <outlet property="categoryPickerView" destination="oH1-QD-NCD" id="O8a-SG-Tel"/>
                         <outlet property="progressBar" destination="l07-Uz-0jz" id="K1m-fh-Lef"/>
+                        <outlet property="progressBarWidthConstraint" destination="PNV-LZ-Lik" id="wuw-aX-y9F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k6-FP-EHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -504,6 +506,8 @@
                     </view>
                     <connections>
                         <outlet property="objectNameTextField" destination="aoY-gx-HqQ" id="nfO-Hn-A6d"/>
+                        <outlet property="progressBar" destination="E6T-Ty-VJm" id="biB-1H-khq"/>
+                        <outlet property="progressBarWidthConstraint" destination="N1C-9a-uHB" id="cha-PB-iOv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SwH-wX-5kv" userLabel="First Responder" sceneMemberID="firstResponder"/>
