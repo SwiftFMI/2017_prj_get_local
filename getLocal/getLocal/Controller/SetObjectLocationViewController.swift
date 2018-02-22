@@ -16,6 +16,8 @@ import FirebaseDatabase
 class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     
+    @IBOutlet weak var setLocationInstructionsLabel: UILabel!
+    @IBOutlet weak var createObjectButton: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var progressBar: UIView!
@@ -53,6 +55,9 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
         self.title = "Set object's location"
         
         updateUI()
+        
+        changeLanguage()
+        handleNotifications()
         
         ref = Database.database().reference()
         dbRef = self.ref.child("objects").childByAutoId()
@@ -94,6 +99,15 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
         progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
         
         progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
+    }
+    
+    private func handleNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "\(Notifications.languageChanged)"), object: nil)
+    }
+    
+    @objc private func changeLanguage() {
+        createObjectButton.setTitle("create_objecet".localized, for: .normal)
+        setLocationInstructionsLabel.text = "set_location_instructions".localized
     }
     
     func addObjectToDatabase() {

@@ -362,9 +362,11 @@
                     </view>
                     <connections>
                         <outlet property="imageTake" destination="Sw6-e6-BaC" id="alz-NS-BGr"/>
+                        <outlet property="nextTakePictureButton" destination="4gV-HW-efm" id="PL9-ob-31N"/>
                         <outlet property="progressBar" destination="SoE-cL-eI1" id="ocR-Xv-xBQ"/>
                         <outlet property="progressBarWidthConstraint" destination="cym-Kv-YWS" id="cnX-ol-1pg"/>
                         <outlet property="progressLabel" destination="cBD-cC-S12" id="Ht6-3J-auT"/>
+                        <outlet property="takePictureButton" destination="Msl-pv-StT" id="xdK-X3-DFu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqW-Wu-uk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -616,10 +618,12 @@
                         <viewLayoutGuide key="safeArea" id="R3m-Fi-7ir"/>
                     </view>
                     <connections>
+                        <outlet property="createObjectButton" destination="lMd-rO-6sS" id="hEB-fH-lqk"/>
                         <outlet property="objectLocationMapView" destination="exp-hQ-sAD" id="yDO-bQ-ca6"/>
                         <outlet property="progressBar" destination="RlL-kE-cOk" id="hqD-xP-5WS"/>
                         <outlet property="progressBarWidthConstraint" destination="Wi4-xi-6bp" id="dwQ-jV-QtS"/>
                         <outlet property="progressLabel" destination="gdf-7I-LVb" id="Kwu-Kr-Ae7"/>
+                        <outlet property="setLocationInstructionsLabel" destination="N4A-c7-Tdd" id="pvv-h4-oZC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMb-SY-nRO" userLabel="First Responder" sceneMemberID="firstResponder"/>

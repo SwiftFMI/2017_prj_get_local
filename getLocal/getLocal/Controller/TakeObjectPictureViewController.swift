@@ -11,6 +11,8 @@ import UIKit
 class TakeObjectPictureViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
   
     
+    @IBOutlet weak var takePictureButton: UIButton!
+    @IBOutlet weak var nextTakePictureButton: UIButton!
     @IBOutlet weak var imageTake: UIImageView!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
@@ -25,7 +27,7 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
     @IBAction func goToChooseObjectCategory(_ sender: UIButton) {
 //        if photoIsChanged == false {
 //            showErrorAlert()
-        } else {
+//        } else {
             self.performSegue(withIdentifier: "showChooseCategory", sender: self)
 //        }
     }
@@ -37,6 +39,9 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
         self.title = "Set object's photo"
         
         updateUI()
+        
+        changeLanguage()
+        handleNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,8 +57,6 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
         let alertController = UIAlertController(title: "Error!", message: "You didn't change the default photo!", preferredStyle: .alert)
         
         let action1 = UIAlertAction(title: "Okay!", style: .default) { (action:UIAlertAction) in
-//            self.tabBarController?.selectedIndex = 1
-//            self.navigationController?.popToRootViewController(animated: true)
         }
         
         alertController.addAction(action1)
@@ -66,6 +69,15 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
         progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
         
         progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
+    }
+    
+    private func handleNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "\(Notifications.languageChanged)"), object: nil)
+    }
+    
+    @objc private func changeLanguage() {
+        takePictureButton.setTitle("take_picture_btn".localized, for: .normal)
+        nextTakePictureButton.setTitle("next_take_picture".localized, for: .normal)
     }
     
     //MARK: - Take a photo
