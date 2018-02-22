@@ -22,3 +22,9 @@
 "tabbar.title.camera" = "Camera";
 "tabbar.title.map" = "Map";
 "take_picture" = "Take picture";
+"next_choose_category" = "Next";
+"next_set_name" = "Next";
+"create_objecet" = "Create object";
+"next_take_picture" = "Next";
+"set_location_instructions" = "Hold on map to change location"
+"take_photo_btn" = "Take photo"
