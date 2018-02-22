@@ -62,7 +62,7 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
     
     func updateUI() {
 //        progressBar.frame.size.width = (view.frame.size.width / 3) * CGFloat(addObjectStep)
-        progressBarWidthConstraint.constant = (view.frame.size.width / 4) * CGFloat(addObjectStep)
+        progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
     }
     
     // The number of columns of data

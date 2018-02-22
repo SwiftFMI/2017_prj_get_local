@@ -95,7 +95,7 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
     
     func updateUI() {
         //        progressBar.frame.size.width = (view.frame.size.width / 3) * CGFloat(addObjectStep)
-        progressBarWidthConstraint.constant = (view.frame.size.width / 4) * CGFloat(addObjectStep)
+        progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
