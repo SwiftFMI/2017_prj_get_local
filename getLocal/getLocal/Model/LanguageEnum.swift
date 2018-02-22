@@ -73,7 +73,7 @@ class Language {
         guard let lang = UserDefaults.standard.value(forKey: Language.kCurrent_language) as? String
         else { return }
         
-        if let createdLanguage = LanguageEnum.createLanguage(from: lang) {
+        if let createdLanguage = LanguageEnum.createLanguage(from: lang) {..
             currentLanguage = createdLanguage
         }
     }
