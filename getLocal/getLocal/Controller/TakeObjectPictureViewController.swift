@@ -12,6 +12,7 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
     
     @IBOutlet weak var imageTake: UIImageView!
     
+    @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     @IBOutlet var progressBar: UIView!
     
@@ -34,7 +35,8 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
     }
     
     func updateUI() {
-//        progressBar.frame.size.width = (view.frame.size.width / 3) * CGFloat(addObjectStep)
+        progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
+        
         progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
     }
     

@@ -10,6 +10,7 @@ import UIKit
 
 class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var progressBar: UIView!
     @IBOutlet weak var objectNameTextField: UITextField!
@@ -56,7 +57,8 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     }
     
     func updateUI() {
-//        progressBar.frame.size.width = (view.frame.size.width / 3) * CGFloat(addObjectStep)
+        progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
+        
         progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
     }
     
