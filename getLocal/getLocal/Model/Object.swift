@@ -33,5 +33,4 @@ class Object {
         description = data["description"] as? String
         workTime = data["workTime"] as? String
     }
-	
 }

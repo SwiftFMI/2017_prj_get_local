@@ -204,5 +204,5 @@ extension ObjectsMapViewController: CLLocationManagerDelegate {
 			self.mapView.setRegion(region, animated: false)
 			locationManager.stopUpdatingLocation()
 		}
-	
 }
+
