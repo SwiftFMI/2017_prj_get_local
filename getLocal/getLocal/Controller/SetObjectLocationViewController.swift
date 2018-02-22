@@ -15,6 +15,7 @@ import FirebaseDatabase
 
 class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var progressBar: UIView!
@@ -22,22 +23,21 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
     
     @IBAction func pressSubmitObjectButton(_ sender: Any) {
         self.showWaitOverlay()
+        
         view.isUserInteractionEnabled = false
         
         addObjectToDatabase()
-        
-//        let objectDetailsVC = storyboard?.instantiateViewController(withIdentifier: StoryboardIDS.objectDetailsVC.rawValue)
-        
     }
+    
     
     var ref: DatabaseReference!
     var dbRef: DatabaseReference!
     
-    var objectCreatedBy: String!
+    var addObjectStep : Int = 0
     
+    var objectCreatedBy: String!
     var locationManager =  CLLocationManager()
     var newPin = MKPointAnnotation()
-    
     var objectTitle: String = ""
     var objectCategory: String = ""
     var objectImage: UIImage = UIImage()
@@ -45,8 +45,6 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
     var objectWorkTime: String = ""
     var objectDescription: String = ""
     var objectUid: String = ""
-    
-    var addObjectStep : Int = 0
     
     
     override func viewDidLoad() {
@@ -57,24 +55,21 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
         updateUI()
         
         ref = Database.database().reference()
-        
         dbRef = self.ref.child("objects").childByAutoId()
         
         objectCreatedBy = Auth.auth().currentUser?.uid
         
         objectLocationMapView.delegate = self
-        
         objectLocationMapView.showsUserLocation = false
         
-        // User's location
+        // user's location
         determineCurrentLocation()
         
         // add gesture recognizer
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(SetObjectLocationViewController.mapLongPress(_:))) // colon needs to pass through info
-//        longPress.minimumPressDuration = 1.5 // in seconds
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(SetObjectLocationViewController.mapLongPress(_:)))
         longPress.numberOfTouchesRequired = 1
 
-        //add gesture recognition
+        // add gesture recognition
         objectLocationMapView.addGestureRecognizer(longPress)
     }
     
@@ -94,41 +89,11 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
 //        }
     }
     
+    //MARK: - Update User Interface
     func updateUI() {
         progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
         
         progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let location = locations.last! as CLLocation
-        let userLocation:CLLocation = locations[0] as CLLocation
-        
-        // Call stopUpdatingLocation() to stop listening for location updates,
-        // otherwise this function will be called every time when user location changes.
-        locationManager.stopUpdatingLocation()
-        
-        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        
-        objectLocationMapView.setRegion(region, animated: true)
-        
-        // Drop a pin at user's current location
-        newPin.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
-//        newPin = "Current location"
-        objectLocationMapView.addAnnotation(newPin)
-    }
-    
-    // func called when gesture recognizer detects a long press
-    @objc func mapLongPress(_ recognizer: UIGestureRecognizer) {
-        objectLocationMapView.removeAnnotation(newPin)
-        newPin = MKPointAnnotation()
-        
-        let touchedAt = recognizer.location(in: self.objectLocationMapView) // adds the location on the view it was pressed
-        let touchedAtCoordinate : CLLocationCoordinate2D = objectLocationMapView.convert(touchedAt, toCoordinateFrom: self.objectLocationMapView) // will get coordinates
-        
-        newPin.coordinate = touchedAtCoordinate
-        objectLocationMapView.addAnnotation(newPin)
     }
     
     func addObjectToDatabase() {
@@ -138,11 +103,9 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
     func uploadImage(objectId: String) {
         let imageName = NSUUID().uuidString
         let storageRef = Storage.storage().reference().child(objectId).child("\(imageName).png")
-
+        
         if let uploadData = UIImagePNGRepresentation(objectImage) {
-
             storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
-
                 if let error = error {
                     print(error)
                     
@@ -151,8 +114,7 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
                     
                     return
                 }
-
-//                if let uploadedImageUrl = metadata?.downloadURL()?.absoluteString {
+                
                 if metadata != nil {
                     self.objectImageUrl = "\(imageName).png"
                     
@@ -183,7 +145,6 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
         dbRef.child("uid").setValue(objectUid)
     }
     
-    
     func showSuccessfulAlert() {
         let alertController = UIAlertController(title: "Success!", message: "You've successfully added an object!", preferredStyle: .alert)
         
@@ -193,8 +154,38 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
         }
         
         alertController.addAction(action1)
- 
+        
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // func called when user's location is updated
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations[0] as CLLocation
+        
+        // call stopUpdatingLocation() to stop listening for location updates,
+        // otherwise this function will be called every time when user location changes.
+        locationManager.stopUpdatingLocation()
+        
+        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        objectLocationMapView.setRegion(region, animated: true)
+        
+        // drop a pin at user's current location
+        newPin.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
+        objectLocationMapView.addAnnotation(newPin)
+    }
+    
+    // func called when gesture recognizer detects a long press
+    @objc func mapLongPress(_ recognizer: UIGestureRecognizer) {
+        objectLocationMapView.removeAnnotation(newPin)
+        newPin = MKPointAnnotation()
+        
+        let touchedAt = recognizer.location(in: self.objectLocationMapView) // adds the location on the view it was pressed
+        let touchedAtCoordinate : CLLocationCoordinate2D = objectLocationMapView.convert(touchedAt, toCoordinateFrom: self.objectLocationMapView) // will get coordinates
+        
+        newPin.coordinate = touchedAtCoordinate
+        objectLocationMapView.addAnnotation(newPin)
     }
     
 }
