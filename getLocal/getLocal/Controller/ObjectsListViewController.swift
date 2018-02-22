@@ -10,12 +10,16 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
-class ObjectsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-	
+class ObjectsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+    
     @IBOutlet var tableViewObjects: UITableView!
+    @IBOutlet var searchBar: UISearchBar!
     
     var user: User!
     var objects = [Object]()
+    
+    var filteredObjects = [Object]()
+    var searchWord = ""
     
     var objectsRef: DatabaseReference!
     var userRef: DatabaseReference!
@@ -28,6 +32,10 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+//        searchBar.searchResultsUpdater = self
+//        searchBar.dimsBackgroundDuringPresentation = false
+        
         self.title = category.plural
         
         user = Auth.auth().currentUser
@@ -57,7 +65,7 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
                     newObjects.append(object)
                 }
                 self.objects = newObjects
-                self.tableViewObjects.reloadData()
+                self.filterObjects()
             }
         })
     }
@@ -71,28 +79,27 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     
     private func queryFavouriteObjects(favourites: [String]) {
         self.objects.removeAll()
-        self.tableViewObjects.reloadData()
         
         for favourite in favourites {
             objectsRef.child(favourite).observe(.value, with: { (snapshot) in
                 if snapshot.hasChildren() {
                     let object = Object(snapshot: snapshot)
                     self.objects.append(object)
+                    self.filterObjects()
                 }
-                self.tableViewObjects.reloadData()
             })
         }
     }
     
     // MARK: - List Objects Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return filteredObjects.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "objectCell") as! ObjectTableViewCell
         
-        let object = objects[indexPath.row]
+        let object = filteredObjects[indexPath.row]
         
         cell.titleCell.text = object.title
         
@@ -113,6 +120,54 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
             viewController.object = selectedObject
         }
     }
-	
+    
+    // MARK: - Search
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchWord = searchText.lowercased()
+        
+        filterObjects()
+    }
+    
+    private func filterObjects() {
+        if searchWord == "" {
+            filteredObjects = objects
+        } else {
+            filteredObjects = objects.filter { $0.title!.lowercased().contains(searchWord) }
+        }
+        
+        self.tableViewObjects.reloadData()
+    }
+    
+    // Mark: - Keyboard
+    
+    var keyboardEnabled = false
+    @IBOutlet var tabGesture: UITapGestureRecognizer!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: Notification.Name.UIKeyboardWillShow, object: nil)
+    }
+    
+    @objc func keyboardWillAppear() {
+        tabGesture.cancelsTouchesInView = true
+        keyboardEnabled = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @IBAction func tapToHideKeyboard(_ sender: UITapGestureRecognizer) {
+        if keyboardEnabled {
+            self.searchBar.resignFirstResponder()
+            keyboardEnabled = false
+        }  else if tabGesture.cancelsTouchesInView {
+            tabGesture.cancelsTouchesInView = false
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.resignFirstResponder()
+    }
+    
 }
 
