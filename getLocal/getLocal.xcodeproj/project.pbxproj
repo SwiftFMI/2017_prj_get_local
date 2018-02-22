@@ -17,15 +17,15 @@
 		696CDD8B203C5F85003DD7F6 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696CDD89203C5F85003DD7F6 /* AnnotationView.swift */; };
 		696CDD8C203C5F85003DD7F6 /* ObjectAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696CDD8A203C5F85003DD7F6 /* ObjectAnnotation.swift */; };
 		69834BE0203318C30002F4E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69834BDF203318C30002F4E5 /* GoogleService-Info.plist */; };
-		BD04BA19203CD3830041FB7E /* EnumCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04BA18203CD3830041FB7E /* EnumCollections.swift */; };
-		BD04BA1B203CD3EB0041FB7E /* LanguageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04BA1A203CD3EB0041FB7E /* LanguageEnum.swift */; };
-		BD371856203DE9FC00DED6F4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD371858203DE9FC00DED6F4 /* Localizable.strings */; };
 		AF99E3DF203DF3C0000EC9F6 /* ObjectList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF99E3DD203DF3C0000EC9F6 /* ObjectList.storyboard */; };
 		AF99E3E2203DF3EC000EC9F6 /* CategoriesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF99E3E0203DF3EC000EC9F6 /* CategoriesList.storyboard */; };
 		AFEB7E3E203B77D900CA21A9 /* CategoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB7E3D203B77D900CA21A9 /* CategoriesListViewController.swift */; };
 		AFEB7E40203B86B000CA21A9 /* ObjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB7E3F203B86B000CA21A9 /* ObjectTableViewCell.swift */; };
 		AFEB7E44203C8DBC00CA21A9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB7E43203C8DBC00CA21A9 /* Category.swift */; };
 		AFEB7E47203DF2A700CA21A9 /* ObjectDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFEB7E45203DF2A600CA21A9 /* ObjectDetail.storyboard */; };
+		BD04BA19203CD3830041FB7E /* EnumCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04BA18203CD3830041FB7E /* EnumCollections.swift */; };
+		BD04BA1B203CD3EB0041FB7E /* LanguageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04BA1A203CD3EB0041FB7E /* LanguageEnum.swift */; };
+		BD371856203DE9FC00DED6F4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD371858203DE9FC00DED6F4 /* Localizable.strings */; };
 		BDCB0001200B55AE000D093F /* NewObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0000200B55AE000D093F /* NewObjectViewController.swift */; };
 		BDCB0003200B55BE000D093F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0002200B55BE000D093F /* InfoViewController.swift */; };
 		BDCB0005200B55FA000D093F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCB0004200B55FA000D093F /* CameraViewController.swift */; };
@@ -406,15 +406,6 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		BD371858203DE9FC00DED6F4 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BD371857203DE9FC00DED6F4 /* en */,
-				BD371859203DE9FE00DED6F4 /* bg */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		AF99E3DD203DF3C0000EC9F6 /* ObjectList.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -437,6 +428,15 @@
 				AFEB7E46203DF2A600CA21A9 /* Base */,
 			);
 			name = ObjectDetail.storyboard;
+			sourceTree = "<group>";
+		};
+		BD371858203DE9FC00DED6F4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD371857203DE9FC00DED6F4 /* en */,
+				BD371859203DE9FE00DED6F4 /* bg */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -557,7 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4D5PLR5969;
+				DEVELOPMENT_TEAM = 2L24TQ8W95;
 				INFOPLIST_FILE = getLocal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bg.sofia-uni.fmi.getLocal";
@@ -573,7 +573,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4D5PLR5969;
+				DEVELOPMENT_TEAM = 2L24TQ8W95;
 				INFOPLIST_FILE = getLocal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bg.sofia-uni.fmi.getLocal";
