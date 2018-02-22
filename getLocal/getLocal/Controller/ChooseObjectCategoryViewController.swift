@@ -26,8 +26,10 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         
         self.title = "Set object's category"
         
-        pickerData = ["restaurant", "club", "pharmacy", "shop", "services", "other"]
+//        pickerData = ["restaurant", "club", "pharmacy", "shop", "services", "other"]
         
+        pickerData = Category.allValues.map{ $0.rawValue }
+      
         // Connect data
         self.categoryPickerView.delegate = self
         self.categoryPickerView.dataSource = self

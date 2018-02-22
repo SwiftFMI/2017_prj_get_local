@@ -12,15 +12,15 @@
 		1F10DDE41FF2985300579C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE21FF2985300579C54 /* Main.storyboard */; };
 		1F10DDE61FF2985300579C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE51FF2985300579C54 /* Assets.xcassets */; };
 		1F10DDE91FF2985300579C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE71FF2985300579C54 /* LaunchScreen.storyboard */; };
+		1FCC5F1D203B4E3C003ABC5D /* TakeObjectPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F1C203B4E3C003ABC5D /* TakeObjectPictureViewController.swift */; };
+		1FCC5F1F203B506C003ABC5D /* ChooseObjectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F1E203B506C003ABC5D /* ChooseObjectCategoryViewController.swift */; };
+		1FCC5F21203B5163003ABC5D /* SetObjectNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F20203B5163003ABC5D /* SetObjectNameViewController.swift */; };
+		1FCC5F23203B52A3003ABC5D /* SetObjectLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F22203B52A3003ABC5D /* SetObjectLocationViewController.swift */; };
 		690FB08F203ECEEE009862EC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690FB08E203ECEED009862EC /* Extensions.swift */; };
 		696CDD87203C5F76003DD7F6 /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696CDD85203C5F76003DD7F6 /* CustomCalloutView.swift */; };
 		696CDD88203C5F76003DD7F6 /* CustomCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 696CDD86203C5F76003DD7F6 /* CustomCalloutView.xib */; };
 		696CDD8B203C5F85003DD7F6 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696CDD89203C5F85003DD7F6 /* AnnotationView.swift */; };
 		696CDD8C203C5F85003DD7F6 /* ObjectAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696CDD8A203C5F85003DD7F6 /* ObjectAnnotation.swift */; };
-		1FCC5F1D203B4E3C003ABC5D /* TakeObjectPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F1C203B4E3C003ABC5D /* TakeObjectPictureViewController.swift */; };
-		1FCC5F1F203B506C003ABC5D /* ChooseObjectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F1E203B506C003ABC5D /* ChooseObjectCategoryViewController.swift */; };
-		1FCC5F21203B5163003ABC5D /* SetObjectNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F20203B5163003ABC5D /* SetObjectNameViewController.swift */; };
-		1FCC5F23203B52A3003ABC5D /* SetObjectLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCC5F22203B52A3003ABC5D /* SetObjectLocationViewController.swift */; };
 		69834BE0203318C30002F4E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69834BDF203318C30002F4E5 /* GoogleService-Info.plist */; };
 		AF99E3DF203DF3C0000EC9F6 /* ObjectList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF99E3DD203DF3C0000EC9F6 /* ObjectList.storyboard */; };
 		AF99E3E2203DF3EC000EC9F6 /* CategoriesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF99E3E0203DF3EC000EC9F6 /* CategoriesList.storyboard */; };
@@ -583,7 +583,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4D5PLR5969;
+				DEVELOPMENT_TEAM = EJFGUPBBHG;
 				INFOPLIST_FILE = getLocal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bg.sofia-uni.fmi.getLocal";
@@ -599,7 +599,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4D5PLR5969;
+				DEVELOPMENT_TEAM = EJFGUPBBHG;
 				INFOPLIST_FILE = getLocal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bg.sofia-uni.fmi.getLocal";

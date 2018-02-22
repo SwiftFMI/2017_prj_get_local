@@ -18,6 +18,7 @@
 "change_language_cancel" = "Cancel";
 "tabbar.title.objects" = "Objects";
 "tabbar.title.info" = "Info";
-"tabbar.title.new_objects" = "New object";
+"tabbar.title.new_object" = "Add object";
 "tabbar.title.camera" = "Camera";
 "tabbar.title.map" = "Map";
+"take_picture" = "Take picture";

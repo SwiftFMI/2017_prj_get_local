@@ -10,10 +10,17 @@ import UIKit
 
 class NewObjectViewController: UIViewController {
 
+    
+    @IBOutlet weak var startAddingObjectButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Add object"
+//        self.title = "Add object"
+        navigationItem.title = "Add object"
+        
+        changeLanguage()
+        handleNotifications()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,5 +33,13 @@ class NewObjectViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
+    }
+    
+    private func handleNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "\(Notifications.languageChanged)"), object: nil)
+    }
+    
+    @objc private func changeLanguage() {
+        startAddingObjectButton.setTitle("take_picture".localized, for: .normal)
     }
 }

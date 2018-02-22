@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Category :String{
+enum Category: String {
     case restaurant = "restaurant"
     case club = "club"
     case pharmacy = "pharmacy"
@@ -34,4 +34,8 @@ enum Category :String{
     }
     
     static let allCategories = [favourites, allObjects, restaurant, club, pharmacy, shop, services, other, myObjects]
+}
+
+extension Category: EnumCollection {
+    
 }
