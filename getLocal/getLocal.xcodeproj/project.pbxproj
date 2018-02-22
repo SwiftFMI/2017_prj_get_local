@@ -12,6 +12,7 @@
 		1F10DDE41FF2985300579C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE21FF2985300579C54 /* Main.storyboard */; };
 		1F10DDE61FF2985300579C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE51FF2985300579C54 /* Assets.xcassets */; };
 		1F10DDE91FF2985300579C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F10DDE71FF2985300579C54 /* LaunchScreen.storyboard */; };
+		690FB08F203ECEEE009862EC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690FB08E203ECEED009862EC /* Extensions.swift */; };
 		696CDD87203C5F76003DD7F6 /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696CDD85203C5F76003DD7F6 /* CustomCalloutView.swift */; };
 		696CDD88203C5F76003DD7F6 /* CustomCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 696CDD86203C5F76003DD7F6 /* CustomCalloutView.xib */; };
 		696CDD8B203C5F85003DD7F6 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696CDD89203C5F85003DD7F6 /* AnnotationView.swift */; };
@@ -52,6 +53,7 @@
 		1F10DDE81FF2985300579C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F10DDEA1FF2985300579C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25BD5E61FC817F041B117935 /* Pods-getLocal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getLocal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-getLocal/Pods-getLocal.debug.xcconfig"; sourceTree = "<group>"; };
+		690FB08E203ECEED009862EC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		696CDD85203C5F76003DD7F6 /* CustomCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalloutView.swift; sourceTree = "<group>"; };
 		696CDD86203C5F76003DD7F6 /* CustomCalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCalloutView.xib; sourceTree = "<group>"; };
 		696CDD89203C5F85003DD7F6 /* AnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
@@ -76,7 +78,7 @@
 		BDCBFFF3200B467E000D093F /* ObjectsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsMapViewController.swift; sourceTree = "<group>"; };
 		BDCBFFF5200B484E000D093F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BDCBFFF7200B492B000D093F /* ObjectsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListViewController.swift; sourceTree = "<group>"; };
-		BDCBFFF9200B4981000D093F /* ObjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailsViewController.swift; sourceTree = "<group>"; };
+		BDCBFFF9200B4981000D093F /* ObjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailsViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
 		BDCBFFFB200B4D7D000D093F /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		BDCBFFFE200B4D9B000D093F /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		BDF23DAF203B82C9003AF4DC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +107,9 @@
 				3E9F5C097AEA57F0EA265B21 /* Pods */,
 				A138C98B90642A8B9598B564 /* Frameworks */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		1F10DDDC1FF2985300579C54 /* Products */ = {
 			isa = PBXGroup;
@@ -192,6 +196,7 @@
 				BDF23DB9203BE71E003AF4DC /* CommonExtension.swift */,
 				BD04BA1A203CD3EB0041FB7E /* LanguageEnum.swift */,
 				BD04BA18203CD3830041FB7E /* EnumCollections.swift */,
+				690FB08E203ECEED009862EC /* Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				BDCBFFF4200B467E000D093F /* ObjectsMapViewController.swift in Sources */,
 				BDF23DB2203BE235003AF4DC /* LanguageViewController.swift in Sources */,
 				BDCBFFFF200B4D9B000D093F /* Common.swift in Sources */,
+				690FB08F203ECEEE009862EC /* Extensions.swift in Sources */,
 				BDF23DBE203CBC54003AF4DC /* LogoutViewController.swift in Sources */,
 				AFEB7E3E203B77D900CA21A9 /* CategoriesListViewController.swift in Sources */,
 				AFEB7E40203B86B000CA21A9 /* ObjectTableViewCell.swift in Sources */,
@@ -557,7 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2L24TQ8W95;
+				DEVELOPMENT_TEAM = 4D5PLR5969;
 				INFOPLIST_FILE = getLocal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bg.sofia-uni.fmi.getLocal";
@@ -573,7 +579,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2L24TQ8W95;
+				DEVELOPMENT_TEAM = 4D5PLR5969;
 				INFOPLIST_FILE = getLocal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bg.sofia-uni.fmi.getLocal";

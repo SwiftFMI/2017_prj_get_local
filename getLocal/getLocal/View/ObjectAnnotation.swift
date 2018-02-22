@@ -14,6 +14,8 @@ class ObjectAnnotation: NSObject, MKAnnotation {
     var workTime: String!
     var name: String!
     var imageUrl: String!
+	var objectId: String!
+	var downloadImageUrl: String!
     
     init(coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate

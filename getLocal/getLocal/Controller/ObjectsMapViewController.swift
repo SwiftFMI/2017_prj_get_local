@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import FirebaseDatabase
-import Kingfisher
+import FirebaseStorage
 
 class ObjectsMapViewController: UIViewController {
 
@@ -21,20 +21,24 @@ class ObjectsMapViewController: UIViewController {
 		var objects = [Object]()
 		var ref: DatabaseReference!
 		private var databaseHandle: DatabaseHandle!
+	    var storageRef: StorageReference!
+		var selectedObject : Object!
 
 		var coordinates: [[Double]]!
 		var titles: [String]!
 		var workHours: [String]!
 		var imageUrls: [String]!
+		var objectIds: [String]!
 		var locationManager = CLLocationManager()
 
 		override func viewDidLoad() {
 			super.viewDidLoad()
 			
-//            self.title = "Nearby objects"
+
 			mapView.delegate = self
 			mapView.showsUserLocation = true;
 			ref = Database.database().reference()
+			storageRef = Storage.storage().reference()
 			
 			// MARK: - Reference for using Firebase Database: https://www.sitepoint.com/creating-a-firebase-backend-for-ios-app/
 			// insert hardcoded objexcts to Firebase Database
@@ -69,9 +73,9 @@ class ObjectsMapViewController: UIViewController {
 				
 				self.objects = newObjects
 				
-//                for object in self.objects {
-//                    print("Loaded object with name: \(object.title!), latitude: \(object.latitude!) and longitude: \(object.longitude!), cattegory: \(object.category!), imageUrl: \(object.imageUrl!), description: \(object.description!), workTime: \(object.workTime!), uid: \(object.uid!)")
-//                }
+                for object in self.objects {
+                    print("Loaded object with name: \(object.title!), latitude: \(object.latitude!) and longitude: \(object.longitude!), cattegory: \(object.category!), imageUrl: \(object.imageUrl!), description: \(object.description!), workTime: \(object.workTime!), uid: \(object.uid!)")
+                }
 				
 				self.loadMapData()
 				
@@ -83,12 +87,14 @@ class ObjectsMapViewController: UIViewController {
 			titles = []
 			workHours = []
 			imageUrls = []
+			objectIds = []
 		
 			for object in objects {
 				coordinates.append([object.latitude!, object.longitude!])
 				titles.append(object.title!)
 				workHours.append(object.workTime!)
 				imageUrls.append(object.imageUrl!)
+				objectIds.append(object.uid!)
 			}
 			
 			for i in 0...objects.count-1 {
@@ -97,6 +103,7 @@ class ObjectsMapViewController: UIViewController {
 				point.imageUrl = imageUrls[i]
 				point.name = titles[i]
 				point.workTime = workHours[i]
+				point.objectId = objectIds[i]
 				self.mapView.addAnnotation(point)
 			}
 			
@@ -106,8 +113,10 @@ class ObjectsMapViewController: UIViewController {
 		}
 	
 		@objc func gotoDetailsScreen() {
-			let detailsVC = storyboard?.instantiateViewController(withIdentifier: StoryboardIDS.objectDetailsVC.rawValue)
-			self.navigationController?.pushViewController(detailsVC!, animated: true)
+			let objectDetailsStoryboard = UIStoryboard.init(name: "ObjectDetail", bundle: Bundle.main)
+			let detailsVC = objectDetailsStoryboard.instantiateViewController(withIdentifier: StoryboardIDS.objectDetailsVC.rawValue) as! ObjectDetailsViewController
+			detailsVC.object = selectedObject
+			self.navigationController?.pushViewController(detailsVC, animated: true)
 		}
 	
     deinit {
@@ -153,9 +162,23 @@ extension ObjectsMapViewController: MKMapViewDelegate {
 			calloutView.pinTitleLabel.text = objectAnnotation.name
 			calloutView.pinWorkTimeLabel.text = "Work time: \(objectAnnotation.workTime!)"
 			
-			// Setting image from url with Kingfisher
-			let url = URL(string: objectAnnotation.imageUrl)
-			calloutView.pinImageView.kf.setImage(with: url)
+			selectedObject = objects.first(where: { $0.uid == objectAnnotation.objectId })
+			
+			// Setting cached image from url
+			if objectAnnotation.downloadImageUrl != nil {
+				calloutView.pinImageView.loadImageUsingCacheWithUrlString(objectAnnotation.downloadImageUrl)
+			} else {
+				storageRef.child(objectAnnotation.objectId).child(objectAnnotation.imageUrl).getMetadata(completion: { metadata, error in
+					if let error = error {
+						print(error.localizedDescription)
+					}
+					if let metadata = metadata {
+						let url = metadata.downloadURL()
+						objectAnnotation.downloadImageUrl = url?.absoluteString
+						calloutView.pinImageView.loadImageUsingCacheWithUrlString((url?.absoluteString)!)
+					}
+				})
+			}
 
 			calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
 			view.addSubview(calloutView)
