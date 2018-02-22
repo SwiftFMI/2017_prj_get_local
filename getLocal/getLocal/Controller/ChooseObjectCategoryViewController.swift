@@ -13,13 +13,12 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
     
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
-    @IBOutlet var progressBar: UIView!
+    @IBOutlet weak var progressBar: UIView!
     @IBOutlet weak var categoryPickerView: UIPickerView!
     
+    
     var objectImage: UIImage = UIImage()
-    
     var pickerData: [String] = [String]()
-    
     var addObjectStep : Int = 0
     
     
@@ -30,7 +29,6 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         
         pickerData = Category.allValues.map{ $0.rawValue }
       
-        // Connect data
         self.categoryPickerView.delegate = self
         self.categoryPickerView.dataSource = self
         
@@ -41,13 +39,14 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK: - Update User Interface
+    func updateUI() {
+        progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
+        
+        progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let objectCategory: String = "bars"
         let objectCategory: String = pickerData[categoryPickerView.selectedRow(inComponent: 0)]
         
         let backItem = UIBarButtonItem()
@@ -61,12 +60,6 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         }
     }
     
-    func updateUI() {
-        progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
-        
-        progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
-    }
-    
     // The number of columns of data
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -77,11 +70,7 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         return pickerData.count
     }
     
-    
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return pickerData[row]
-//    }
-    
+    // The selected row
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let attributedString = NSAttributedString(string: pickerData[row], attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
         return attributedString
