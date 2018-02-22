@@ -11,6 +11,7 @@ import UIKit
 class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
+    @IBOutlet weak var nextChooseCategoryButton: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var progressBar: UIView!
@@ -33,6 +34,9 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         self.categoryPickerView.dataSource = self
         
         updateUI()
+        
+        changeLanguage()
+        handleNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +48,14 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
         
         progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
+    }
+    
+    private func handleNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "\(Notifications.languageChanged)"), object: nil)
+    }
+    
+    @objc private func changeLanguage() {
+        nextChooseCategoryButton.setTitle("next_choose_category".localized, for: .normal)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

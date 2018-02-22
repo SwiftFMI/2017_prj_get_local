@@ -11,6 +11,7 @@ import UIKit
 class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     
     
+    @IBOutlet weak var nextSetNameButton: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var progressBar: UIView!
@@ -30,6 +31,10 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
         objectNameTextField.delegate = self
         
         updateUI()
+        
+        changeLanguage()
+        handleNotifications()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +46,14 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
         progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
         
         progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
+    }
+    
+    private func handleNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "\(Notifications.languageChanged)"), object: nil)
+    }
+    
+    @objc private func changeLanguage() {
+        nextSetNameButton.setTitle("next_set_name".localized, for: .normal)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

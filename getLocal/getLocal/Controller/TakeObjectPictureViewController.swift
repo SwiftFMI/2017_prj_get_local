@@ -22,6 +22,15 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
     private var photoIsChanged: Bool = false
     
     
+    @IBAction func goToChooseObjectCategory(_ sender: UIButton) {
+//        if photoIsChanged == false {
+//            showErrorAlert()
+        } else {
+            self.performSegue(withIdentifier: "showChooseCategory", sender: self)
+//        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +41,24 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func showErrorAlert() {
+        let alertController = UIAlertController(title: "Error!", message: "You didn't change the default photo!", preferredStyle: .alert)
+        
+        let action1 = UIAlertAction(title: "Okay!", style: .default) { (action:UIAlertAction) in
+//            self.tabBarController?.selectedIndex = 1
+//            self.navigationController?.popToRootViewController(animated: true)
+        }
+        
+        alertController.addAction(action1)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     //MARK: - Update User Interface

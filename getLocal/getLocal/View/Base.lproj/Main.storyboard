@@ -290,7 +290,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5rI-O1-vLS" kind="show" id="Iqq-uB-8HT"/>
+                                    <action selector="goToChooseObjectCategory:" destination="ttr-RP-dJd" eventType="touchUpInside" id="qDg-GI-tcI"/>
+                                    <segue destination="5rI-O1-vLS" kind="show" identifier="showChooseCategory" id="Iqq-uB-8HT"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-not-available" translatesAutoresizingMaskIntoConstraints="NO" id="Sw6-e6-BaC">
@@ -441,6 +442,7 @@
                     </view>
                     <connections>
                         <outlet property="categoryPickerView" destination="oH1-QD-NCD" id="O8a-SG-Tel"/>
+                        <outlet property="nextChooseCategoryButton" destination="kfj-iI-Gtc" id="EIJ-Fl-9mK"/>
                         <outlet property="progressBar" destination="l07-Uz-0jz" id="K1m-fh-Lef"/>
                         <outlet property="progressBarWidthConstraint" destination="PNV-LZ-Lik" id="wuw-aX-y9F"/>
                         <outlet property="progressLabel" destination="t5v-3r-Qav" id="l94-5R-aPp"/>
@@ -524,6 +526,7 @@
                         <viewLayoutGuide key="safeArea" id="aqi-M6-lwd"/>
                     </view>
                     <connections>
+                        <outlet property="nextSetNameButton" destination="PwJ-Cs-xmH" id="VDU-au-ByF"/>
                         <outlet property="objectNameTextField" destination="aoY-gx-HqQ" id="nfO-Hn-A6d"/>
                         <outlet property="progressBar" destination="E6T-Ty-VJm" id="biB-1H-khq"/>
                         <outlet property="progressBarWidthConstraint" destination="N1C-9a-uHB" id="cha-PB-iOv"/>
