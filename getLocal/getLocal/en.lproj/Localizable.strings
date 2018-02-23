@@ -35,3 +35,13 @@
 "set_location_title" = "Set location";
 "new_object_instructions" = "Start adding an object";
 "set_name_instructions" = "Set a name, working time and description of the object";
+"categories" = "Categories";
+"restaurants" = "Restaurants";
+"clubs" = "Clubs";
+"pharmacies" = "Pharmacies";
+"shops" = "Shops";
+"services" = "Services";
+"other" = "Other";
+"all objects" = "All objects";
+"work_time" = "Work time: ";
+"navigation_button" = "Navigate to that place";

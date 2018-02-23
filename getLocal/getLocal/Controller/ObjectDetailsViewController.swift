@@ -19,7 +19,9 @@ class ObjectDetailsViewController: UIViewController {
     @IBOutlet var descriptionText: UITextView!
     @IBOutlet var addToFavourites: UIButton!
     @IBOutlet var removeFromFavourites: UIButton!
+    @IBOutlet var navigateButton: UIButton!
     @IBOutlet var loader: UIActivityIndicatorView!
+    @IBOutlet var workTimeForLokalizing: UILabel!
     
     var user: User!
     var userRef: DatabaseReference!
@@ -30,12 +32,15 @@ class ObjectDetailsViewController: UIViewController {
         titleLabel.text = object.title
         workingTimeLabel.text = object.workTime
         descriptionText.text = object.description
+        navigateButton.setTitle("navigation_button".localized, for: .normal)
         
         objectImageView.loadImageUsingCacheWithUrlString(object.uid!, object.imageUrl!, loader)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        workTimeForLokalizing.text = "work_time".localized
         
         user = Auth.auth().currentUser
         userRef = Database.database().reference().child("users").child(user.uid).child("favourites")

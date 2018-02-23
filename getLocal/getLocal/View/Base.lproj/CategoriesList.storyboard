@@ -65,6 +65,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vME-fZ-nd3"/>
                     <connections>
+                        <outlet property="categoriesTable" destination="Tr0-hM-gti" id="5my-QE-uvr"/>
                         <segue destination="Re3-Q6-FNW" kind="show" identifier="category" id="oT7-CK-jeb"/>
                     </connections>
                 </viewController>

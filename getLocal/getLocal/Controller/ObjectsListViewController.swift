@@ -34,11 +34,11 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        self.title = category.plural
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.title = category.plural.localized
         
         user = Auth.auth().currentUser
         objectsRef = Database.database().reference().child("objects")
