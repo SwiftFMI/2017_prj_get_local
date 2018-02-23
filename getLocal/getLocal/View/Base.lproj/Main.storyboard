@@ -279,7 +279,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gV-HW-efm">
-                                <rect key="frame" x="117" y="554" width="140" height="40"/>
+                                <rect key="frame" x="117" y="570" width="140" height="40"/>
                                 <color key="backgroundColor" red="0.32941176470588235" green="0.63137254901960782" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="8MG-n1-Tj4"/>
@@ -295,14 +295,14 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-not-available" translatesAutoresizingMaskIntoConstraints="NO" id="Sw6-e6-BaC">
-                                <rect key="frame" x="60" y="84" width="254" height="384"/>
+                                <rect key="frame" x="60" y="84" width="254" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="0Vg-Jg-AHf"/>
-                                    <constraint firstAttribute="height" constant="384" id="g2d-WB-DO6"/>
+                                    <constraint firstAttribute="height" constant="400" id="g2d-WB-DO6"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msl-pv-StT">
-                                <rect key="frame" x="117.5" y="494" width="140" height="40"/>
+                                <rect key="frame" x="117.5" y="510" width="140" height="40"/>
                                 <color key="backgroundColor" red="0.78823529411764703" green="0.24705882352941178" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="F8h-tx-FqH"/>
