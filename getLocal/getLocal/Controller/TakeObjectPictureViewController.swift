@@ -25,10 +25,10 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
     
     
     @IBAction func goToChooseObjectCategory(_ sender: UIButton) {
-        if photoIsChanged == false {
-            showErrorAlert()
-            return
-        }
+//        if photoIsChanged == false {
+//            showErrorAlert()
+//            return
+//        }
     }
     
     

@@ -31,7 +31,7 @@
 "new_object_title" = "Add object";
 "take_object_picture_title" = "Set photo";
 "choose_category_title" = "Set category";
-"set_name_title" = "Set name";
+"set_name_title" = "Set data";
 "set_location_title" = "Set location";
 "new_object_instructions" = "Start adding an object";
-"set_name_instructions" = "Set a name of the object";
+"set_name_instructions" = "Set a name, working time and description of the object";

@@ -480,18 +480,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aoY-gx-HqQ">
-                                <rect key="frame" x="77.5" y="318" width="220" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Ivt-Ng-QkW"/>
-                                    <constraint firstAttribute="width" constant="220" id="iDR-vV-VBq"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwJ-Cs-xmH">
-                                <rect key="frame" x="107" y="513" width="160" height="40"/>
+                                <rect key="frame" x="107" y="480" width="160" height="40"/>
                                 <color key="backgroundColor" red="0.32941176470588235" green="0.63137254901960782" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Em2-1F-BxY"/>
@@ -533,30 +523,68 @@
                                     <constraint firstAttribute="bottom" secondItem="E6T-Ty-VJm" secondAttribute="bottom" id="pcz-yM-ffH"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set a name of the object" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGl-M0-Zom">
-                                <rect key="frame" x="83.5" y="249" width="208" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set a name, working time and description of the object" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGl-M0-Zom">
+                                <rect key="frame" x="11" y="114" width="353" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aoY-gx-HqQ">
+                                <rect key="frame" x="61" y="190" width="253" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ivt-Ng-QkW"/>
+                                    <constraint firstAttribute="width" constant="253" id="iDR-vV-VBq"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ro-AP-DPR">
+                                <rect key="frame" x="60" y="263" width="255" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="255" id="5Ro-GD-bMK"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="eKJ-c3-k6W"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="253" id="tso-7g-Lp6"/>
+                                    <constraint firstAttribute="height" constant="40" id="z8L-bq-7b0"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A8M-du-vLc">
+                                <rect key="frame" x="60" y="336" width="255" height="88"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="ESX-B9-sfE"/>
+                                    <constraint firstAttribute="width" constant="255" id="kB4-Fo-wFP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.51764705882352935" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="A8M-du-vLc" firstAttribute="top" secondItem="8ro-AP-DPR" secondAttribute="bottom" constant="33" id="35m-bn-CbJ"/>
+                            <constraint firstItem="8ro-AP-DPR" firstAttribute="centerX" secondItem="ma8-kX-Uhr" secondAttribute="centerX" id="3BH-gB-6dd"/>
                             <constraint firstItem="aqi-M6-lwd" firstAttribute="bottom" secondItem="wGR-ay-rRW" secondAttribute="bottom" id="3Zs-FR-VIC"/>
-                            <constraint firstItem="aoY-gx-HqQ" firstAttribute="top" secondItem="aqi-M6-lwd" secondAttribute="top" constant="254" id="8ka-mc-hnX"/>
                             <constraint firstItem="PwJ-Cs-xmH" firstAttribute="centerX" secondItem="ma8-kX-Uhr" secondAttribute="centerX" id="AgP-Ww-S57"/>
                             <constraint firstItem="aoY-gx-HqQ" firstAttribute="centerX" secondItem="ma8-kX-Uhr" secondAttribute="centerX" id="FG6-Gq-ryP"/>
                             <constraint firstItem="rGl-M0-Zom" firstAttribute="centerX" secondItem="ma8-kX-Uhr" secondAttribute="centerX" id="RYD-5f-4mL"/>
-                            <constraint firstItem="PwJ-Cs-xmH" firstAttribute="top" secondItem="aoY-gx-HqQ" secondAttribute="bottom" constant="155" id="ePy-eP-Tlp"/>
+                            <constraint firstItem="8ro-AP-DPR" firstAttribute="top" secondItem="aoY-gx-HqQ" secondAttribute="bottom" constant="33" id="WWr-dc-DsA"/>
+                            <constraint firstItem="aoY-gx-HqQ" firstAttribute="top" secondItem="rGl-M0-Zom" secondAttribute="bottom" constant="59" id="aCf-SD-B75"/>
+                            <constraint firstItem="A8M-du-vLc" firstAttribute="centerX" secondItem="ma8-kX-Uhr" secondAttribute="centerX" id="bey-y4-8Ha"/>
                             <constraint firstAttribute="trailing" secondItem="wGR-ay-rRW" secondAttribute="trailing" id="lvt-Pz-yH2"/>
-                            <constraint firstItem="rGl-M0-Zom" firstAttribute="top" secondItem="aqi-M6-lwd" secondAttribute="top" constant="185" id="odi-9A-WZj"/>
+                            <constraint firstItem="rGl-M0-Zom" firstAttribute="top" secondItem="aqi-M6-lwd" secondAttribute="top" constant="50" id="odi-9A-WZj"/>
+                            <constraint firstItem="PwJ-Cs-xmH" firstAttribute="top" secondItem="A8M-du-vLc" secondAttribute="bottom" constant="56" id="ujY-Ky-lo2"/>
                             <constraint firstItem="wGR-ay-rRW" firstAttribute="leading" secondItem="aqi-M6-lwd" secondAttribute="leading" id="xEk-Ii-mt5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aqi-M6-lwd"/>
                     </view>
                     <connections>
                         <outlet property="nextSetNameButton" destination="PwJ-Cs-xmH" id="VDU-au-ByF"/>
+                        <outlet property="objectDescriptionTextView" destination="A8M-du-vLc" id="jfw-hT-F4b"/>
                         <outlet property="objectNameTextField" destination="aoY-gx-HqQ" id="nfO-Hn-A6d"/>
+                        <outlet property="objectWorkingTimeField" destination="8ro-AP-DPR" id="APs-Cv-ZEZ"/>
                         <outlet property="progressBar" destination="E6T-Ty-VJm" id="biB-1H-khq"/>
                         <outlet property="progressBarWidthConstraint" destination="N1C-9a-uHB" id="cha-PB-iOv"/>
                         <outlet property="progressLabel" destination="HhP-FU-UKt" id="heb-eR-4gG"/>

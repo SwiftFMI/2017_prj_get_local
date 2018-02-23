@@ -11,6 +11,8 @@ import UIKit
 class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     
     
+    @IBOutlet weak var objectDescriptionTextView: UITextView!
+    @IBOutlet weak var objectWorkingTimeField: UITextField!
     @IBOutlet weak var setNameInstructionsLabel: UILabel!
     @IBOutlet weak var nextSetNameButton: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
@@ -77,6 +79,8 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let objectName: String = objectNameTextField.text!
+        let objectWorkingTime: String = objectWorkingTimeField.text!
+        let objectDescription: String = objectDescriptionTextView.text!
         
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
@@ -87,6 +91,8 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
             setObjectLocationVC.objectCategory = objectCategory
             setObjectLocationVC.objectTitle = objectName
             setObjectLocationVC.addObjectStep = addObjectStep + 1
+            setObjectLocationVC.objectWorkTime = objectWorkingTime
+            setObjectLocationVC.objectDescription = objectDescription
         }
     }
     

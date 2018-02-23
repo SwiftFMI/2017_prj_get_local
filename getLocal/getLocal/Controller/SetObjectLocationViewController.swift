@@ -132,7 +132,7 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
                 if metadata != nil {
                     self.objectImageUrl = "\(imageName).png"
                     
-                    self.saveObjectValues()
+                    self.saveObjectValues(objectId: objectId)
                     
                     self.removeAllOverlays()
                     self.view.isUserInteractionEnabled = true
@@ -147,7 +147,7 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
         }
     }
     
-    func saveObjectValues() {
+    func saveObjectValues(objectId: String) {
         dbRef.child("title").setValue(objectTitle)
         dbRef.child("latitude").setValue(newPin.coordinate.latitude)
         dbRef.child("longitude").setValue(newPin.coordinate.longitude)
@@ -156,7 +156,7 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
         dbRef.child("workTime").setValue(objectWorkTime)
         dbRef.child("description").setValue(objectDescription)
         dbRef.child("createdBy").setValue(objectCreatedBy)
-        dbRef.child("uid").setValue(objectUid)
+        dbRef.child("uid").setValue(objectId)
     }
     
     func showSuccessfulAlert() {
