@@ -10,10 +10,10 @@ import Foundation
 
 
 
-
 enum SegueIDs {
   case unwindToLogin
 }
+
 
 enum StoryboardIDS: String {
     case loginVC = "LoginViewController"
@@ -31,3 +31,7 @@ enum Notifications {
     case languageChanged
 }
 
+
+enum NumberConstants: Int {
+    case numberOfSteps = 4
+}

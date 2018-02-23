@@ -11,37 +11,54 @@ import UIKit
 class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
+    @IBOutlet weak var nextChooseCategoryButton: UIButton!
+    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var progressBar: UIView!
     @IBOutlet weak var categoryPickerView: UIPickerView!
     
+    
     var objectImage: UIImage = UIImage()
-    
     var pickerData: [String] = [String]()
-    
-    var addObjectStep : Int = 1
+    var addObjectStep : Int = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Set object's category"
+        self.title = "choose_category_title".localized
         
-        pickerData = ["restaurant", "club", "pharmacy", "shop", "services", "other"]
-        
-        // Connect data
+        pickerData = Category.allValues.map{ $0.rawValue }
+      
         self.categoryPickerView.delegate = self
         self.categoryPickerView.dataSource = self
         
         updateUI()
+        
+        changeLanguage()
+        handleNotifications()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    //MARK: - Update User Interface
+    func updateUI() {
+        progressLabel.text = String(addObjectStep) + "/\(NumberConstants.numberOfSteps.rawValue)"
+        
+        progressBarWidthConstraint.constant = (view.frame.size.width / CGFloat(NumberConstants.numberOfSteps.rawValue)) * CGFloat(addObjectStep)
+    }
+    
+    private func handleNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "\(Notifications.languageChanged)"), object: nil)
+    }
+    
+    @objc private func changeLanguage() {
+        nextChooseCategoryButton.setTitle("next_choose_category".localized, for: .normal)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let objectCategory: String = "bars"
         let objectCategory: String = pickerData[categoryPickerView.selectedRow(inComponent: 0)]
         
         let backItem = UIBarButtonItem()
@@ -51,11 +68,8 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         if let setObjectNameVC = segue.destination as? SetObjectNameViewController {
             setObjectNameVC.objectImage = objectImage
             setObjectNameVC.objectCategory = objectCategory
+            setObjectNameVC.addObjectStep = addObjectStep + 1
         }
-    }
-    
-    func updateUI() {
-        progressBar.frame.size.width = (view.frame.size.width / 2) * CGFloat(addObjectStep)
     }
     
     // The number of columns of data
@@ -68,11 +82,7 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
         return pickerData.count
     }
     
-    
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return pickerData[row]
-//    }
-    
+    // The selected row
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let attributedString = NSAttributedString(string: pickerData[row], attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
         return attributedString

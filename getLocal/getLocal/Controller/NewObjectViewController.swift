@@ -10,10 +10,21 @@ import UIKit
 
 class NewObjectViewController: UIViewController {
 
+    
+    @IBOutlet weak var newObjectInstructionsLabel: UILabel!
+    @IBOutlet weak var startAddingObjectButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = "Add object"
+        
+        navigationItem.title = "new_object_title".localized
+        
+        changeLanguage()
+        handleNotifications()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,10 +32,18 @@ class NewObjectViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
+    }
+    
+    private func handleNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "\(Notifications.languageChanged)"), object: nil)
+    }
+    
+    @objc private func changeLanguage() {
+        startAddingObjectButton.setTitle("take_picture".localized, for: .normal)
+        newObjectInstructionsLabel.text = "new_object_instructions".localized
     }
 }
