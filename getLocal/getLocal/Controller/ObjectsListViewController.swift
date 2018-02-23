@@ -144,6 +144,7 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet var tabGesture: UITapGestureRecognizer!
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: Notification.Name.UIKeyboardWillShow, object: nil)
     }
     
@@ -153,6 +154,7 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
     
