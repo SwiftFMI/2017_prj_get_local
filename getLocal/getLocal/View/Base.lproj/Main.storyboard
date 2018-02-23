@@ -181,7 +181,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15Y-3y-beT">
-                                <rect key="frame" x="82" y="308" width="210" height="70"/>
+                                <rect key="frame" x="82" y="467" width="210" height="70"/>
                                 <color key="backgroundColor" red="0.32941176470588235" green="0.63137254901960782" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="T76-Bz-xHM"/>
@@ -195,16 +195,34 @@
                                     <segue destination="ttr-RP-dJd" kind="show" id="NAz-tY-jdc"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-pin-2" translatesAutoresizingMaskIntoConstraints="NO" id="mcO-RL-x1r">
+                                <rect key="frame" x="59" y="105" width="257" height="262"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="262" id="12n-RC-Nf9"/>
+                                    <constraint firstAttribute="width" constant="257" id="eUq-8T-rTD"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start adding an object" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h74-0u-TSo">
+                                <rect key="frame" x="88" y="398" width="199.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.19215686274509802" green="0.50980392156862742" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="15Y-3y-beT" firstAttribute="centerY" secondItem="H9I-9f-cw5" secondAttribute="centerY" constant="9.5" id="DD0-SH-hM5"/>
+                            <constraint firstItem="h74-0u-TSo" firstAttribute="top" secondItem="mcO-RL-x1r" secondAttribute="bottom" constant="31" id="BSH-4I-pjw"/>
                             <constraint firstItem="15Y-3y-beT" firstAttribute="centerX" secondItem="H9I-9f-cw5" secondAttribute="centerX" id="Ffs-01-cDp"/>
+                            <constraint firstItem="mcO-RL-x1r" firstAttribute="top" secondItem="8yZ-hG-lg9" secondAttribute="top" constant="41" id="JOi-KC-th4"/>
+                            <constraint firstItem="15Y-3y-beT" firstAttribute="top" secondItem="h74-0u-TSo" secondAttribute="bottom" constant="44" id="Xot-Lr-5Lm"/>
+                            <constraint firstItem="h74-0u-TSo" firstAttribute="centerX" secondItem="H9I-9f-cw5" secondAttribute="centerX" id="djo-7n-UGS"/>
+                            <constraint firstItem="mcO-RL-x1r" firstAttribute="centerX" secondItem="H9I-9f-cw5" secondAttribute="centerX" id="fM0-OA-rke"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8yZ-hG-lg9"/>
                     </view>
                     <navigationItem key="navigationItem" id="1xn-P1-7dX"/>
                     <connections>
+                        <outlet property="newObjectInstructionsLabel" destination="h74-0u-TSo" id="102-DJ-KsN"/>
                         <outlet property="startAddingObjectButton" destination="15Y-3y-beT" id="eTr-CS-iQr"/>
                     </connections>
                 </viewController>
@@ -1001,6 +1019,7 @@
     </scenes>
     <resources>
         <image name="image-not-available" width="1152" height="1440"/>
+        <image name="map-pin-2" width="512" height="512"/>
         <image name="ndk" width="480" height="336"/>
     </resources>
 </document>

@@ -11,6 +11,7 @@ import UIKit
 class NewObjectViewController: UIViewController {
 
     
+    @IBOutlet weak var newObjectInstructionsLabel: UILabel!
     @IBOutlet weak var startAddingObjectButton: UIButton!
     
     override func viewDidLoad() {
@@ -43,5 +44,6 @@ class NewObjectViewController: UIViewController {
     
     @objc private func changeLanguage() {
         startAddingObjectButton.setTitle("take_picture".localized, for: .normal)
+        newObjectInstructionsLabel.text = "new_object_instructions".localized
     }
 }
