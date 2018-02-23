@@ -37,6 +37,9 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
         
         self.title = "set_name_title".localized
         
+//        objectNameTextField.text = "Enter object's name"
+//        objectNameTextField.textColor = UIColor.lightGray
+        
         objectNameTextField.delegate = self
         
         updateUI()
@@ -95,6 +98,20 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
             setObjectLocationVC.objectDescription = objectDescription
         }
     }
+    
+//    private func textViewDidBeginEditing(_ textView: UITextView) {
+//        if objectNameTextField.textColor == UIColor.lightGray {
+//            objectNameTextField.text = nil
+//            objectNameTextField.textColor = UIColor.black
+//        }
+//    }
+//
+//    private func textViewDidEndEditing(_ textView: UITextView) {
+//        if objectNameTextField.text?.isEmpty == true {
+//            objectNameTextField.text = "Enter object's name"
+//            objectNameTextField.textColor = UIColor.lightGray
+//        }
+//    }
     
     // built in method
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
