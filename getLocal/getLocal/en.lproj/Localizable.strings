@@ -29,4 +29,7 @@
 "set_location_instructions" = "Hold on map to change location";
 "take_picture_btn" = "Take photo";
 "new_object_title" = "Add object";
-"take_object_picture_title" = "Set object's photo";
+"take_object_picture_title" = "Set photo";
+"choose_category_title" = "Set category";
+"set_name_title" = "Set name";
+"set_location_title" = "Set location";

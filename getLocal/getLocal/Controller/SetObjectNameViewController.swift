@@ -32,7 +32,7 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Set object's name"
+        self.title = "set_name_title".localized
         
         objectNameTextField.delegate = self
         

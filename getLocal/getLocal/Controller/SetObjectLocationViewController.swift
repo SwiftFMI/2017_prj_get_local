@@ -52,7 +52,7 @@ class SetObjectLocationViewController: UIViewController, MKMapViewDelegate, CLLo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Set object's location"
+        self.title = "set_location_title".localized
         
         updateUI()
         

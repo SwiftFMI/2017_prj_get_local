@@ -26,7 +26,7 @@ class ChooseObjectCategoryViewController: UIViewController, UIPickerViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Set object's category"
+        self.title = "choose_category_title".localized
         
         pickerData = Category.allValues.map{ $0.rawValue }
       
