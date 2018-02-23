@@ -30,14 +30,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVZ-67-FBY">
-                                                    <rect key="frame" x="20" y="10" width="355" height="23.5"/>
+                                                    <rect key="frame" x="20" y="10" width="335" height="23.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="RVZ-67-FBY" secondAttribute="trailing" id="3Gx-Vg-suY"/>
+                                                <constraint firstAttribute="trailing" secondItem="RVZ-67-FBY" secondAttribute="trailing" constant="20" id="3Gx-Vg-suY"/>
                                                 <constraint firstItem="RVZ-67-FBY" firstAttribute="leading" secondItem="BEA-mN-4H2" secondAttribute="leading" constant="20" id="NMR-Lf-n1I"/>
                                                 <constraint firstAttribute="bottom" secondItem="RVZ-67-FBY" secondAttribute="bottom" constant="10" id="bIV-AJ-6jk"/>
                                                 <constraint firstItem="RVZ-67-FBY" firstAttribute="top" secondItem="BEA-mN-4H2" secondAttribute="top" constant="10" id="xOS-3O-LfZ"/>

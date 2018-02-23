@@ -7,41 +7,35 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 let imageCache = NSCache<NSString, AnyObject>()
 
 extension UIImageView {
     
-    func loadImageUsingCacheWithUrlString(_ urlString: String) {
+    func loadImageUsingCacheWithUrlString(_ objectId: String, _ imageUrl: String, _ loader: UIActivityIndicatorView?) {
         
         self.image = nil
         
         //check cache for image first
-        if let cachedImage = imageCache.object(forKey: urlString as NSString) as? UIImage {
+        if let cachedImage = imageCache.object(forKey: objectId + imageUrl as NSString) as? UIImage {
             self.image = cachedImage
             return
         }
         
         //otherwise fire off a new download
-        let url = URL(string: urlString)
-        URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-            
-            //download hit an error so lets return out
+        let storageRef = Storage.storage().reference()
+        storageRef.child(objectId).child(imageUrl).getData(maxSize: 1024 * 1024) { data, error in
             if let error = error {
-                print(error)
-                return
-            }
-            
-            DispatchQueue.main.async(execute: {
-                
-                if let downloadedImage = UIImage(data: data!) {
-                    imageCache.setObject(downloadedImage, forKey: urlString as NSString)
-                    
-                    self.image = downloadedImage
+                print(error.localizedDescription)
+            } else {
+                self.image = UIImage(data: data!)
+                if let loader = loader {
+                    loader.stopAnimating()
                 }
-            })
-            
-        }).resume()
+                imageCache.setObject(self.image!, forKey: objectId + imageUrl as NSString)
+            }
+        }
     }
     
 }

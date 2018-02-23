@@ -165,20 +165,7 @@ extension ObjectsMapViewController: MKMapViewDelegate {
 			selectedObject = objects.first(where: { $0.uid == objectAnnotation.objectId })
 			
 			// Setting cached image from url
-			if objectAnnotation.downloadImageUrl != nil {
-				calloutView.pinImageView.loadImageUsingCacheWithUrlString(objectAnnotation.downloadImageUrl)
-			} else {
-				storageRef.child(objectAnnotation.objectId).child(objectAnnotation.imageUrl).getMetadata(completion: { metadata, error in
-					if let error = error {
-						print(error.localizedDescription)
-					}
-					if let metadata = metadata {
-						let url = metadata.downloadURL()
-						objectAnnotation.downloadImageUrl = url?.absoluteString
-						calloutView.pinImageView.loadImageUsingCacheWithUrlString((url?.absoluteString)!)
-					}
-				})
-			}
+            calloutView.pinImageView.loadImageUsingCacheWithUrlString(objectAnnotation.objectId, objectAnnotation.imageUrl, nil)
 
 			calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
 			view.addSubview(calloutView)
