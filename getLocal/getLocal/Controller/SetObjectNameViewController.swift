@@ -11,6 +11,7 @@ import UIKit
 class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     
     
+    @IBOutlet weak var setNameInstructionsLabel: UILabel!
     @IBOutlet weak var nextSetNameButton: UIButton!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarWidthConstraint: NSLayoutConstraint!
@@ -71,6 +72,7 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
     
     @objc private func changeLanguage() {
         nextSetNameButton.setTitle("next_set_name".localized, for: .normal)
+        setNameInstructionsLabel.text = "set_name_instructions".localized
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

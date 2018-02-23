@@ -34,3 +34,4 @@
 "set_name_title" = "Set name";
 "set_location_title" = "Set location";
 "new_object_instructions" = "Start adding an object";
+"set_name_instructions" = "Set a name of the object";

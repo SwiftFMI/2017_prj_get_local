@@ -533,6 +533,12 @@
                                     <constraint firstAttribute="bottom" secondItem="E6T-Ty-VJm" secondAttribute="bottom" id="pcz-yM-ffH"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set a name of the object" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGl-M0-Zom">
+                                <rect key="frame" x="83.5" y="249" width="208" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.51764705882352935" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -540,8 +546,10 @@
                             <constraint firstItem="aoY-gx-HqQ" firstAttribute="top" secondItem="aqi-M6-lwd" secondAttribute="top" constant="254" id="8ka-mc-hnX"/>
                             <constraint firstItem="PwJ-Cs-xmH" firstAttribute="centerX" secondItem="ma8-kX-Uhr" secondAttribute="centerX" id="AgP-Ww-S57"/>
                             <constraint firstItem="aoY-gx-HqQ" firstAttribute="centerX" secondItem="ma8-kX-Uhr" secondAttribute="centerX" id="FG6-Gq-ryP"/>
+                            <constraint firstItem="rGl-M0-Zom" firstAttribute="centerX" secondItem="ma8-kX-Uhr" secondAttribute="centerX" id="RYD-5f-4mL"/>
                             <constraint firstItem="PwJ-Cs-xmH" firstAttribute="top" secondItem="aoY-gx-HqQ" secondAttribute="bottom" constant="155" id="ePy-eP-Tlp"/>
                             <constraint firstAttribute="trailing" secondItem="wGR-ay-rRW" secondAttribute="trailing" id="lvt-Pz-yH2"/>
+                            <constraint firstItem="rGl-M0-Zom" firstAttribute="top" secondItem="aqi-M6-lwd" secondAttribute="top" constant="185" id="odi-9A-WZj"/>
                             <constraint firstItem="wGR-ay-rRW" firstAttribute="leading" secondItem="aqi-M6-lwd" secondAttribute="leading" id="xEk-Ii-mt5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aqi-M6-lwd"/>
@@ -552,6 +560,7 @@
                         <outlet property="progressBar" destination="E6T-Ty-VJm" id="biB-1H-khq"/>
                         <outlet property="progressBarWidthConstraint" destination="N1C-9a-uHB" id="cha-PB-iOv"/>
                         <outlet property="progressLabel" destination="HhP-FU-UKt" id="heb-eR-4gG"/>
+                        <outlet property="setNameInstructionsLabel" destination="rGl-M0-Zom" id="h6y-6C-hS8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SwH-wX-5kv" userLabel="First Responder" sceneMemberID="firstResponder"/>

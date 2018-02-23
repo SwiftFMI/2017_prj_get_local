@@ -34,3 +34,4 @@
 "set_name_title" = "Избери име";
 "set_location_title" = "Избери местоположение";
 "new_object_instructions" = "Започни добавянето на обект";
+"set_name_instructions" = "Напиши име на обекта";
