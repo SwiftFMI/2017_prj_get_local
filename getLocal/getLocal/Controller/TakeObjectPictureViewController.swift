@@ -25,17 +25,17 @@ class TakeObjectPictureViewController: UIViewController, UINavigationControllerD
     
     
     @IBAction func goToChooseObjectCategory(_ sender: UIButton) {
-//        if photoIsChanged == false {
-//            showErrorAlert()
-//            return
-//        }
+        if photoIsChanged == false {
+            showErrorAlert()
+            return
+        }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Set object's photo"
+        self.title = "take_object_picture_title".localized
         
         updateUI()
         

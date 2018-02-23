@@ -28,4 +28,6 @@
 "next_take_picture" = "Следваща";
 "set_location_instructions" = "Задръж на картата";
 "take_picture_btn" = "Направи снимка";
+"new_object_title" = "Добавяне на обект";
+"take_object_picture_title" = "Качване на снимка";
 

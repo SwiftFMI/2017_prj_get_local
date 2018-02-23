@@ -16,7 +16,7 @@ class NewObjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Add object"
+        navigationItem.title = "new_object_title".localized
         
         changeLanguage()
         handleNotifications()

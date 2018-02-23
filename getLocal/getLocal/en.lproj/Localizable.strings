@@ -28,4 +28,5 @@
 "next_take_picture" = "Next";
 "set_location_instructions" = "Hold on map to change location";
 "take_picture_btn" = "Take photo";
-
+"new_object_title" = "Add object";
+"take_object_picture_title" = "Set object's photo";
