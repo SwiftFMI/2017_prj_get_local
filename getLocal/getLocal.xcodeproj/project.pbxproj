@@ -85,7 +85,7 @@
 		BDCB0000200B55AE000D093F /* NewObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewObjectViewController.swift; sourceTree = "<group>"; };
 		BDCB0002200B55BE000D093F /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		BDCB0004200B55FA000D093F /* CameraViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
-		BDCBFFF3200B467E000D093F /* ObjectsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsMapViewController.swift; sourceTree = "<group>"; };
+		BDCBFFF3200B467E000D093F /* ObjectsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsMapViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
 		BDCBFFF5200B484E000D093F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BDCBFFF7200B492B000D093F /* ObjectsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListViewController.swift; sourceTree = "<group>"; };
 		BDCBFFF9200B4981000D093F /* ObjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetailsViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -583,7 +583,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EJFGUPBBHG;
+				DEVELOPMENT_TEAM = 4D5PLR5969;
 				INFOPLIST_FILE = getLocal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bg.sofia-uni.fmi.getLocal";
@@ -599,7 +599,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EJFGUPBBHG;
+				DEVELOPMENT_TEAM = 4D5PLR5969;
 				INFOPLIST_FILE = getLocal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bg.sofia-uni.fmi.getLocal";

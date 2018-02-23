@@ -21,7 +21,7 @@ class ObjectsMapViewController: UIViewController {
 		var objects = [Object]()
 		var ref: DatabaseReference!
 		private var databaseHandle: DatabaseHandle!
-	    var storageRef: StorageReference!
+//        var storageRef: StorageReference!
 		var selectedObject : Object!
 
 		var coordinates: [[Double]]!
@@ -33,12 +33,6 @@ class ObjectsMapViewController: UIViewController {
 
 		override func viewDidLoad() {
 			super.viewDidLoad()
-			
-
-			mapView.delegate = self
-			mapView.showsUserLocation = true;
-			ref = Database.database().reference()
-			storageRef = Storage.storage().reference()
 			
 			// MARK: - Reference for using Firebase Database: https://www.sitepoint.com/creating-a-firebase-backend-for-ios-app/
 			// insert hardcoded objexcts to Firebase Database
@@ -54,12 +48,28 @@ class ObjectsMapViewController: UIViewController {
 			dbRefId2.child("longitude").setValue("-0.11")
 			*/
 			
+            mapView.delegate = self
+            mapView.showsUserLocation = true;
+            
 			locationManager.delegate = self
 			locationManager.desiredAccuracy = kCLLocationAccuracyBest
 			locationManager.requestWhenInUseAuthorization()
-			locationManager.startUpdatingLocation()
-			startObservingDatabase()
 		}
+	
+        override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            ref = Database.database().reference()
+            locationManager.startUpdatingLocation()
+            startObservingDatabase()
+        }
+    
+        override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            if ref != nil {
+                ref.child("objects").removeObserver(withHandle: databaseHandle)
+            }
+            NotificationCenter.default.removeObserver(self)
+        }
 
 		func startObservingDatabase () {
 			self.showWaitOverlay()
@@ -119,11 +129,11 @@ class ObjectsMapViewController: UIViewController {
 			self.navigationController?.pushViewController(detailsVC, animated: true)
 		}
 	
-    deinit {
-        if ref != nil {
-            ref.child("objects").removeObserver(withHandle: databaseHandle)
-        }
-    }
+//    deinit {
+//        if ref != nil {
+//            ref.child("objects").removeObserver(withHandle: databaseHandle)
+//        }
+//    }
 }
 
 
