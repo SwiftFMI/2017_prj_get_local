@@ -1,0 +1,93 @@
+
+/* Class = "UIButton"; normalTitle = "Take picture"; ObjectID = "15Y-3y-beT"; */
+"15Y-3y-beT.normalTitle" = "Take picture";
+
+/* Class = "UITabBarItem"; title = "More"; ObjectID = "4Ck-Gg-tgE"; */
+"4Ck-Gg-tgE.title" = "More";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "4gV-HW-efm"; */
+"4gV-HW-efm.normalTitle" = "Next";
+
+/* Class = "UITabBarItem"; title = "Camera"; ObjectID = "5ZN-tl-g3e"; */
+"5ZN-tl-g3e.title" = "Camera";
+
+/* Class = "UITextField"; placeholder = "Enter a working time"; ObjectID = "8ro-AP-DPR"; */
+"8ro-AP-DPR.placeholder" = "Enter a working time";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HhP-FU-UKt"; */
+"HhP-FU-UKt.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HqJ-di-Ujh"; */
+"HqJ-di-Ujh.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Profile"; ObjectID = "Mfr-VV-BHu"; */
+"Mfr-VV-BHu.text" = "Profile";
+
+/* Class = "UIButton"; normalTitle = "Take Photo"; ObjectID = "Msl-pv-StT"; */
+"Msl-pv-StT.normalTitle" = "Take Photo";
+
+/* Class = "UILabel"; text = "Hold on map to change location"; ObjectID = "N4A-c7-Tdd"; */
+"N4A-c7-Tdd.text" = "Hold on map to change location";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "PwJ-Cs-xmH"; */
+"PwJ-Cs-xmH.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "My objects"; ObjectID = "Qns-HJ-gfD"; */
+"Qns-HJ-gfD.text" = "My objects";
+
+/* Class = "UILabel"; text = "Liked objects"; ObjectID = "UYd-m3-unZ"; */
+"UYd-m3-unZ.text" = "Liked objects";
+
+/* Class = "UILabel"; text = "Change theme"; ObjectID = "Ud0-b5-fW1"; */
+"Ud0-b5-fW1.text" = "Change theme";
+
+/* Class = "UILabel"; text = "Change language"; ObjectID = "Wx2-K2-Ep1"; */
+"Wx2-K2-Ep1.text" = "Change language";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "XGh-iM-1FW"; */
+"XGh-iM-1FW.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "Zze-sB-ql2"; */
+"Zze-sB-ql2.title" = "Map";
+
+/* Class = "UITextField"; placeholder = "Enter a name"; ObjectID = "aoY-gx-HqQ"; */
+"aoY-gx-HqQ.placeholder" = "Enter a name";
+
+/* Class = "UILabel"; text = "x/4"; ObjectID = "cBD-cC-S12"; */
+"cBD-cC-S12.text" = "x/4";
+
+/* Class = "UITabBarItem"; title = "Add Object"; ObjectID = "e26-iw-Uwl"; */
+"e26-iw-Uwl.title" = "Add Object";
+
+/* Class = "UIButton"; normalTitle = "Login with facebook"; ObjectID = "eYS-YK-Z58"; */
+"eYS-YK-Z58.normalTitle" = "Login with facebook";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gdf-7I-LVb"; */
+"gdf-7I-LVb.text" = "Label";
+
+/* Class = "UILabel"; text = "Start adding an object"; ObjectID = "h74-0u-TSo"; */
+"h74-0u-TSo.text" = "Start adding an object";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "kfj-iI-Gtc"; */
+"kfj-iI-Gtc.normalTitle" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Submit object"; ObjectID = "lMd-rO-6sS"; */
+"lMd-rO-6sS.normalTitle" = "Submit object";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "pHB-qr-Imv"; */
+"pHB-qr-Imv.normalTitle" = "Logout";
+
+/* Class = "UILabel"; text = "Set a name, working time and description of the object"; ObjectID = "rGl-M0-Zom"; */
+"rGl-M0-Zom.text" = "Set a name, working time and description of the object";
+
+/* Class = "UITabBarItem"; title = "Objects"; ObjectID = "rY4-Lu-EfN"; */
+"rY4-Lu-EfN.title" = "Objects";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "t5v-3r-Qav"; */
+"t5v-3r-Qav.text" = "Label";
+
+/* Class = "UILabel"; text = "getLocal"; ObjectID = "udb-wv-YYM"; */
+"udb-wv-YYM.text" = "getLocal";
+
+/* Class = "UINavigationController"; title = "Nearby Objects"; ObjectID = "zf6-Qx-EYb"; */
+"zf6-Qx-EYb.title" = "Nearby Objects";

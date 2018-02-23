@@ -129,9 +129,11 @@
                         <outlet property="addToFavourites" destination="Cgh-Rj-UR0" id="2iY-Db-s09"/>
                         <outlet property="descriptionText" destination="eV9-Hc-pp0" id="5tU-Xv-aHr"/>
                         <outlet property="loader" destination="IYV-a1-7Ph" id="Wxw-DX-huq"/>
+                        <outlet property="navigateButton" destination="Uu6-uv-Ssi" id="U8m-YL-VVI"/>
                         <outlet property="objectImageView" destination="vjy-gM-wtt" id="ClS-ww-D47"/>
                         <outlet property="removeFromFavourites" destination="lhs-Su-fbE" id="tti-vt-ic1"/>
                         <outlet property="titleLabel" destination="s5r-04-NjY" id="d0d-HZ-LZA"/>
+                        <outlet property="workTimeForLokalizing" destination="d5q-PZ-Cyg" id="L59-rw-zKf"/>
                         <outlet property="workingTimeLabel" destination="NDR-S2-Zon" id="MIq-YO-UEv"/>
                     </connections>
                 </viewController>

@@ -21,15 +21,15 @@ enum Category: String {
     
     var plural: String {
         switch self {
-            case .restaurant: return "Restaurants"
-            case .club: return "Clubs"
-            case .pharmacy: return "Pharmacies"
-            case .shop: return "Shops"
-            case .services: return "Services"
-            case .other: return "Other"
-            case .allObjects: return "All objects"
-            case .favourites: return "Favourites"
-            case .myObjects: return "My objects"
+            case .restaurant: return "restaurants"
+            case .club: return "clubs"
+            case .pharmacy: return "pharmacies"
+            case .shop: return "shops"
+            case .services: return "services"
+            case .other: return "other"
+            case .allObjects: return "all objects"
+            case .favourites: return "liked_objects"
+            case .myObjects: return "my_objects"
         }
     }
     

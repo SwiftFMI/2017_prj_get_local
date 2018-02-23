@@ -13,14 +13,13 @@ class CategoriesListUserController: UIViewController, UITableViewDataSource, UIT
     var categories : [Category] = Category.allCategories
     
     var selectedCategory : Category!
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = "Categories"
-    }
+    
+    @IBOutlet var categoriesTable: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
+        super.viewWillAppear(animated)
+        self.title = "categories".localized
+        categoriesTable.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,7 +29,7 @@ class CategoriesListUserController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Category") as! CategoryTableViewCell
         
-        cell.categoryLabel.text = categories[indexPath.row].plural
+        cell.categoryLabel.text = categories[indexPath.row].plural.localized
         
         return cell
     }

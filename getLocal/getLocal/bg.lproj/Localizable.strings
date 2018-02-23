@@ -35,3 +35,13 @@
 "set_location_title" = "Избери местоположение";
 "new_object_instructions" = "Започни добавянето на обект";
 "set_name_instructions" = "Напиши име, работно време и описание на обекта";
+"categories" = "Категории";
+"restaurants" = "Ресторанти";
+"clubs" = "Клубове";
+"pharmacies" = "Аптеки";
+"shops" = "Магазини";
+"services" = "Услуги";
+"other" = "Други";
+"all objects" = "Всички обекти";
+"work_time" = "Работно време: ";
+"navigation_button" = "Упътвания";
