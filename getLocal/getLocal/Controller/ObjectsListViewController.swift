@@ -17,6 +17,7 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     
     var user: User!
     var objects = [Object]()
+    var favourites = [String]()
     
     var filteredObjects = [Object]()
     var searchWord = ""
@@ -33,16 +34,31 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-//        searchBar.searchResultsUpdater = self
-//        searchBar.dimsBackgroundDuringPresentation = false
-        
         self.title = category.plural
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         user = Auth.auth().currentUser
         objectsRef = Database.database().reference().child("objects")
-        userRef = Database.database().reference().child("users").child(user.uid)
+        userRef = Database.database().reference().child("users").child(user.uid).child("favourites")
         
         queryDb()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: Notification.Name.UIKeyboardWillShow, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        userRef.removeAllObservers()
+        objectsRef.removeAllObservers()
+        for favourite in favourites {
+            objectsRef.child(favourite)
+        }
+        
+        NotificationCenter.default.removeObserver(self)
     }
     
     private func queryDb() {
@@ -71,13 +87,13 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     private func queryFavourites() {
-        userRef.child("favourites").observe(.value, with: { (snapshot) in
-            let favourites = (snapshot.children.allObjects as![DataSnapshot]).map({$0.key})
-            self.queryFavouriteObjects(favourites: favourites)
+        userRef.observe(.value, with: { (snapshot) in
+            self.favourites = (snapshot.children.allObjects as![DataSnapshot]).map({$0.key})
+            self.queryFavouriteObjects()
         })
     }
     
-    private func queryFavouriteObjects(favourites: [String]) {
+    private func queryFavouriteObjects() {
         self.objects.removeAll()
         
         for favourite in favourites {
@@ -143,19 +159,9 @@ class ObjectsListViewController: UIViewController, UITableViewDataSource, UITabl
     var keyboardEnabled = false
     @IBOutlet var tabGesture: UITapGestureRecognizer!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: Notification.Name.UIKeyboardWillShow, object: nil)
-    }
-    
     @objc func keyboardWillAppear() {
         tabGesture.cancelsTouchesInView = true
         keyboardEnabled = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
     }
     
     @IBAction func tapToHideKeyboard(_ sender: UITapGestureRecognizer) {

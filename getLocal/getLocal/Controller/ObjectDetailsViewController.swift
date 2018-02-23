@@ -31,17 +31,25 @@ class ObjectDetailsViewController: UIViewController {
         workingTimeLabel.text = object.workTime
         descriptionText.text = object.description
         
-        user = Auth.auth().currentUser
-        
-        userRef = Database.database().reference().child("users").child(user.uid)
-        
         objectImageView.loadImageUsingCacheWithUrlString(object.uid!, object.imageUrl!, loader)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        userRef.child("favourites").observe(.value, with: { (snapshot) in
+        user = Auth.auth().currentUser
+        userRef = Database.database().reference().child("users").child(user.uid).child("favourites")
+        
+        userRef.observe(.value, with: { (snapshot) in
             let isFavourite = (snapshot.children.allObjects as![DataSnapshot]).map({$0.key}).contains(where: {$0 == self.object.uid})
             self.favouritesButtonState(enabled: !isFavourite)
         })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
+        userRef.removeAllObservers()
     }
     
     private func favouritesButtonState(enabled: Bool) {
@@ -60,11 +68,11 @@ class ObjectDetailsViewController: UIViewController {
     }
 
     @IBAction func addToFavourites(_ sender: UIButton) {
-        userRef.child("favourites").updateChildValues([AnyHashable(object.uid!) : true])
+        userRef.updateChildValues([AnyHashable(object.uid!) : true])
     }
     
     @IBAction func removeFromFavourites(_ sender: UIButton) {
-        userRef.child("favourites").child(object.uid!).removeValue()
+        userRef.child(object.uid!).removeValue()
     }
     
 		@IBAction func pressNavigateButton(_ sender: Any) {
