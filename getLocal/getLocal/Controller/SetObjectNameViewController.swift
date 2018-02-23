@@ -118,8 +118,18 @@ class SetObjectNameViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
-        self.view.endEditing(true)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        self.view.endEditing(true)
+        if textField == self.objectNameTextField {
+            self.objectWorkingTimeField.becomeFirstResponder()
+        }
+        if textField == self.objectWorkingTimeField {
+            self.objectDescriptionTextView.becomeFirstResponder()
+        }
+        if textField == self.objectDescriptionTextView {
+          self.objectDescriptionTextView.resignFirstResponder()
+        }
+        
         return true
     }
     
