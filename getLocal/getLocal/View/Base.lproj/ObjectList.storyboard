@@ -13,7 +13,7 @@
         <!--Objects List View Controller-->
         <scene sceneID="Ds6-3K-vI4">
             <objects>
-                <viewController id="KFN-9u-4lt" customClass="ObjectsListViewController" customModule="getLocal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="objectsList" id="KFN-9u-4lt" customClass="ObjectsListViewController" customModule="getLocal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ufd-eP-VH7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

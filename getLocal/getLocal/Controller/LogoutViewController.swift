@@ -17,10 +17,9 @@ class LogoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        logoutButton.setTitle("logout".localized, for: .normal)
         
-        logoutButton.setTitle("Hello".localized, for: .normal)
-//        Language.shared.currentLanguage
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "\(Notifications.languageChanged)"), object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,5 +37,14 @@ class LogoutViewController: UIViewController {
         FBSDKLoginManager().logOut()
     
         performSegue(withIdentifier: "\(SegueIDs.unwindToLogin)", sender: nil)
+    }
+
+    @objc private func changeLanguage() {
+        logoutButton.setTitle("logout".localized, for: .normal)
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }

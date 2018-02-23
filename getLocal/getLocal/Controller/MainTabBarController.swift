@@ -22,6 +22,9 @@ class MainTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     private func handleNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name(rawValue: "\(Notifications.languageChanged)"), object: nil)

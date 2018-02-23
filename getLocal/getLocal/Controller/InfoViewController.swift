@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class InfoViewController: UITableViewController {
 
@@ -21,10 +22,27 @@ class InfoViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard indexPath.section == 0, let menuRow = Menu(rawValue: indexPath.row)
-        else { return }
+        if indexPath.section == 0, let user = Auth.auth().currentUser {
+            cell.imageView?.imageFromServerURL(url: user.photoURL!){ [weak self] in
+                print("Avatar downloaded")
+            }
+            cell.textLabel?.text = user.displayName
+        } else if indexPath.section == 1 {
+            let menuRow = Menu(rawValue: indexPath.row)
+            cell.textLabel?.text = menuRow?.description ?? ""
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard section == 0 else { return nil }
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
         
-        cell.textLabel?.text = "\(menuRow)"
+        return view
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard section == 0 else { return 0 }
+        return 40
     }
     
     private func handleNotifications() {
@@ -34,10 +52,22 @@ class InfoViewController: UITableViewController {
     @objc private func languageChanged() {
         tableView.reloadData()
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.section == 1, let menuRow = Menu(rawValue: indexPath.row) else { return }
+        
+        if menuRow == .myObjects  || menuRow  == .likedObjects {
+            let storyboard = UIStoryboard(name: "ObjectList", bundle: nil)
+            guard let objectsListVC = storyboard.instantiateViewController(withIdentifier: "\(StoryboardIDS.objectsList)") as? ObjectsListViewController else { return }
+            
+            let category = menuRow == .myObjects ? Category.myObjects : Category.favourites
+            objectsListVC.category = category
+            navigationController?.pushViewController(objectsListVC, animated: true)
+        }
+    }
 }
 
 private enum Menu: Int {
-    case profile = 0
     case myObjects
     case likedObjects
     case changeLanguage
@@ -48,8 +78,6 @@ extension Menu: CustomStringConvertible {
     
     var description: String {
         switch self {
-        case .profile:
-            return "profile".localized
         case .myObjects:
             return "my_objects".localized
         case .likedObjects:

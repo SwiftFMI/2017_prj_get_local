@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var user: User?
@@ -23,11 +24,11 @@ class ProfileViewController: UIViewController {
         user = Auth.auth().currentUser
         activityIndicator.startAnimating()
         self.title = "Profile"
-        usernameLabel.text = user?.displayName
+        usernameLabel.text = user?.displayName ?? ""
+        emailLabel.text = user?.email ?? ""
         downloadAvatar()
         
         userAvatar.layer.cornerRadius = 100
-        
         userAvatar.layer.masksToBounds = true
     }
 
