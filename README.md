@@ -3,9 +3,9 @@ Course project for the iOS-11 and Swift-4 mobile application development course 
 
 
 ## Съдържание
-1. Описание на проекта
-2. Елементи на приложението
-3. [Git Flow](https://github.com/pepincho/getLocal#git-flow)
+1. [Описание на проекта](https://github.com/SwiftFMI/2017_prj_get_local#Описание-на-проекта)
+2. [Елементи на приложението](https://github.com/SwiftFMI/2017_prj_get_local#Елементи-на-приложението)
+3. [Git Flow](https://github.com/SwiftFMI/2017_prj_get_local#git-flow)
 
 
 ## Table of Contents
