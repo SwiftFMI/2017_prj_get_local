@@ -9,9 +9,9 @@ Course project for the iOS-11 and Swift-4 mobile application development course 
 
 
 ## Table of Contents
-1. [English Project Description](https://github.com/pepincho/getLocal#english-project-description)
-2. [Features of the application](https://github.com/pepincho/getLocal#features-of-the-application)
-3. [Git Flow](https://github.com/pepincho/getLocal#git-flow)
+1. [English Project Description](https://github.com/SwiftFMI/2017_prj_get_local#english-project-description)
+2. [Features of the application](https://github.com/SwiftFMI/2017_prj_get_local#features-of-the-application)
+3. [Git Flow](https://github.com/SwiftFMI/2017_prj_get_local#git-flow)
 
 
 # Описание на проекта
